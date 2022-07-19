@@ -10,6 +10,20 @@
           <include name="Tear_Down"/>
         </methods>
       </class> <!-- Test.Test_Log_In_Stemex -->
+      <class name="Test.Test_Stemex_Application_Creation">
+        <methods>
+          <include name="Tear_Down"/>
+          <include name="setup"/>
+          <include name="App_Create_Test"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Application_Creation -->
+      <class name="Test.Test_Stemex_Search_Filters">
+        <methods>
+          <include name="setup"/>
+          <include name="Tear_Down"/>
+          <include name="Stemp_Ex_Search_Test"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Search_Filters -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

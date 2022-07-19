@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class Test_Base {
@@ -18,7 +19,7 @@ public class Test_Base {
 
 		String project_path = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver",project_path+"\\\\Driver\\\\chromedriver.exe"); 
-	    driver = new ChromeDriver();  
+	    driver = new ChromeDriver();      
 	    driver.manage().window().maximize();
 		tdriver.set(driver);
 		return getDriver();

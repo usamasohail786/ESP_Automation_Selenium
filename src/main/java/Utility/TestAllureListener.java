@@ -4,7 +4,7 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
+//import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -35,14 +35,14 @@ public class TestAllureListener implements ITestListener {
 		return html;
 	}
 
-	public void onStart(ITestContext iTestContext) {
-		System.out.println("I am in onStart method " + iTestContext.getName());
-		iTestContext.setAttribute("WebDriver", Test_Base.getDriver());
-	}
-
-	public void onFinish(ITestContext iTestContext) {
-		System.out.println("I am in onFinish method " + iTestContext.getName());
-	}
+//	public void onStart(ITestContext iTestContext) {
+//		System.out.println("I am in onStart method " + iTestContext.getName());
+//		iTestContext.setAttribute("WebDriver", Test_Base.getDriver());
+//	}
+//
+//	public void onFinish(ITestContext iTestContext) {
+//		System.out.println("I am in onFinish method " + iTestContext.getName());
+//	}
 
 	public void onTestStart(ITestResult iTestResult) {
 		System.out.println("I am in onTestStart method " + getTestMethodName(iTestResult) + " start");
