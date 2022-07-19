@@ -57,6 +57,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		assertTrue(actual_app_result);
 		Boolean actual_mine_tab_result = app_obj.verify_mine_tab(app_main_mid_tab);
 		assertTrue(actual_mine_tab_result);
+		System.out.print("test");
 	}
 
 	@AfterMethod
