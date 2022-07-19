@@ -1,1 +1,0 @@
-{"uuid":"f4ab3a40-ed25-4696-aaf8-8b00deec2008","name":"Test.Test_Log_In_Stemex","children":["0643e9a1-a037-41a3-ac17-493730a7a261"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1658203199697,"stop":1658203211172}],"afters":[],"start":1658203199628,"stop":1658203457119}
