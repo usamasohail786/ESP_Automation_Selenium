@@ -1,0 +1,1 @@
+{"uuid":"fffea19f-c4ca-4455-a62c-80747b040e65","name":"Test.Test_Stemex_Application_Creation","children":["44145e86-43d1-4f68-b044-cc578933fbb4"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1658144589280,"stop":1658144600312}],"afters":[],"start":1658144540740,"stop":1658144781622}

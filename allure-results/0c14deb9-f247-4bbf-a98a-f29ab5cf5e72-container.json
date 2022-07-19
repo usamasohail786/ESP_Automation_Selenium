@@ -1,0 +1,1 @@
+{"uuid":"0c14deb9-f247-4bbf-a98a-f29ab5cf5e72","name":"Test.Test_Stemex_Search_Filters","children":["6feffe5c-1665-4ef3-9903-89e5f1e9613d"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1658151717263,"stop":1658151730383}],"afters":[],"start":1658151717203,"stop":1658151733135}

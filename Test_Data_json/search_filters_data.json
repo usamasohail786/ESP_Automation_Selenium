@@ -1,0 +1,17 @@
+{
+    "filter_open": "Open" ,
+    "filter_pending": "Pending",
+    "filter_accepted":"Accepted",
+     "filter_rejected":"Rejected",
+    "filter_all":"All",
+    "filter_cancelled":"Cancelled",
+    "open_text":"Pending"   ,
+    "app_main_all_tab":"All",
+    "no_app_text":"No Applications to show.",
+    "submit_newest_first": "Submitted: Newest First" ,
+     "submit_oldest_first": "Submitted: Oldest First" ,
+    "app_main_action_tab":"Action",
+    "non_submitted_defination":"new test defination without submit",
+    "submitted_defination":"usama"
+  }
+  
