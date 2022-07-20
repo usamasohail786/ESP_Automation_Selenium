@@ -25,6 +25,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
 
+//import com.paulhammant.ngwebdriver.NgWebDriver;
+
 public class Common_class {
 
 	WebDriver driver = null;
@@ -32,7 +34,7 @@ public class Common_class {
 
 	public Common_class(WebDriver driver) {
 		this.driver = driver;
-		// wait=new WebDriverWait(driver,60);
+		
 
 	}
 

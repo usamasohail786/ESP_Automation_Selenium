@@ -60,7 +60,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		System.out.print("test");
 	}
 
-	@AfterMethod
+	@org.testng.annotations.AfterMethod
 	public void Tear_Down() throws InterruptedException {
 
 		obj.driver.quit();

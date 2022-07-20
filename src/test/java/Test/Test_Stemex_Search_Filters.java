@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.json.simple.parser.ParseException;
-
+import org.junit.After;
 import org.testng.annotations.AfterMethod;
 
 import org.testng.annotations.Listeners;
@@ -72,7 +72,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 		assertTrue(search_obj.submitted_def);
 	}
 
-	@AfterMethod
+	@org.testng.annotations.AfterMethod
 	public void Tear_Down() throws InterruptedException {
 
 		obj.driver.quit();
