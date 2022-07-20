@@ -44,6 +44,8 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 	@Feature("Search Filters")
 	public void Stemp_Ex_Search_Test() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
+		
+		try {
 		Log_In_Stem_ex log_obj = new Log_In_Stem_ex(obj.driver);
 		Create_Application_Page app_obj = new Create_Application_Page(obj.driver);
 		Search_Filters_Stemex search_obj = new Search_Filters_Stemex(obj.driver);
@@ -70,6 +72,12 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 		search_obj.Sorting_Defination(app_main_all_tab, non_submitted_defination, submitted_defination);
 		assertTrue(search_obj.non_submitted_def);
 		assertTrue(search_obj.submitted_def);
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
 	}
 
 	@org.testng.annotations.AfterMethod

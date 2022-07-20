@@ -43,6 +43,8 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 	@Feature("Create Application")
 	public void App_Create_Test() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
+		try
+		{
 		Log_In_Stem_ex log_obj = new Log_In_Stem_ex(obj.driver);
 		Create_Application_Page app_obj = new Create_Application_Page(obj.driver);
 		log_obj.Log_In(phone_number, pass);
@@ -58,6 +60,12 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		Boolean actual_mine_tab_result = app_obj.verify_mine_tab(app_main_mid_tab);
 		assertTrue(actual_mine_tab_result);
 		System.out.print("test");
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
 	}
 
 	@org.testng.annotations.AfterMethod
