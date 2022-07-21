@@ -192,7 +192,7 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeClickable(filters_box, 10);
 		com.Scroll_To_Element(next_page);
-		com.element_to_be_stable(1000);
+		com.element_to_be_stable(2000);
 		com.Explicit_wait_elementToBeClickable(last_page, 10);
 		last_page.click();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
