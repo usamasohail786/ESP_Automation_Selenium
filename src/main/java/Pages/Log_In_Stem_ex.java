@@ -17,11 +17,11 @@ public class Log_In_Stem_ex {
 	WebDriver driver = null;
 	@FindBy(xpath="//mat-label[text()='Mobile Number']/parent::label/parent::span/preceding-sibling::input")
 	WebElement phone_number;
-	@FindBy(xpath="//input[@formcontrolname='.......sds']")
+	@FindBy(xpath="//input[@formcontrolname='password']")
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath="//button[@type='........das']")
 	WebElement  sign_in_btn;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;
