@@ -21,7 +21,7 @@ public class Log_In_Stem_ex {
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
-	@FindBy(xpath="//button[@type='........das']")
+	@FindBy(xpath="//button[@type='submit']")
 	WebElement  sign_in_btn;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;
@@ -50,9 +50,22 @@ public class Log_In_Stem_ex {
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();	
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
-    	Thread.sleep(50000);
+    	try
+    	{
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	System.out.println("wait try...........");
+    	}
+    	catch(Exception e){
+    		e.getCause();
+    	}
+    	try
+    	{
+    	com.getNGDriver().waitForAngularRequestsToFinish();
+    	System.out.println("wait try...........");
+    	}
+    	catch(Exception e){
+    		e.getCause();
+    	}
 }
    
 
