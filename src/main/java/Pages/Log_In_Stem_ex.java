@@ -17,7 +17,7 @@ public class Log_In_Stem_ex {
 	WebDriver driver = null;
 	@FindBy(xpath="//mat-label[text()='Mobile Number']/parent::label/parent::span/preceding-sibling::input")
 	WebElement phone_number;
-	@FindBy(xpath="//input[@formcontrolname='password']")
+	@FindBy(xpath="//input[@formcontrolname='.......sds']")
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
@@ -50,8 +50,9 @@ public class Log_In_Stem_ex {
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();	
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	//com.getNGDriver().waitForAngularRequestsToFinish();
+    	Thread.sleep(50000);
 }
    
 

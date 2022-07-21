@@ -107,6 +107,7 @@ public class Create_Application_Page extends Test_Data {
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_before_string_mine=appication_counter_on_end.getText();
         counter_before_mine=Integer.parseInt(counter_before_string_mine);
@@ -147,7 +148,7 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	com.Explicit_wait_elementToBeInvisible(spinner, 40);
-    	//com.element_to_be_stable(2000);
+    	com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_after_string_mine=appication_counter_on_end.getText();
         counter_after_mine=Integer.parseInt(counter_after_string_mine);
