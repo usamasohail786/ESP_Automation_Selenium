@@ -61,7 +61,7 @@ public class Log_In_Stem_ex {
     	try
     	{
     	com.getNGDriver().waitForAngularRequestsToFinish();
-    	System.out.println("wait try...........");
+    	System.out.println("wait try..........11.");
     	}
     	catch(Exception e){
     		e.getCause();
