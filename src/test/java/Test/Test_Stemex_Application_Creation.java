@@ -48,8 +48,8 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		Log_In_Stem_ex log_obj = new Log_In_Stem_ex(obj.driver);
 		Create_Application_Page app_obj = new Create_Application_Page(obj.driver);
 		log_obj.Log_In(phone_number, pass);
-		//String URL = obj.driver.getCurrentUrl();
-		//assertEquals(URL, url);
+		String URL = obj.driver.getCurrentUrl();
+		assertEquals(URL, url);
 		app_obj.Choose_Group(group_name);
 		String tab_text_exist = app_obj.Choose_Tab(tab);
 		assertEquals(tab_text_exist, tab);

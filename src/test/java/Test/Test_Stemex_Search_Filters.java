@@ -50,8 +50,8 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 		Create_Application_Page app_obj = new Create_Application_Page(obj.driver);
 		Search_Filters_Stemex search_obj = new Search_Filters_Stemex(obj.driver);
 		log_obj.Log_In(phone_number, pass);
-		//String URL = obj.driver.getCurrentUrl();
-		//assertEquals(URL, url);
+		String URL = obj.driver.getCurrentUrl();
+		assertEquals(URL, url);
 		app_obj.Choose_Group(group_name);
 		app_obj.Choose_Tab(tab);
 		search_obj.Search_Status_Filters(filter_open, open_text, app_main_all_tab, filter_accepted, filter_rejected,
