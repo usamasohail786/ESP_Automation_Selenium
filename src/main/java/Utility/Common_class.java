@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.common.base.Predicate;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 
 //import com.paulhammant.ngwebdriver.NgWebDriver;
@@ -47,16 +48,30 @@ public class Common_class {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		return (new NgWebDriver(js));
 	}
-
+  
 	public void element_to_be_stable(int waittime) throws InterruptedException {
 
 		Thread.sleep(waittime);
 	}
 
-	public WebElement Explicit_wait_elementToBeClickable(WebElement element_hover_wait, int waittime) {
+	public WebElement Explicit_wait_elementToBeClickable(WebElement element_hover_wait, int waittime) throws InterruptedException {
+		try
+		{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		return wait.until(ExpectedConditions.elementToBeClickable(element_hover_wait));
+		}
+		catch(Exception e)
+		{
+			element_to_be_stable(4000);
+		}
+		return element_hover_wait;
 
+	}
+	public void js_Wait()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		wait.until(webDriver -> "complete".equals(((JavascriptExecutor) webDriver)
+		    .executeScript("return document.readyState")));
 	}
 
 	public void Get_Attribute_of_element_click(List<WebElement> list_element, String text, String attribute,
@@ -75,31 +90,71 @@ public class Common_class {
 
 	}
 
-	public void Explicit_wait_elements_visiblity(List<WebElement> list_element, int waittime) {
+	public void Explicit_wait_elements_visiblity(List<WebElement> list_element, int waittime) throws InterruptedException {
+		try
+		{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		wait.until(ExpectedConditions.visibilityOfAllElements(list_element));
+		}
+		catch(Exception e)
+		{
+			element_to_be_stable(4000);
+		}
 	}
+	
 
 	public void Explicit_wait_elements_presence(List<WebElement> list_element, int waittime) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By) list_element));
 	}
 
-	public void Explicit_wait_elementToBeVisible(WebElement element_hover_wait, int waittime) {
-
+	public void Explicit_wait_elementToBeVisible(WebElement element_hover_wait, int waittime) throws InterruptedException {
+      try
+      {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		wait.until(ExpectedConditions.visibilityOf(element_hover_wait));
+      }
+      catch(Exception e)
+      {
+    	  element_to_be_stable(4000);
+      }
 
 	}
+	public void Explicit_wait_elementToBeStale(WebElement element_hover_wait, int waittime) throws InterruptedException {
+	      try
+	      {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
+			wait.until(ExpectedConditions.stalenessOf(element_hover_wait));
+	      }
+	      catch(Exception e)
+	      {
+	    	  element_to_be_stable(4000);
+	      }
 
-	public void Explicit_wait_elementToBeInvisible(WebElement element, int waittime) {
+		}
+
+	public void Explicit_wait_elementToBeInvisible(WebElement element, int waittime) throws InterruptedException {
+		try
+		{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		wait.until(ExpectedConditions.invisibilityOf(element));
+		}
+		catch(Exception e)
+		{
+			element_to_be_stable(4000);
+		}
 	}
 
-	public void Explicit_wait_until_element_selected(WebElement search_box, int waittime) {
+	public void Explicit_wait_until_element_selected(WebElement search_box, int waittime) throws InterruptedException {
+		try
+		{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
 		wait.until(ExpectedConditions.elementToBeSelected(search_box));
+		}
+		catch(Exception e)
+		{
+			element_to_be_stable(4000);
+		}
 
 	}
 

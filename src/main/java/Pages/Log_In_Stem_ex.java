@@ -44,32 +44,17 @@ public class Log_In_Stem_ex {
     public void Log_In(String phone,String pass) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
+    	
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();	
-    	try
-    	{
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	System.out.println("wait try...........");
-    	}
-    	catch(Exception e){
-    		e.getCause();
-    	}
-    	try
-    	{
-    	com.getNGDriver().waitForAngularRequestsToFinish();
-    	System.out.println("wait try..........11.");
-    	}
-    	catch(Exception e){
-    		e.getCause();
-    	}
-}
+    	
+    }
    
-
-
 
 }
 

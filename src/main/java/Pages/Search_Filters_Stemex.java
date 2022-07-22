@@ -83,19 +83,19 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_all_tabs, 50);
 		com.get_elements_text_click(app_main_all_tabs, all_tab);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.Explicit_wait_elementToBeClickable(appication_counter, 40);
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_all = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_all != no_app_txt)
 
 		{
-			com.element_to_be_stable(1000);
+			//com.element_to_be_stable(1000);
+			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String all_count = appication_counter.getText();
 			all_int_count = com.counter_int(all_count);
 
 		}
-		com.element_to_be_stable(2000);
-		com.Explicit_wait_elementToBeClickable(filters_box, 100);
+		//com.element_to_be_stable(2000);
+		com.Explicit_wait_elementToBeStale(filters_box, 5);
 		filters_box.click();
 		com.Search_filters(search_filter_list, Open_Filter);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
@@ -105,12 +105,13 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_open = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_open != no_app_txt) {
+			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String open_count = appication_counter.getText();
 			open_int_count = com.counter_int(open_count);
 
 		}
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(2000);
+		//com.element_to_be_stable(2000);
 		com.Explicit_wait_elementToBeClickable(filters_box, 100);
 		filters_box.click();
 		com.Search_filters(search_filter_list, accepted_filter);
@@ -121,12 +122,13 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_accepted = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_accepted != no_app_txt) {
+			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String accepted_count = appication_counter.getText();
 			accepted_int_count = com.counter_int(accepted_count);
 
 		}
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(2000);
+		//com.element_to_be_stable(2000);
 		com.Explicit_wait_elementToBeClickable(filters_box, 100);
 		filters_box.click();
 		com.Search_filters(search_filter_list, rejected_filter);
@@ -137,12 +139,13 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_rejected = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_rejected != no_app_txt) {
+			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String rejected_count = appication_counter.getText();
 			rejected_int_count = com.counter_int(rejected_count);
 
 		}
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(2000);
+		//com.element_to_be_stable(2000);
 		com.Explicit_wait_elementToBeClickable(filters_box, 100);
 		filters_box.click();
 		com.Search_filters(search_filter_list, cancelled_filter);
@@ -153,6 +156,7 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_cancelled = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_cancelled != no_app_txt) {
+			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String cancel_count = appication_counter.getText();
 			cancelled_int_count = com.counter_int(cancel_count);
 
@@ -166,12 +170,12 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_action_tab, 50);
 		com.get_elements_text_click(app_main_all_tabs, action);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.getNGDriver().waitForAngularRequestsToFinish();
+		com.Explicit_wait_elementToBeVisible(application_no_text, 30);
 		oldest_last_newest_cosider_initial = com.Get_Text_single_element(application_no_text);
-		com.Explicit_wait_elementToBeClickable(filters_box, 10);
+		com.Explicit_wait_elementToBeStale(filters_box, 5);
 		filters_box.click();
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
-		com.element_to_be_stable(1000);
+		//com.element_to_be_stable(1000);
 		com.Search_filters_compare(search_filter_list, Submit_oldest_fisrt);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeClickable(filters_box, 10);
@@ -184,8 +188,8 @@ public class Search_Filters_Stemex {
 		oldest_last_newest_cosider = com.Get_Text_single_element(application_no_text_last);
 		driver.navigate().refresh();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(1000);
-		com.Explicit_wait_elementToBeClickable(filters_box, 10);
+		//com.element_to_be_stable(1000);
+		com.Explicit_wait_elementToBeStale(filters_box, 5);
 		filters_box.click();
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
 		com.Search_filters(search_filter_list, Submit_newwest_first);
@@ -201,10 +205,11 @@ public class Search_Filters_Stemex {
 		newest_last_oldest_cosider_initial = com.Get_Text_single_element(application_no_text_last);
 		driver.navigate().refresh();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(1000);
+		//com.element_to_be_stable(1000);
+		com.Explicit_wait_elementToBeStale(filters_box, 5);
 		filters_box.click();
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
-		com.element_to_be_stable(1000);
+		//com.element_to_be_stable(1000);
 		com.Search_filters_compare(search_filter_list, Submit_oldest_fisrt);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeClickable(application_no_text, 10);
@@ -217,7 +222,7 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_action_tab, 50);
 		com.get_elements_text_click(app_main_all_tabs, all_tab);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.element_to_be_stable(1300);
+		//com.element_to_be_stable(1300);
 		com.Explicit_wait_elementToBeClickable(filters_box_defination, 10);
 		filters_box_defination.click();
 		com.Explicit_wait_elementToBeClickable(defination_drop_down_search, 5);

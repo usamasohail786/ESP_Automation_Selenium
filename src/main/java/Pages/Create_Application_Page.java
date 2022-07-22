@@ -90,9 +90,8 @@ public class Create_Application_Page extends Test_Data {
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
-    	com.element_to_be_stable(1000);
     	com.get_elements_text_click(tab_list, Tab_name);
     	return Tab_name;
     }
@@ -107,14 +106,14 @@ public class Create_Application_Page extends Test_Data {
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_before_string_mine=appication_counter_on_end.getText();
         counter_before_mine=Integer.parseInt(counter_before_string_mine);
     	com.get_elements_text_click(creat_application_btn, app_btn_txt);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	search_btn.sendKeys(search); 	
-    	com.element_to_be_stable(2200);
+    	search_btn.sendKeys(search); 		
+        com.Explicit_wait_elementToBeVisible(search_result, 30);	
+        com.element_to_be_stable(2500);	
     	search_result.click();
     	com.Explicit_wait_elements_visiblity(field1, 100);
     	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
@@ -148,7 +147,7 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	com.Explicit_wait_elementToBeInvisible(spinner, 40);
-    	com.element_to_be_stable(2000);
+    	//com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_after_string_mine=appication_counter_on_end.getText();
         counter_after_mine=Integer.parseInt(counter_after_string_mine);
