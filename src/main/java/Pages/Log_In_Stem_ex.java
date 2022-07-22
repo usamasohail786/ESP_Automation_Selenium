@@ -54,6 +54,7 @@ public class Log_In_Stem_ex {
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();	
     	com.Explicit_wait_elementToBeVisible(error_pass, 5);
+    	System.out.println(error_pass.getText()+"error");
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	
     }
