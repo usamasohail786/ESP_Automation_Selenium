@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.internal.thread.IExecutor;
 
 import Utility.Common_class;
 
@@ -68,7 +69,7 @@ public class Search_Filters_Stemex {
 	public String newest_last_oldest_cosider_initial;
 	public Boolean non_submitted_def=false;
 	public Boolean submitted_def=false;
-
+	public Boolean aap_record_exist=false;
 	public Search_Filters_Stemex(WebDriver driver) {
 
 		this.driver = driver;
@@ -89,13 +90,13 @@ public class Search_Filters_Stemex {
 
 		{
 			//com.element_to_be_stable(1000);
-			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
+			com.Explicit_wait_elementToBeClickable(appication_counter, 10);
 			String all_count = appication_counter.getText();
 			all_int_count = com.counter_int(all_count);
 
 		}
-		//com.element_to_be_stable(2000);
-		com.Explicit_wait_elementToBeStale(filters_box, 5);
+		//clicking on All status Tab
+		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		filters_box.click();
 		com.Search_filters(search_filter_list, Open_Filter);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
@@ -164,15 +165,18 @@ public class Search_Filters_Stemex {
 
 	}
 
-	public void Sorting_Filters(String action, String Submit_newwest_first, String Submit_oldest_fisrt)
+	public void Sorting_Filters_by_newset_and_oldest(String action, String Submit_newwest_first, String Submit_oldest_fisrt)
 			throws InterruptedException {
 		Common_class com = new Common_class(driver);
+		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elements_visiblity(app_main_action_tab, 50);
-		com.get_elements_text_click(app_main_all_tabs, action);
+		com.get_elements_text_click(app_main_action_tab, action);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeVisible(application_no_text, 30);
+		//Getting text on By Default filter
+		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		oldest_last_newest_cosider_initial = com.Get_Text_single_element(application_no_text);
-		com.Explicit_wait_elementToBeStale(filters_box, 5);
+		System.out.println(oldest_last_newest_cosider_initial+"getting text on Default filter");
 		filters_box.click();
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
 		//com.element_to_be_stable(1000);
@@ -185,7 +189,9 @@ public class Search_Filters_Stemex {
 		last_page.click();		
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeClickable(application_no_text, 10);
+		//clicked on oldest first and getting record text
 		oldest_last_newest_cosider = com.Get_Text_single_element(application_no_text_last);
+		System.out.println(oldest_last_newest_cosider+"clicked on oldest first and getting record text");
 		driver.navigate().refresh();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//com.element_to_be_stable(1000);
@@ -206,7 +212,7 @@ public class Search_Filters_Stemex {
 		driver.navigate().refresh();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//com.element_to_be_stable(1000);
-		com.Explicit_wait_elementToBeStale(filters_box, 5);
+		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		filters_box.click();
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
 		//com.element_to_be_stable(1000);
@@ -223,6 +229,7 @@ public class Search_Filters_Stemex {
 		com.get_elements_text_click(app_main_all_tabs, all_tab);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//com.element_to_be_stable(1300);
+		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		com.Explicit_wait_elementToBeClickable(filters_box_defination, 10);
 		filters_box_defination.click();
 		com.Explicit_wait_elementToBeClickable(defination_drop_down_search, 5);
@@ -241,4 +248,26 @@ public class Search_Filters_Stemex {
 			
 		}
     }
+    public void Search_Records(String search_Txt) throws InterruptedException
+    {
+    	//add text into search field on All tab of listing
+    	Common_class com = new Common_class(driver);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	search_btn.sendKeys(search_Txt);	
+    	//waiting for result
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeClickable(application_no_text, 10);
+    	//getting result
+    	if(application_no_text.isDisplayed())
+    	{
+    		aap_record_exist=true;
+    	}
+    	else
+    	{
+    		aap_record_exist=false;
+    	}
+    	
+    	
+    }
 }
+

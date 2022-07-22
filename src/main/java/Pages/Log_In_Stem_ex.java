@@ -18,6 +18,8 @@ public class Log_In_Stem_ex {
 	@FindBy(xpath="//mat-label[text()='Mobile Number']/parent::label/parent::span/preceding-sibling::input")
 	WebElement phone_number;
 	@FindBy(xpath="//input[@formcontrolname='password']")
+	WebElement error_pass;
+	@FindBy(xpath="//mat-error")
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
@@ -51,6 +53,7 @@ public class Log_In_Stem_ex {
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();	
+    	com.Explicit_wait_elementToBeVisible(error_pass, 5);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	
     }

@@ -183,6 +183,7 @@ public class Common_class {
 
 			if (name.contains(text)) {
 				webElement.click();
+				System.out.println(webElement.getText()+"get text");
 				break;
 			}
 		}

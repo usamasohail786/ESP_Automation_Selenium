@@ -38,6 +38,7 @@ public class Test_Data{
 	 public String app_main_action_tab;
 	 public String non_submitted_defination;
 	 public String submitted_defination;
+	 public String search_text;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -71,6 +72,7 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		app_main_action_tab=(String) jsonobject_search_filters.get("app_main_action_tab");
 		non_submitted_defination=(String) jsonobject_search_filters.get("non_submitted_defination");
 		submitted_defination=(String) jsonobject_search_filters.get("submitted_defination");
+		search_text=(String) jsonobject_search_filters.get("search_text");
 		
 }
 

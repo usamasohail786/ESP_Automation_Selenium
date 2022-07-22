@@ -11,7 +11,7 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.junit.After;
 import org.testng.annotations.AfterMethod;
-
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
 
 import Base.Test_Base;
@@ -38,7 +38,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 
 	}
 
-	@org.testng.annotations.Test
+	@org.testng.annotations.Test(priority = 1)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Status Filters,Definition Filter and Submitted Filters")
 	@Feature("Search Filters")
@@ -66,12 +66,8 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 		assertEquals(cancelled_Actual, filter_cancelled);
 		assertEquals(search_obj.accepted_int_count + search_obj.open_int_count + search_obj.cancelled_int_count
 				+ search_obj.rejected_int_count, search_obj.all_int_count);
-		search_obj.Sorting_Filters(app_main_action_tab, submit_newest_first, submit_oldest_first);
-		assertEquals(search_obj.oldest_last_newest_cosider, search_obj.oldest_last_newest_cosider_initial);
-		assertEquals(search_obj.newest_last_oldest_cosider, search_obj.newest_last_oldest_cosider_initial);
-		search_obj.Sorting_Defination(app_main_all_tab, non_submitted_defination, submitted_defination);
-		assertTrue(search_obj.non_submitted_def);
-		assertTrue(search_obj.submitted_def);
+		
+		
 		}
 		catch(Exception e2)
 		   {
@@ -79,8 +75,65 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@org.testng.annotations.Test(priority = 2)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Verifying Search by Newset First Record and Oldest First Record")
+	@Feature("Search By First and Last Sorting Filter")
+	public void Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		
+		try {
+			Search_Filters_Stemex search_obj = new Search_Filters_Stemex(obj.driver);
+			search_obj.Sorting_Filters_by_newset_and_oldest(app_main_action_tab, submit_newest_first, submit_oldest_first);
+			assertEquals(search_obj.oldest_last_newest_cosider, search_obj.oldest_last_newest_cosider_initial);
+			assertEquals(search_obj.newest_last_oldest_cosider, search_obj.newest_last_oldest_cosider_initial);
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 3)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Verifying Search by Definitation")
+	@Feature("Search By Definitation")
+	public void Stemp_Ex_Search_by_Definition() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		
+		try {
+			Search_Filters_Stemex search_obj = new Search_Filters_Stemex(obj.driver);
+			search_obj.Sorting_Defination(app_main_all_tab, non_submitted_defination, submitted_defination);
+			assertTrue(search_obj.non_submitted_def);
+			assertTrue(search_obj.submitted_def);
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 4)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Verifying Search Record by Date and Application No")
+	@Feature("Search Records")
+	public void Stemp_Ex_Search_Test_Record() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		
+		try {
+			Search_Filters_Stemex search_obj = new Search_Filters_Stemex(obj.driver);
+			search_obj.Search_Records(search_text);
+			assertTrue(search_obj.aap_record_exist,"App record not exist after searching");
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	
 
-	@org.testng.annotations.AfterMethod
+	@AfterTest
 	public void Tear_Down() throws InterruptedException {
 
 		obj.driver.quit();
