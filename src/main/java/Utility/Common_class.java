@@ -170,19 +170,25 @@ public class Common_class {
 		action.moveToElement(element).perform();
 
 	}
-
+  public void js_click(WebElement element)
+  {
+	  JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", element);
+  }
 	public void Scroll_To_Element(WebElement element) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 	public void get_elements_text_click(List<WebElement> list_element, String text) throws InterruptedException {
-
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
 		for (WebElement webElement : list_element) {
 
 			String name = webElement.getText();
 
 			if (name.contains(text)) {
-				webElement.click();
+				//webElement.click();
+				js.executeScript("arguments[0].click()", webElement);
 				System.out.println(webElement.getText()+"get text");
 				break;
 			}
@@ -190,16 +196,16 @@ public class Common_class {
 	}
 
 	public void Search_filters(List<WebElement> list_element, String text) throws InterruptedException
-
+	
 	{
-
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 		for (WebElement webElement : list_element) {
 
 			String name = webElement.getText();
 
 			if (name.contains(text)) {
-
-				webElement.click();
+				js.executeScript("arguments[0].click()", webElement);
+				//webElement.click();
 				break;
 
 			}
@@ -208,16 +214,16 @@ public class Common_class {
 	}
 
 	public void Search_filters_compare(List<WebElement> list_element, String text) throws InterruptedException
-
+	
 	{
-
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 		for (WebElement webElement : list_element) {
 
 			String name = webElement.getText();
 
 			if (name.contains(text)) {
-
-				webElement.click();
+				js.executeScript("arguments[0].click()", webElement);
+				//webElement.click();
 				break;
 
 			}
