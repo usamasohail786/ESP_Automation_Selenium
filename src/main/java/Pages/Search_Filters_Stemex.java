@@ -209,11 +209,11 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elementToBeClickable(filters_box, 10);
 		com.Explicit_wait_elementToBeClickable(application_no_text, 10);
 		newest_last_oldest_cosider_initial = com.Get_Text_single_element(application_no_text_last);
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//com.element_to_be_stable(1000);
 		com.Explicit_wait_elementToBeStale(filters_box, 3);
-		filters_box.click();
+		com.js_click(filters_box);
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
 		//com.element_to_be_stable(1000);
 		com.Search_filters_compare(search_filter_list, Submit_oldest_fisrt);
