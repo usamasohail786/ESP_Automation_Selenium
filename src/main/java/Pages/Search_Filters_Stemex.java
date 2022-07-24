@@ -186,7 +186,7 @@ public class Search_Filters_Stemex {
 		com.Scroll_To_Element(next_page);
 		com.element_to_be_stable(1000);
 		com.Explicit_wait_elementToBeClickable(last_page, 10);
-		last_page.click();		
+		com.js_click(last_page);		
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeClickable(application_no_text, 10);
 		//clicked on oldest first and getting record text
@@ -231,7 +231,7 @@ public class Search_Filters_Stemex {
 		//com.element_to_be_stable(1300);
 		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		com.Explicit_wait_elementToBeClickable(filters_box_defination, 10);
-		filters_box_defination.click();
+		com.js_click(filters_box_defination);
 		com.Explicit_wait_elementToBeClickable(defination_drop_down_search, 5);
 		defination_drop_down_search.sendKeys(non_submit);
 		com.Explicit_wait_elementToBeClickable(all_defination_check_box, 5);
@@ -253,6 +253,8 @@ public class Search_Filters_Stemex {
     	//add text into search field on All tab of listing
     	Common_class com = new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeClickable(search_btn, 5);
+    	com.js_click(search_btn);
     	search_btn.sendKeys(search_Txt);	
     	//waiting for result
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
