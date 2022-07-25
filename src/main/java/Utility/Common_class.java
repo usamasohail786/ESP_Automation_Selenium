@@ -266,6 +266,7 @@ public class Common_class {
 	}
 
 	public String Get_Text_single_element(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 		String txt_back = element.getText();
 		return txt_back;
 	}

@@ -84,6 +84,7 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_all_tabs, 50);
 		com.get_elements_text_click(app_main_all_tabs, all_tab);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
+		com.getNGDriver().waitForAngularRequestsToFinish();
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_all = com.Get_Text_element(no_application_text, no_app_txt);
 		if (no_app_text_from_list_all != no_app_txt)
@@ -172,9 +173,12 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_action_tab, 50);
 		com.get_elements_text_click(app_main_action_tab, action);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
-		com.Explicit_wait_elementToBeVisible(application_no_text, 30);
+		com.getNGDriver().waitForAngularRequestsToFinish();
 		//Getting text on By Default filter
 		com.Explicit_wait_elementToBeStale(filters_box, 3);
+		driver.navigate().refresh();
+		com.Explicit_wait_elementToBeInvisible(spinner, 100);
+		com.Explicit_wait_elementToBeVisible(application_no_text, 30);
 		oldest_last_newest_cosider_initial = com.Get_Text_single_element(application_no_text);
 		System.out.println(oldest_last_newest_cosider_initial+"getting text on Default filter");
 		filters_box.click();
@@ -228,6 +232,7 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elements_visiblity(app_main_action_tab, 50);
 		com.get_elements_text_click(app_main_all_tabs, all_tab);
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
+		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//com.element_to_be_stable(1300);
 		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		com.Explicit_wait_elementToBeClickable(filters_box_defination, 10);
@@ -253,10 +258,12 @@ public class Search_Filters_Stemex {
     	//add text into search field on All tab of listing
     	Common_class com = new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elementToBeClickable(search_btn, 5);
     	com.js_click(search_btn);
     	search_btn.sendKeys(search_Txt);	
     	//waiting for result
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elementToBeClickable(application_no_text, 10);
     	//getting result

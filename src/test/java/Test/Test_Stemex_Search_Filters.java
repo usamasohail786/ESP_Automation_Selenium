@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import org.json.simple.parser.ParseException;
 import org.junit.After;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
@@ -38,7 +39,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 
 	}
 
-	@org.testng.annotations.Test(priority = 1)
+	@org.testng.annotations.Test(priority = 4)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Status Filters,Definition Filter and Submitted Filters")
 	@Feature("Search Filters")
@@ -75,7 +76,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
-	@org.testng.annotations.Test(priority = 2)
+	@org.testng.annotations.Test(priority = 5)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Newset First Record and Oldest First Record")
 	@Feature("Search By First and Last Sorting Filter")
@@ -94,7 +95,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
-	@org.testng.annotations.Test(priority = 3)
+	@org.testng.annotations.Test(priority = 6)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Definitation")
 	@Feature("Search By Definitation")
@@ -113,7 +114,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
-	@org.testng.annotations.Test(priority = 4)
+	@org.testng.annotations.Test(priority = 7)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search Record by Date and Application No")
 	@Feature("Search Records")
@@ -133,7 +134,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 	}
 	
 
-	@AfterTest
+	@AfterClass
 	public void Tear_Down() throws InterruptedException {
 
 		obj.driver.quit();

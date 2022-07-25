@@ -46,14 +46,30 @@ public class Log_In_Stem_ex {
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	phone_number.clear();
+    	password_input_text.clear();
+    	com.Explicit_wait_elementToBeClickable(phone_number, 100);
+    	com.Explicit_wait_elementToBeClickable(phone_number, 30);
+    	phone_number.sendKeys(phone);
+    	System.out.println(pass+"passs..........");
+    	password_input_text.sendKeys(pass);
+    	com.js_click(sign_in_btn);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	
+    	
+    }
+    public void Log_In_wrong_credentials(String phone,String pass) throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
     	com.js_click(sign_in_btn);
-    	com.element_to_be_stable(100000);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 10000);
-    	System.out.println("sds");
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	
     	
     }
    

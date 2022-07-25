@@ -9,9 +9,9 @@ import java.io.IOException;
 
 
 import org.json.simple.parser.ParseException;
-
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
 import Base.Test_Base;
 import Pages.Create_Application_Page;
@@ -37,7 +37,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 
 	}
 
-	@org.testng.annotations.Test
+	@org.testng.annotations.Test(priority = 3)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("verifying user can create application and moreover that application exist in All,Mine and Action Tabs")
 	@Feature("Create Application")
@@ -68,7 +68,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		   }
 	}
 
-	@org.testng.annotations.AfterMethod
+	@AfterClass
 	public void Tear_Down() throws InterruptedException {
 
 		obj.driver.quit();

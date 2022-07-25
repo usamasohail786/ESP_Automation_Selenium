@@ -39,6 +39,8 @@ public class Test_Data{
 	 public String non_submitted_defination;
 	 public String submitted_defination;
 	 public String search_text;
+	 public String wrong_phone_no;
+	 public String wrong_pass;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -73,7 +75,8 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		non_submitted_defination=(String) jsonobject_search_filters.get("non_submitted_defination");
 		submitted_defination=(String) jsonobject_search_filters.get("submitted_defination");
 		search_text=(String) jsonobject_search_filters.get("search_text");
-		
+		wrong_pass=(String)jsonobject.get("wrong_password_stemex");
+		wrong_phone_no=(String) jsonobject.get("wrong_phone_number");
 }
 
 }
