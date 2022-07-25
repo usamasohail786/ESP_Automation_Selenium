@@ -50,9 +50,9 @@ public class Log_In_Stem_ex {
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
-    	sign_in_btn.click();	
-    	com.Explicit_wait_elementToBeInvisible(spinner, 10000);
-    	com.element_to_be_stable(900000);
+    	sign_in_btn.click();
+    	com.element_to_be_stable(200000);
+    	//com.Explicit_wait_elementToBeInvisible(spinner, 10000);
     	System.out.println("sds");
     	
     }
