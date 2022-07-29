@@ -5,9 +5,10 @@
     <classes>
       <class name="Test.Test_Stemex_Search_Filters">
         <methods>
+          <include name="Stemp_Ex_Search_Test_Record_On_All_Tab"/>
           <include name="setup"/>
+          <include name="Stemp_Ex_Search_Test_Record_On_Mine_Tab"/>
           <include name="Tear_Down"/>
-          <include name="Stemp_Ex_Search_Test"/>
         </methods>
       </class> <!-- Test.Test_Stemex_Search_Filters -->
     </classes>

@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="Test.Test_Stemex_Search_Filters">
         <methods>
+          <include name="Stemp_Ex_Search_Test_Record_On_All_Tab"/>
           <include name="setup"/>
+          <include name="Stemp_Ex_Search_Test_Record_On_Mine_Tab"/>
           <include name="Tear_Down"/>
-          <include name="Stemp_Ex_Search_Test"/>
         </methods>
       </class> <!-- Test.Test_Stemex_Search_Filters -->
-      <class name="Test.Test_Stemex_Application_Creation">
-        <methods>
-          <include name="App_Create_Test"/>
-          <include name="Tear_Down"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- Test.Test_Stemex_Application_Creation -->
-      <class name="Test.Test_Log_In_Stemex">
-        <methods>
-          <include name="Test_Stemex"/>
-          <include name="setup"/>
-          <include name="Tear_Down"/>
-        </methods>
-      </class> <!-- Test.Test_Log_In_Stemex -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

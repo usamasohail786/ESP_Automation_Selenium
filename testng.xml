@@ -5,7 +5,7 @@
     <classes>
       <class name="Test.Test_Log_In_Stemex"/>
       <class name="Test.Test_Stemex_Application_Creation"/>
-      <class name=  "Test.Test_Stemex_Search_Filters"/>
+      <class name="Test.Test_Stemex_Search_Filters"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

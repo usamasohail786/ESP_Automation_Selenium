@@ -54,7 +54,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		String tab_text_exist = app_obj.Choose_Tab(tab);
 		assertEquals(tab_text_exist, tab);
 		app_obj.Creat_Application(search_app, create_app_btn, field1_data, submit_btn_text, field_place_holder,
-				done_btn_text, app_main_mid_tab);
+				done_btn_text, app_main_mid_tab,app_text_display);
 		Boolean actual_app_result = app_obj.verify_action_tab();
 		assertTrue(actual_app_result);
 		Boolean actual_mine_tab_result = app_obj.verify_mine_tab(app_main_mid_tab);

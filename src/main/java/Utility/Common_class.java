@@ -120,6 +120,18 @@ public class Common_class {
       }
 
 	}
+	public void Explicit_wait_elementTextAppear(WebElement element_hover_wait, int waittime,String Text) throws InterruptedException {
+	      try
+	      {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waittime));
+			wait.until(ExpectedConditions.textToBePresentInElement(element_hover_wait,Text));
+	      }
+	      catch(Exception e)
+	      {
+	    	  element_to_be_stable(4000);
+	      }
+
+		}
 	public void Explicit_wait_elementToBeStale(WebElement element_hover_wait, int waittime) throws InterruptedException {
 	      try
 	      {
@@ -239,14 +251,16 @@ public class Common_class {
 		for (WebElement webElement : list_element) {
 
 			String name = webElement.getText();
-
+           
 			if (name.contains(text)) {
-				get_text = webElement.getText();
+				
+				get_text = webElement.getText();	
 				break;
 
 			}
-
+		
 		}
+		
 		return get_text;
 	}
 

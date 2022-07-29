@@ -6,24 +6,10 @@
       <class name="Test.Test_Stemex_Search_Filters">
         <methods>
           <include name="setup"/>
+          <include name="Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record"/>
           <include name="Tear_Down"/>
-          <include name="Stemp_Ex_Search_Test"/>
         </methods>
       </class> <!-- Test.Test_Stemex_Search_Filters -->
-      <class name="Test.Test_Stemex_Application_Creation">
-        <methods>
-          <include name="App_Create_Test"/>
-          <include name="Tear_Down"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- Test.Test_Stemex_Application_Creation -->
-      <class name="Test.Test_Log_In_Stemex">
-        <methods>
-          <include name="Test_Stemex"/>
-          <include name="setup"/>
-          <include name="Tear_Down"/>
-        </methods>
-      </class> <!-- Test.Test_Log_In_Stemex -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

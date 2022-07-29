@@ -38,8 +38,8 @@ public class Create_Application_Page extends Test_Data {
 	List<WebElement> icons_btn;
 	@FindBy(xpath="//input[@placeholder='Search']")
 	WebElement  search_btn;
-	@FindBy(xpath="//div[@class='grid-row cursor-pointer ng-star-inserted']")
-	WebElement  search_result;
+	@FindBy(xpath="//div[@class='grid-row cursor-pointer ng-star-inserted']//div")
+	List<WebElement> search_result;
 	@FindBy(xpath="//div[@class='grid-row cursor-pointer ng-star-inserted']//div")
 	WebElement  search_result_list;
 	@FindBy(xpath="(//div[@class='header-menu']//a)[1]")
@@ -57,10 +57,16 @@ public class Create_Application_Page extends Test_Data {
 	WebElement appication;
 	@FindBy(xpath="(//span[contains(text(), 'Application')])[1]//parent::div//parent::div//div[text()]")
 	WebElement appication_counter_on_start;
+	@FindBy(xpath="//span[contains(text(), 'Application')]")
+	WebElement appication_text;
 	@FindBy(xpath="(//span[contains(text(), 'Application')])[1]//parent::div//parent::div//div[text()]")
 	WebElement appication_counter_on_end;
 	@FindBy(xpath="//div[@class='mat-tab-label-content']")
 	List<WebElement> app_main_tabs_list;
+	@FindBy(xpath="(//div[text()='Requested On:'])[1]")
+	WebElement content_load;
+	@FindBy(xpath="(//mat-icon)[last()]")
+	WebElement result_load;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -95,38 +101,39 @@ public class Create_Application_Page extends Test_Data {
     	com.get_elements_text_click(tab_list, Tab_name);
     	return Tab_name;
     }
-    public void Creat_Application(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab) throws InterruptedException
+    public void Creat_Application(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab,String app_text_display) throws InterruptedException
     {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
-      	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-      	com.Explicit_wait_elementToBeClickable(appication_counter_on_start, 50);
-        counter_before_string=appication_counter_on_start.getText();
+      	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
+      	//com.js_click(appication_counter_on_start); 
+    	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
+      	counter_before_string=appication_counter_on_start.getText();
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	com.getNGDriver().waitForAngularRequestsToFinish();
-    	com.Explicit_wait_elementToBeClickable(appication_counter_on_end, 30);
+    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	//com.getNGDriver().waitForAngularRequestsToFinish();
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
+    	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
     	counter_before_string_mine=appication_counter_on_end.getText();
         counter_before_mine=Integer.parseInt(counter_before_string_mine);
     	com.get_elements_text_click(creat_application_btn, app_btn_txt);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	com.getNGDriver().waitForAngularRequestsToFinish();
+     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	search_btn.sendKeys(search); 		
-        com.Explicit_wait_elementToBeVisible(search_result, 30);	
-        com.element_to_be_stable(2500);	
-    	search_result.click();
+        com.Explicit_wait_elements_visiblity(search_result, 30);	
+    	search_result.get(0).click();
     	com.Explicit_wait_elements_visiblity(field1, 100);
     	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
-    	com.element_to_be_stable(2200);
+    	com.Explicit_wait_elements_visiblity(submit_btn, 3);
         com.get_elements_text_click(submit_btn, Submit_btn);
         com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
         com.Mouse_to_element(move_to_contianer);    
         done_btn.click();  
-    	com.Explicit_wait_elementToBeInvisible(spinner, 50);
+        com.Explicit_wait_elementToBeInvisible(spinner, 30);
     	appication.click();
-    	com.Explicit_wait_elementToBeInvisible(spinner, 50);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
     	
       
     }

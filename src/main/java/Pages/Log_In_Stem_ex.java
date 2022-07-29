@@ -21,7 +21,7 @@ public class Log_In_Stem_ex {
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath="//button[@type='submit']//span[last()]")
 	WebElement  sign_in_btn;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;

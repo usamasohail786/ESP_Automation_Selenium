@@ -41,6 +41,8 @@ public class Test_Data{
 	 public String search_text;
 	 public String wrong_phone_no;
 	 public String wrong_pass;
+	 public String wrong_txt;
+	 public String app_text_display;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -77,6 +79,9 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		search_text=(String) jsonobject_search_filters.get("search_text");
 		wrong_pass=(String)jsonobject.get("wrong_password_stemex");
 		wrong_phone_no=(String) jsonobject.get("wrong_phone_number");
+		app_text_display=(String) jsonobject_app_create.get("app_text_display");
+		wrong_txt=(String) jsonobject_search_filters.get("wrong_Txt");
+		
 }
 
 }

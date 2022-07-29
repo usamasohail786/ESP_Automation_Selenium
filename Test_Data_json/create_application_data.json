@@ -8,5 +8,6 @@
        "done_btn_Text":"DONE",
       "field_place_holder_value":"Title",
        "tab_name":"Request",
-    "group":"ESP - QA - StemeXe"
+    "group":"ESP - QA - StemeXe",
+    "app_text_display":"Application"
     }

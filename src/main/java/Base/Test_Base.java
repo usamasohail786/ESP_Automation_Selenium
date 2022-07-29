@@ -21,11 +21,10 @@ public class Test_Base {
 		System.setProperty("webdriver.chrome.driver",project_path+"\\\\Driver\\\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
-      	options.addArguments("window-size=1280,1920");
-      	
-		System.out.println(System.getProperty("java.runtime.version"+"................version"));
-	    driver = new ChromeDriver(options);      
-	    //driver.manage().window().maximize();
+    
+	    
+	    driver = new ChromeDriver();      
+	    driver.manage().window().maximize();
 		tdriver.set(driver);
 		return getDriver();
 	}
