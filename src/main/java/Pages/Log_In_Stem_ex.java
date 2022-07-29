@@ -35,6 +35,7 @@ public class Log_In_Stem_ex {
 	WebElement  profile_img;
 	@FindBy(xpath="//mat-error")
 	WebElement  pass_error;
+	
 	public String error=null;
     public Log_In_Stem_ex(WebDriver driver) {
     	
@@ -54,7 +55,8 @@ public class Log_In_Stem_ex {
     	System.out.println(pass+"passs..........");
     	password_input_text.sendKeys(pass);
     	com.js_click(sign_in_btn);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elements_visiblity(choose_group, 100);
     	
     	
     }
@@ -69,6 +71,7 @@ public class Log_In_Stem_ex {
     	password_input_text.sendKeys(pass);
     	com.js_click(sign_in_btn);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	
     	
     	
     }
