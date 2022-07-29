@@ -52,13 +52,16 @@ public class Log_In_Stem_ex {
     	com.Explicit_wait_elementToBeClickable(phone_number, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
-    	System.out.println(pass+"passs..........");
+    	
     	password_input_text.sendKeys(pass);
     	com.js_click(sign_in_btn);
     	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	com.Explicit_wait_elements_visiblity(choose_group, 100);
-    	
-    	
+    	//com.Explicit_wait_elements_visiblity(choose_group, 100);
+    	com.element_to_be_stable(120000);
+    	System.out.println(pass+"passs..........");
+    	String Dr=driver.getCurrentUrl();
+    	System.out.println(Dr+" ..driver..........");
+    	com.element_to_be_stable(17000);
     }
     public void Log_In_wrong_credentials(String phone,String pass) throws InterruptedException
     {
