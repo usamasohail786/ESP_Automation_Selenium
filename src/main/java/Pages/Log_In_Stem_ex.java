@@ -56,7 +56,8 @@ public class Log_In_Stem_ex {
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
-    	sign_in_btn.click();;
+    	sign_in_btn.click();
+    	System.out.print(sign_in_btn+"sign in button");
         com.Explicit_wait_elementToBeInvisible(spinner, 100);
     }
     public void Log_In_wrong_credentials(String phone,String pass) throws InterruptedException
