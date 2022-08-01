@@ -22,12 +22,12 @@ public class Test_Base {
 		String project_path = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver",project_path+"\\\\Driver\\\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		//options.addArguments("--headless");
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-		browserstackOptions.put("resolution", "1680x1050");
-		capabilities.setCapability("bstack:options", browserstackOptions);
-	    driver = new ChromeDriver();      
+		options.addArguments("--headless");
+		options.addArguments("--window-size=1920,1080");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--allow-insecure-localhost");
+	    driver = new ChromeDriver(options);      
 	    //driver.manage().window().maximize();
 		tdriver.set(driver);
 		return getDriver();
