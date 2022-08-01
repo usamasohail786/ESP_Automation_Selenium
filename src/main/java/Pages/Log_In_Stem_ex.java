@@ -64,7 +64,6 @@ public class Log_In_Stem_ex {
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	com.Explicit_wait_elementToBeClickable(phone_number, 100);
     	com.Explicit_wait_elementToBeClickable(phone_number, 30);
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);

@@ -67,6 +67,7 @@ public class Test_Log_In_Stemex extends Test_Data {
 		Data();
 		try {
 		Log_In_Stem_ex log = new Log_In_Stem_ex(obj.driver);
+		System.out.print(phone_number+"phone number................");
 		log.Log_In(phone_number, pass);	
 		String URL = obj.driver.getCurrentUrl();
 		assertEquals(URL, url);
