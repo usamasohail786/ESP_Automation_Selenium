@@ -36,31 +36,31 @@ public class Test_Log_In_Stemex extends Test_Data {
 		obj.driver.get("https://stemexe-stag.web.app/auth/login");
 
 	}
-
-	@org.testng.annotations.Test(priority = 1)
-	@Severity(SeverityLevel.MINOR)
-	@Description("Verifying user is not able to Login with Wrong Credentials")
-	@Feature("Login")
-	@Ignore
-	public void Test_Stemex_Log_In_with_wrong_credentials() throws InterruptedException, FileNotFoundException, IOException, ParseException, Throwable {
-		
-		Data();
-		try {
-		Log_In_Stem_ex log = new Log_In_Stem_ex(obj.driver);
-		log.Log_In_wrong_credentials(wrong_phone_no, wrong_pass);
-		String URL = obj.driver.getCurrentUrl();
-		assertNotEquals(URL, url);
-		}
-		catch(Exception e2)
-		   {
-			e2.printStackTrace();
-			e2.getMessage();
-		   }
-		
-
-	}
+//
+//	@org.testng.annotations.Test(priority = 1)
+//	@Severity(SeverityLevel.MINOR)
+//	@Description("Verifying user is not able to Login with Wrong Credentials")
+//	@Feature("Login")
+//	@Ignore
+//	public void Test_Stemex_Log_In_with_wrong_credentials() throws InterruptedException, FileNotFoundException, IOException, ParseException, Throwable {
+//		
+//		Data();
+//		try {
+//		Log_In_Stem_ex log = new Log_In_Stem_ex(obj.driver);
+//		log.Log_In_wrong_credentials(wrong_phone_no, wrong_pass);
+//		String URL = obj.driver.getCurrentUrl();
+//		assertNotEquals(URL, url);
+//		}
+//		catch(Exception e2)
+//		   {
+//			e2.printStackTrace();
+//			e2.getMessage();
+//		   }
+//		
+//
+//	}
 	
-	@org.testng.annotations.Test(priority = 2)
+	@org.testng.annotations.Test
 	@Severity(SeverityLevel.MINOR)
 	@Description("verifying user is able to Login properly and approching next page successfully")
 	@Feature("Login")
