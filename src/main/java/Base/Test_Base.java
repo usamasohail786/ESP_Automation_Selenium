@@ -27,7 +27,7 @@ public class Test_Base {
 //		options.addArguments("--disable-gpu");
 //		options.addArguments("--no-sandbox");
 //		options.addArguments("--allow-insecure-localhost");
-	   // driver = new ChromeDriver(options);      
+	    driver = new ChromeDriver();      
 	    driver.manage().window().maximize();
 		tdriver.set(driver);
 		return getDriver();
