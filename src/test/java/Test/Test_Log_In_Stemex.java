@@ -12,6 +12,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Listeners;
 import Base.Test_Base;
 import Pages.Log_In_Stem_ex;
@@ -40,6 +41,7 @@ public class Test_Log_In_Stemex extends Test_Data {
 	@Severity(SeverityLevel.MINOR)
 	@Description("Verifying user is not able to Login with Wrong Credentials")
 	@Feature("Login")
+	@Ignore
 	public void Test_Stemex_Log_In_with_wrong_credentials() throws InterruptedException, FileNotFoundException, IOException, ParseException, Throwable {
 		
 		Data();

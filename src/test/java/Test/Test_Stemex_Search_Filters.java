@@ -13,6 +13,7 @@ import org.junit.After;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Listeners;
 
 import Base.Test_Base;
@@ -38,7 +39,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 		obj.driver.get("https://stemexe-stag.web.app/auth/login");
 
 	}
-
+	@Ignore
 	@org.testng.annotations.Test(priority = 4)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Sorting with Status on All Tab including All,Accepted,Open,Rejected and Cancelled")
@@ -77,6 +78,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 5)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Sorting with Status on Mine Tab including All,Accepted,Open,Rejected and Cancelled")
@@ -111,6 +113,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 6)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Newset First Record and Oldest First Record")
@@ -130,6 +133,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 7)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Definitation on All Tab")
@@ -151,6 +155,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 8)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search Record by Date and Application No on All Tab")
@@ -170,6 +175,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 9)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Definitation on Mine Tab")
@@ -191,6 +197,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 10)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search Record by Date and Application No on Mine Tab")
@@ -210,6 +217,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 11)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search by Definitation on Action Tab")
@@ -230,6 +238,7 @@ public class Test_Stemex_Search_Filters extends Test_Data {
 			e2.getMessage();
 		   }
 	}
+	@Ignore
 	@org.testng.annotations.Test(priority = 12)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying Search Record by Date and Application No on Action Tab")

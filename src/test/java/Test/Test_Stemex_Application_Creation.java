@@ -12,6 +12,7 @@ import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Listeners;
 import Base.Test_Base;
 import Pages.Create_Application_Page;
@@ -36,7 +37,7 @@ public class Test_Stemex_Application_Creation extends Test_Data {
 		obj.driver.get("https://stemexe-stag.web.app/auth/login");
 
 	}
-
+	@Ignore
 	@org.testng.annotations.Test(priority = 3)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("verifying user can create application and moreover that application exist in All,Mine and Action Tabs")
