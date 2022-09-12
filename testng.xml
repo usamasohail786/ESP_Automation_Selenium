@@ -6,6 +6,9 @@
       <class name="Test.Test_Log_In_Stemex"/>
       <class name="Test.Test_Stemex_Application_Creation"/>
       <class name="Test.Test_Stemex_Search_Filters"/>
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_verification"/>
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_rejected"/>
+       <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

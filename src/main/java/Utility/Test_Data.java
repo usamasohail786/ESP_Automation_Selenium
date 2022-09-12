@@ -17,6 +17,8 @@ public class Test_Data{
 	 public String tab;
 	 public String url;
 	 public String search_app;
+	 public String search_app_1;
+	 public String complete_stage_1;
 	 public String create_app_btn;
 	 public String field1_data;
 	 public String submit_btn_text;
@@ -43,6 +45,7 @@ public class Test_Data{
 	 public String wrong_pass;
 	 public String wrong_txt;
 	 public String app_text_display;
+	 public String reject_stage;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -55,6 +58,7 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		tab=(String) jsonobject_app_create.get("tab_name");
 		url=(String) jsonobject.get("url");
 		search_app=(String) jsonobject_app_create.get("search_create_app");
+		search_app_1=(String) jsonobject_app_create.get("search_create_app_1");
 		create_app_btn=(String) jsonobject_app_create.get("create_app_btn");
 		field1_data=(String) jsonobject_app_create.get("field1_data");
 		submit_btn_text=(String) jsonobject_app_create.get("submit_btn_Text");
@@ -81,7 +85,8 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		wrong_phone_no=(String) jsonobject.get("wrong_phone_number");
 		app_text_display=(String) jsonobject_app_create.get("app_text_display");
 		wrong_txt=(String) jsonobject_search_filters.get("wrong_Txt");
-		
+		complete_stage_1=(String) jsonobject_app_create.get("complete_stage_1");
+		reject_stage=(String) jsonobject_app_create.get("reject_stage");
 }
 
 }

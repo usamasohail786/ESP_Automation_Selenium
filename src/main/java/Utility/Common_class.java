@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.time.Duration;
 
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -201,7 +202,7 @@ public class Common_class {
 			if (name.contains(text)) {
 				//webElement.click();
 				js.executeScript("arguments[0].click()", webElement);
-				System.out.println(webElement.getText()+"get text");
+				System.out.println(webElement.getText()+"get text show request.............");
 				break;
 			}
 		}
@@ -315,5 +316,19 @@ public class Common_class {
 		wait.until(ExpectedConditions.visibilityOf(elem));
 
 	}
+	public void randomly_select(List<WebElement> option_select_list)
+	{
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		for (WebElement webElement : option_select_list) {
+//           
+//			js.executeScript("arguments[0].click()", webElement);
+//			}
+		//List <WebElement> listings = driver.findElements(By.cssSelector(""));
+		Random r = new Random();
+		System.out.print(option_select_list.size()+".....................sizeeeee");
+		int randomValue = r.nextInt(option_select_list.size()); //Getting a random value that is between 0 and (list's size)-1
+		option_select_list.get(randomValue).click();
+//		
+		}
+	}
 
-}

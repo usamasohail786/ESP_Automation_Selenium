@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.Test_Stemex_Search_Filters">
+      <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2">
         <methods>
-          <include name="Stemp_Ex_Search_Test_Record_On_All_Tab"/>
           <include name="setup"/>
-          <include name="Stemp_Ex_Search_Test_Record_On_Mine_Tab"/>
           <include name="Tear_Down"/>
+          <include name="App_Create_stage_Test"/>
         </methods>
-      </class> <!-- Test.Test_Stemex_Search_Filters -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage2_rejected2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -183,7 +183,6 @@ public class Search_Filters_Stemex {
 		
 		
 		
-		System.out.println("inside if.....................");
 			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String cancel_count;
 			
@@ -281,10 +280,9 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elementToBeClickable(filters_box, 100);
 		filters_box.click();
 		com.Search_filters(search_filter_list, cancelled_filter);
-		com.Explicit_wait_elementToBeVisible(content_load, 50);
+		//com.Explicit_wait_elementToBeVisible(content_load, 50);
 		com.Explicit_wait_elements_visiblity(no_application_text, 100);
 		String no_app_text_from_list_cancelled = com.Get_Text_element(no_application_text, no_app_txt);
-		System.out.println(no_app_text_from_list_cancelled+no_app_txt+"s...........text");
 		if(no_app_text_from_list_cancelled==null)
 		{
 			no_app_text_from_list_cancelled="xyzrandom";
@@ -292,10 +290,9 @@ public class Search_Filters_Stemex {
 		if(!no_app_text_from_list_cancelled.startsWith(no_app_txt))
 		{
 		cancelled = driver.findElement(By.xpath("//div[contains(text(),'" + cancelled_filter + "')]")).getText();
-		com.Explicit_wait_elementToBeClickable(appication_counter, 40);
+		com.Explicit_wait_elementToBeClickable(appication_counter, 5);
 		
-			System.out.println("inside if.....................");
-			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
+		//	com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String cancel_count;
 			
 				 cancel_count = appication_counter.getText();
@@ -305,7 +302,7 @@ public class Search_Filters_Stemex {
 		}
 		else
 		{
-			System.out.println("elseee.............");
+			
 			cancelled_int_count =0;
 			cancelled="Cancelled";
 		}
@@ -342,9 +339,10 @@ public class Search_Filters_Stemex {
 		com.Scroll_To_Element(next_page);
 		com.element_to_be_stable(2000);
 		com.Explicit_wait_elementToBeClickable(last_page, 10);
-		last_page.click();		
+	    last_page.click();
 		com.Explicit_wait_elementToBeVisible(content_load, 50);
 		com.Explicit_wait_elementToBeClickable(application_no_text_last, 30);
+		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//clicked on oldest first and getting record text
 		oldest_last_newest_cosider = com.Get_Text_single_element(application_no_text_last);
 		System.out.println(oldest_last_newest_cosider+"clicked on oldest first and getting record text");

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_rejected">
+        <methods>
+          <include name="setup"/>
+          <include name="App_Create_verify_stage1_rejected"/>
+          <include name="Tear_Down"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_rejected -->
       <class name="Test.Test_Stemex_Search_Filters">
         <methods>
           <include name="setup"/>
@@ -10,6 +17,13 @@
           <include name="Tear_Down"/>
         </methods>
       </class> <!-- Test.Test_Stemex_Search_Filters -->
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_verification">
+        <methods>
+          <include name="setup"/>
+          <include name="App_Create_stage_Test"/>
+          <include name="Tear_Down"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_verification -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

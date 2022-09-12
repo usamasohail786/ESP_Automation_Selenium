@@ -26,7 +26,7 @@ public class Create_Application_Page extends Test_Data {
 	WebElement  stemex_logo;
 	@FindBy(xpath="//mat-spinner")
 	WebElement  spinner;
-	@FindBy(xpath="//a[@class='mat-focus-indicator menu-item mat-menu-item ng-star-inserted']//div//span")
+	@FindBy(xpath="//a[@class='header-menu-item ng-star-inserted']//div//span")
 	List<WebElement> tab_list;
 	@FindBy(xpath="//a[@href='/pages/profile']")
 	WebElement  profile_img;
@@ -105,7 +105,7 @@ public class Create_Application_Page extends Test_Data {
     {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
-      	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
+      	com.Explicit_wait_elementToBeInvisible(spinner, 100);
       	//com.js_click(appication_counter_on_start); 
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
@@ -128,6 +128,7 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elements_visiblity(field1, 100);
     	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
     	com.Explicit_wait_elements_visiblity(submit_btn, 3);
+    	com.element_to_be_stable(1000);
         com.get_elements_text_click(submit_btn, Submit_btn);
         com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
         com.Mouse_to_element(move_to_contianer);    

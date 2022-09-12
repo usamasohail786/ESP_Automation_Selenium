@@ -1,13 +1,17 @@
 {
     "application_no": "NUM93968",
     "app_main_mid_tab":"Mine",
-     "search_create_app":"usama",
+     "search_create_app":"first test",
+      "search_create_app_1":"usama",
      "create_app_btn":"CREATE APPLICATION",
      "field1_data":"my app title",
       "submit_btn_Text":"SUBMIT",
        "done_btn_Text":"DONE",
       "field_place_holder_value":"Title",
        "tab_name":"Request",
-    "group":"ESP - QA - StemeXe",
-    "app_text_display":"Application"
+    "group":"Automation",
+    "app_text_display":"Application",
+    "complete_stage_1":"Complete"
+     "reject_stage":"Rejected"
+  
     }
