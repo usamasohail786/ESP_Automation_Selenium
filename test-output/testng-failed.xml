@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2">
+      <class name="Test.Test_Stemex_Application_Creation_forms_test_1">
         <methods>
-          <include name="setup"/>
           <include name="Tear_Down"/>
-          <include name="App_Create_stage_Test"/>
+          <include name="App_Create_Test_forms"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage2_rejected2 -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_forms_test_1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

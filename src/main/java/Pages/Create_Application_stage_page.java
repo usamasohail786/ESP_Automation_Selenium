@@ -175,8 +175,8 @@ public class Create_Application_stage_page extends Test_Data {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeVisible(approve_btn, 4);
-    	com.element_to_be_stable(2000);
-    	com.js_click(approve_btn);
+    	com.element_to_be_stable(3000);
+    	approve_btn.click();
     	com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
     	com.Mouse_to_element(move_to_contianer); 
     	com.Explicit_wait_elementToBeVisible(accept_btn, 4);
@@ -191,6 +191,7 @@ public class Create_Application_stage_page extends Test_Data {
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 4);
     	open_btn.click();
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeStale(reject_btn, 5);
@@ -225,13 +226,14 @@ public class Create_Application_stage_page extends Test_Data {
     	com.Explicit_wait_elementToBeVisible(first_btn, 10);
     	com.js_click(first_btn);
     	com.Explicit_wait_elementToBeInvisible(spinner, 40);
-    	com.Explicit_wait_elementToBeStale(rejected_status, 4);
+    	com.Explicit_wait_elementToBeStale(rejected_status, 2);
     	return rejected_status.getText();
     }
     public void Approve_verify_Stage2() throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
+    	com.Explicit_wait_elementToBeVisible(open_btn, 4);
     	open_btn.click();
     	com.element_to_be_stable(2000);
     	com.js_click(approve_btn);
@@ -257,11 +259,11 @@ public class Create_Application_stage_page extends Test_Data {
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elements_visiblity(count_accepted, 4);
-    	System.out.print(count_accepted.size()+"sizes.....................");
+    
     	if(count_accepted.size()==3)
     	{
     		accepted_size=true;
-    		System.out.print("show me Size.....................................................");
+    	
     	}
     }
 

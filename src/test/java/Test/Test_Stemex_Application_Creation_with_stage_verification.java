@@ -75,7 +75,7 @@ public class Test_Stemex_Application_Creation_with_stage_verification extends Te
 		Create_Application_stage_page app_obj = new Create_Application_stage_page(obj.driver);
 		
 		String stage1_accept=app_obj.Approve_verify_Stage1();
-		System.out.print(stage1_accept+"...............................................");
+		
 		assertEquals(stage1_accept, complete_stage_1);
 		}
 		catch(Exception e2)

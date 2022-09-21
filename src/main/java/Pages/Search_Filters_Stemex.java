@@ -127,8 +127,7 @@ public class Search_Filters_Stemex {
 			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String open_count = appication_counter.getText();
 			open_int_count = com.counter_int(open_count);
-			System.out.println(open_int_count+"open............");
-
+			
 		}
 		//com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		com.Explicit_wait_elementToBeVisible(content_load, 50);
@@ -186,14 +185,14 @@ public class Search_Filters_Stemex {
 			com.Explicit_wait_elementToBeVisible(appication_counter, 10);
 			String cancel_count;
 			
-				 cancel_count = appication_counter.getText();
+			cancel_count = appication_counter.getText();
 			
 			cancelled_int_count = com.counter_int(cancel_count);
 
 		}
 		else
 		{
-			System.out.println("elseee.............");
+			
 			cancelled_int_count =0;
 			cancelled="Cancelled";
 		}
@@ -388,7 +387,7 @@ public class Search_Filters_Stemex {
 		if(mine==true && all==false)
 		{
 		com.get_elements_text_click(app_main_all_tabs, mine_tab);
-		System.out.println("mine tab..........");
+		
 		}
 		if(action==true)
 		{
@@ -396,7 +395,6 @@ public class Search_Filters_Stemex {
 		System.out.println("action tab..........");
 		}
 		com.Explicit_wait_elementToBeVisible(content_load, 50);
-		//com.element_to_be_stable(1300);
 		com.Explicit_wait_elementToBeStale(filters_box, 3);
 		com.Explicit_wait_elementToBeClickable(filters_box_defination, 10);
 		filters_box_defination.click();
@@ -452,7 +450,7 @@ public class Search_Filters_Stemex {
     	else
     	{
     		aap_empty_record_exist=false;
-    		System.out.println("else......");
+    		
     	}
     	
     }

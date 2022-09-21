@@ -65,8 +65,16 @@ public class Create_Application_Page extends Test_Data {
 	List<WebElement> app_main_tabs_list;
 	@FindBy(xpath="(//div[text()='Requested On:'])[1]")
 	WebElement content_load;
-	@FindBy(xpath="(//mat-icon)[last()]")
+	@FindBy(xpath="//div[text()=' 1 Available Options ']")
+	WebElement available_wait;
+	@FindBy(xpath="//mat-error")
+	WebElement min_length_error;
+	@FindBy(xpath="//input")
+	List<WebElement> short_text_input;
+	@FindBy(xpath="(//mat-icon)[last()]")	
 	WebElement result_load;
+	@FindBy(xpath="//mat-error")	
+	WebElement require_error;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -78,6 +86,8 @@ public class Create_Application_Page extends Test_Data {
 	public String error=null;
 	boolean Action_tab=false;
 	boolean Mine_tab=false;
+	boolean required_field=false;
+	public boolean min_length_error_bol=false;
     public Create_Application_Page(WebDriver driver) throws FileNotFoundException, IOException, ParseException {
     	
     	this.driver = driver;
@@ -102,6 +112,7 @@ public class Create_Application_Page extends Test_Data {
     	return Tab_name;
     }
     public void Creat_Application(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab,String app_text_display) throws InterruptedException
+
     {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
@@ -123,7 +134,8 @@ public class Create_Application_Page extends Test_Data {
     	com.get_elements_text_click(creat_application_btn, app_btn_txt);
      	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	search_btn.sendKeys(search); 		
-        com.Explicit_wait_elements_visiblity(search_result, 30);	
+        com.Explicit_wait_elementToBeClickable(search_result.get(0), 30);
+        com.Explicit_wait_elementToBeVisible(available_wait, 5);
     	search_result.get(0).click();
     	com.Explicit_wait_elements_visiblity(field1, 100);
     	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
@@ -136,6 +148,45 @@ public class Create_Application_Page extends Test_Data {
         com.Explicit_wait_elementToBeInvisible(spinner, 30);
     	appication.click();
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
+    	
+      
+    }
+    public void Creat_Application_to_test_forms(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab,String app_text_display) throws InterruptedException
+    {
+    	String attribute_name="data-placeholder";
+    	Common_class com=new Common_class(driver);
+      	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+      	//com.js_click(appication_counter_on_start); 
+    	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
+      	counter_before_string=appication_counter_on_start.getText();
+      	counter_before=Integer.parseInt(counter_before_string);
+      	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
+    	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
+    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	//com.getNGDriver().waitForAngularRequestsToFinish();
+    	driver.navigate().refresh();
+    	com.Explicit_wait_elementToBeVisible(content_load, 70);
+    	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
+    	counter_before_string_mine=appication_counter_on_end.getText();
+        counter_before_mine=Integer.parseInt(counter_before_string_mine);
+    	com.get_elements_text_click(creat_application_btn, app_btn_txt);
+     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
+    	search_btn.sendKeys(search); 		
+        com.Explicit_wait_elementToBeClickable(search_result.get(0), 30);
+        com.Explicit_wait_elementToBeVisible(available_wait, 5);
+    	search_result.get(0).click();
+//    	com.Explicit_wait_elements_visiblity(field1, 100);
+//    	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
+//    	com.Explicit_wait_elements_visiblity(submit_btn, 3);
+//    	com.element_to_be_stable(1000);
+//        com.get_elements_text_click(submit_btn, Submit_btn);
+//        com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
+//        com.Mouse_to_element(move_to_contianer);    
+//        done_btn.click();  
+//        com.Explicit_wait_elementToBeInvisible(spinner, 30);
+//    	appication.click();
+//    	com.Explicit_wait_elementToBeVisible(content_load, 50);
     	
       
     }
@@ -169,7 +220,30 @@ public class Create_Application_Page extends Test_Data {
     	}
     	return Mine_tab;
     }
-
+    public void verify_min_max_length_of_short_Text() throws InterruptedException
+    {
+    	//add values in short text to check min length and max length are working fine
+    	//min length should not be less than 2
+    	Common_class com=new Common_class(driver);
+        com.Explicit_wait_elements_visiblity(short_text_input, 10);
+    	short_text_input.get(0).sendKeys("AB");
+    	if(min_length_error.isDisplayed())
+    	{
+    		min_length_error_bol=true;
+    	}
+    	
+    	
+    }
+    public void verify_required_field_working_fine() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+        if(require_error.isDisplayed())
+        {
+        	required_field=true;
+        }
+       
+    }
 
 }
 

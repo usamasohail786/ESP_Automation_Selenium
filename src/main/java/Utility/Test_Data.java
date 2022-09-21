@@ -46,6 +46,7 @@ public class Test_Data{
 	 public String wrong_txt;
 	 public String app_text_display;
 	 public String reject_stage;
+	 public String app_name_forms;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -87,6 +88,7 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		wrong_txt=(String) jsonobject_search_filters.get("wrong_Txt");
 		complete_stage_1=(String) jsonobject_app_create.get("complete_stage_1");
 		reject_stage=(String) jsonobject_app_create.get("reject_stage");
+		app_name_forms=(String) jsonobject_app_create.get("app_name_forms");
 }
 
 }

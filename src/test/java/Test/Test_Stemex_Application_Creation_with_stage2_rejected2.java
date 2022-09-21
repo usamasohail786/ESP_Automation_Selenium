@@ -68,7 +68,7 @@ public class Test_Stemex_Application_Creation_with_stage2_rejected2 extends Test
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Testing on Rejected Application on Stage 2")
 	@Feature("Rejected Application on Stage 2")
-	public void App_Create_verify_stage1_rejected() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+	public void App_Create_verify_stage2_rejected() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
 		try
 		{

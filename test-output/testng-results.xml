@@ -1,147 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="19" passed="19" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-12T13:02:12 PKT" name="Suite" finished-at="2022-09-12T13:09:39 PKT" duration-ms="447565">
+  <suite started-at="2022-09-21T16:25:28 PKT" name="Default suite" finished-at="2022-09-21T16:26:28 PKT" duration-ms="60594">
     <groups>
     </groups>
-    <test started-at="2022-09-12T13:02:12 PKT" name="Test" finished-at="2022-09-12T13:09:39 PKT" duration-ms="447565">
-      <class name="Test.Test_Stemex_Application_Creation">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation@6aa61224]" started-at="2022-09-12T13:02:31 PKT" name="setup" finished-at="2022-09-12T13:02:40 PKT" duration-ms="8901" status="PASS">
+    <test started-at="2022-09-21T16:25:28 PKT" name="Default test" finished-at="2022-09-21T16:26:28 PKT" duration-ms="60594">
+      <class name="Test.Test_Stemex_Application_Creation_forms_test_1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:25:28 PKT" name="setup" finished-at="2022-09-21T16:25:40 PKT" duration-ms="12438" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="App_Create_Test()[pri:3, instance:Test.Test_Stemex_Application_Creation@6aa61224]" started-at="2022-09-12T13:02:40 PKT" name="App_Create_Test" finished-at="2022-09-12T13:03:32 PKT" duration-ms="51806" status="PASS">
+        <test-method signature="App_Create_Test_forms()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:25:40 PKT" name="App_Create_Test_forms" finished-at="2022-09-21T16:26:28 PKT" duration-ms="47883" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- App_Create_Test -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation@6aa61224]" started-at="2022-09-12T13:03:32 PKT" name="Tear_Down" finished-at="2022-09-12T13:03:32 PKT" duration-ms="129" status="PASS">
+        </test-method> <!-- App_Create_Test_forms -->
+        <test-method signature="App_short_text_legth_test()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:26:28 PKT" name="App_short_text_legth_test" finished-at="2022-09-21T16:26:28 PKT" duration-ms="23" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Application_Creation -->
-      <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@2474f125]" started-at="2022-09-12T13:08:19 PKT" name="setup" finished-at="2022-09-12T13:08:29 PKT" duration-ms="9964" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="App_Create_stage_Test()[pri:6, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@2474f125]" started-at="2022-09-12T13:08:29 PKT" name="App_Create_stage_Test" finished-at="2022-09-12T13:09:17 PKT" duration-ms="47320" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_stage_Test -->
-        <test-method signature="App_Create_verify_stage1_rejected()[pri:7, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@2474f125]" started-at="2022-09-12T13:09:17 PKT" name="App_Create_verify_stage1_rejected" finished-at="2022-09-12T13:09:39 PKT" duration-ms="22695" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_verify_stage1_rejected -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@2474f125]" started-at="2022-09-12T13:09:39 PKT" name="Tear_Down" finished-at="2022-09-12T13:09:39 PKT" duration-ms="126" status="PASS">
+        </test-method> <!-- App_short_text_legth_test -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:26:28 PKT" name="Tear_Down" finished-at="2022-09-21T16:26:28 PKT" duration-ms="180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage2_rejected2 -->
-      <class name="Test.Test_Stemex_Application_Creation_with_stage_verification">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@3e6f3f28]" started-at="2022-09-12T13:05:53 PKT" name="setup" finished-at="2022-09-12T13:06:11 PKT" duration-ms="17140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="App_Create_stage_Test()[pri:3, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@3e6f3f28]" started-at="2022-09-12T13:06:11 PKT" name="App_Create_stage_Test" finished-at="2022-09-12T13:07:04 PKT" duration-ms="53612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_stage_Test -->
-        <test-method signature="App_Create_verify_stage1()[pri:4, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@3e6f3f28]" started-at="2022-09-12T13:07:04 PKT" name="App_Create_verify_stage1" finished-at="2022-09-12T13:07:09 PKT" duration-ms="4958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_verify_stage1 -->
-        <test-method signature="App_Create_verify_stage2()[pri:5, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@3e6f3f28]" started-at="2022-09-12T13:07:09 PKT" name="App_Create_verify_stage2" finished-at="2022-09-12T13:07:17 PKT" duration-ms="7630" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_verify_stage2 -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@3e6f3f28]" started-at="2022-09-12T13:07:17 PKT" name="Tear_Down" finished-at="2022-09-12T13:07:17 PKT" duration-ms="131" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_verification -->
-      <class name="Test.Test_Log_In_Stemex">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Log_In_Stemex@f99f5e0]" started-at="2022-09-12T13:02:12 PKT" name="setup" finished-at="2022-09-12T13:02:22 PKT" duration-ms="10625" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Test_Stemex_Log_In_with_wrong_credentials()[pri:1, instance:Test.Test_Log_In_Stemex@f99f5e0]" started-at="2022-09-12T13:02:23 PKT" name="Test_Stemex_Log_In_with_wrong_credentials" finished-at="2022-09-12T13:02:24 PKT" duration-ms="1838" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_Stemex_Log_In_with_wrong_credentials -->
-        <test-method signature="Test_Stemex_Log_In()[pri:2, instance:Test.Test_Log_In_Stemex@f99f5e0]" started-at="2022-09-12T13:02:24 PKT" name="Test_Stemex_Log_In" finished-at="2022-09-12T13:02:31 PKT" duration-ms="6505" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_Stemex_Log_In -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Log_In_Stemex@f99f5e0]" started-at="2022-09-12T13:02:31 PKT" name="Tear_Down" finished-at="2022-09-12T13:02:31 PKT" duration-ms="126" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Log_In_Stemex -->
-      <class name="Test.Test_Stemex_Application_Creation_with_stage_rejected">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@7e19ebf0]" started-at="2022-09-12T13:07:17 PKT" name="setup" finished-at="2022-09-12T13:07:33 PKT" duration-ms="15945" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="App_Create_stage_Test()[pri:6, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@7e19ebf0]" started-at="2022-09-12T13:07:33 PKT" name="App_Create_stage_Test" finished-at="2022-09-12T13:08:19 PKT" duration-ms="46371" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_stage_Test -->
-        <test-method signature="App_Create_verify_stage1_rejected()[pri:7, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@7e19ebf0]" started-at="2022-09-12T13:08:19 PKT" name="App_Create_verify_stage1_rejected" finished-at="2022-09-12T13:08:19 PKT" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_Create_verify_stage1_rejected -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@7e19ebf0]" started-at="2022-09-12T13:08:19 PKT" name="Tear_Down" finished-at="2022-09-12T13:08:19 PKT" duration-ms="114" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_rejected -->
-      <class name="Test.Test_Stemex_Search_Filters">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:03:32 PKT" name="setup" finished-at="2022-09-12T13:03:42 PKT" duration-ms="10342" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Stemp_Ex_Search_Test_By_Status_On_All_Tab()[pri:4, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:03:42 PKT" name="Stemp_Ex_Search_Test_By_Status_On_All_Tab" finished-at="2022-09-12T13:04:14 PKT" duration-ms="31664" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_Test_By_Status_On_All_Tab -->
-        <test-method signature="Stemp_Ex_Search_Test_By_Status_On_Mine_Tab()[pri:5, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:04:14 PKT" name="Stemp_Ex_Search_Test_By_Status_On_Mine_Tab" finished-at="2022-09-12T13:04:37 PKT" duration-ms="23281" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_Test_By_Status_On_Mine_Tab -->
-        <test-method signature="Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record()[pri:6, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:04:37 PKT" name="Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record" finished-at="2022-09-12T13:05:22 PKT" duration-ms="45235" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record -->
-        <test-method signature="Stemp_Ex_Search_by_Definition_On_All_Tab()[pri:7, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:22 PKT" name="Stemp_Ex_Search_by_Definition_On_All_Tab" finished-at="2022-09-12T13:05:30 PKT" duration-ms="7573" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_All_Tab -->
-        <test-method signature="Stemp_Ex_Search_Test_Record_On_All_Tab()[pri:8, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:30 PKT" name="Stemp_Ex_Search_Test_Record_On_All_Tab" finished-at="2022-09-12T13:05:33 PKT" duration-ms="2811" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_All_Tab -->
-        <test-method signature="Stemp_Ex_Search_by_Definition_On_Mine_Tab()[pri:9, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:33 PKT" name="Stemp_Ex_Search_by_Definition_On_Mine_Tab" finished-at="2022-09-12T13:05:42 PKT" duration-ms="8960" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_Mine_Tab -->
-        <test-method signature="Stemp_Ex_Search_Test_Record_On_Mine_Tab()[pri:10, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:42 PKT" name="Stemp_Ex_Search_Test_Record_On_Mine_Tab" finished-at="2022-09-12T13:05:44 PKT" duration-ms="1778" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_Mine_Tab -->
-        <test-method signature="Stemp_Ex_Search_by_Definition_On_Action_Tab()[pri:11, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:44 PKT" name="Stemp_Ex_Search_by_Definition_On_Action_Tab" finished-at="2022-09-12T13:05:51 PKT" duration-ms="7944" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_Action_Tab -->
-        <test-method signature="Stemp_Ex_Search_Test_Record_On_Action_Tab()[pri:12, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:51 PKT" name="Stemp_Ex_Search_Test_Record_On_Action_Tab" finished-at="2022-09-12T13:05:53 PKT" duration-ms="1780" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_Action_Tab -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Search_Filters@30bce90b]" started-at="2022-09-12T13:05:53 PKT" name="Tear_Down" finished-at="2022-09-12T13:05:53 PKT" duration-ms="128" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Search_Filters -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_forms_test_1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
