@@ -309,7 +309,11 @@ public class Common_class {
 		counter = Integer.parseInt(Text);
 		return counter;
 	}
-
+	public void highLighterMethod(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+		}
+		
 	public void fluentwait(WebElement elem) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
 				.pollingEvery(Duration.ofMillis(1500)).ignoring(NoSuchElementException.class);

@@ -7,10 +7,12 @@ import java.io.IOException;
 import java.util.List;
 
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Utility.Common_class;
 import Utility.Test_Data;
@@ -53,6 +55,8 @@ public class Create_Application_Page extends Test_Data {
 	WebElement done_btn;
 	@FindBy(xpath="//mat-dialog-container")
 	WebElement move_to_contianer;
+	@FindBy(xpath="//mat-calendar ")
+	WebElement calendar_contianer;
 	@FindBy(xpath="//a[@href='/pages/applications?tab=0']")
 	WebElement appication;
 	@FindBy(xpath="(//span[contains(text(), 'Application')])[1]//parent::div//parent::div//div[text()]")
@@ -75,6 +79,28 @@ public class Create_Application_Page extends Test_Data {
 	WebElement result_load;
 	@FindBy(xpath="//mat-error")	
 	WebElement require_error;
+	@FindBy(xpath="//input[@type='email']")	
+	WebElement require_click;
+	@FindBy(xpath="//input[@data-placeholder='Read Only Field Test']")	
+	WebElement read_only_field;
+	@FindBy(xpath="//h1[text()='Forms Testing']")	
+	WebElement empty_click;
+	@FindBy(xpath="//input[@data-placeholder='Default Date Testing']")	
+	WebElement default_date_exist;
+	@FindBy(xpath="(//button[@aria-label=\"Open calendar\"])[1]")	
+	WebElement calendar_open;
+	@FindBy(xpath="//div[@class='mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-today']")	
+	WebElement select_today_date;
+	@FindBy(xpath="//div[@class='mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-selected mat-calendar-body-today']")	
+	WebElement select_today_date_one;
+	@FindBy(xpath="(//mat-icon[@fontset='material-icons-outlined'])[2]")	
+	WebElement hint_icon;
+	@FindBy(xpath="(//input[@type='number'])[2]")	
+	WebElement min_max_field;
+	@FindBy(xpath="//mat-error[text()=' Value must be between 6 and 70 ']")	
+	WebElement min_max_error;
+	@FindBy(xpath="//button//span[text()='Save']")	
+	WebElement save_btn_scroll;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -86,8 +112,12 @@ public class Create_Application_Page extends Test_Data {
 	public String error=null;
 	boolean Action_tab=false;
 	boolean Mine_tab=false;
-	boolean required_field=false;
+	public boolean required_field=false;
 	public boolean min_length_error_bol=false;
+	public boolean max_length_error_bol=false;
+	public boolean default_Date_exist=false;
+	public boolean hint_icon_exist=false;
+	public boolean min_max_error_bool=false;
     public Create_Application_Page(WebDriver driver) throws FileNotFoundException, IOException, ParseException {
     	
     	this.driver = driver;
@@ -222,27 +252,108 @@ public class Create_Application_Page extends Test_Data {
     }
     public void verify_min_max_length_of_short_Text() throws InterruptedException
     {
-    	//add values in short text to check min length and max length are working fine
-    	//min length should not be less than 2
+    	//add values in short text to check min length 4 and max length  10 are working fine
+    	//min length should not be less than 4
     	Common_class com=new Common_class(driver);
         com.Explicit_wait_elements_visiblity(short_text_input, 10);
     	short_text_input.get(0).sendKeys("AB");
+    	com.Explicit_wait_elementToBeClickable(min_length_error, 5);
     	if(min_length_error.isDisplayed())
     	{
     		min_length_error_bol=true;
     	}
-    	
+    	com.Explicit_wait_elements_visiblity(short_text_input, 10);
+    	short_text_input.get(0).sendKeys("ABcd12324343243242343242344232423432");
+    	String typeValue=short_text_input.get(0).getAttribute("maxlength");
+    	int max_value=com.counter_int(typeValue);
+    	if(max_value==10)
+    	{
+    		max_length_error_bol=true;
+    	}
     	
     }
     public void verify_required_field_working_fine() throws InterruptedException
     {
     	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elementToBeClickable(require_click, 4);
+    	require_click.click();
+    	//clicking on empty click
+    	com.Explicit_wait_elementToBeClickable(require_click, 4);
+    	empty_click.click();  
+    	com.Explicit_wait_elementToBeClickable(require_error, 4);
+    	//waiting for to show required error 
         if(require_error.isDisplayed())
         {
         	required_field=true;
         }
        
+    }
+    public void verify_read_only_field()
+    {
+    	//Read only field 	
+    	Assert.assertTrue(read_only_field.getAttribute("disabled").equals("true"),"Element ReadOnly");
+    }
+    
+    public void today_date_validate(String today_dat) throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	//opening the calendar 
+    	
+    	com.Explicit_wait_elementToBeClickable(calendar_open, 5);
+    	calendar_open.click();
+    	com.Explicit_wait_elementToBeVisible(calendar_contianer, 10);
+    	com.Mouse_to_element(calendar_contianer);
+    	com.Explicit_wait_elementToBeStale(select_today_date, 1);
+    	select_today_date.click();
+    	//opening the calendar the calendar again 
+    	com.Explicit_wait_elementToBeClickable(calendar_open, 5);
+    	calendar_open.click();
+    	com.Explicit_wait_elementToBeVisible(calendar_contianer, 10);
+    	com.Mouse_to_element(calendar_contianer);
+    	//comparing today date with selected date
+    	com.Explicit_wait_elementToBeStale(select_today_date_one, 1);
+    	select_today_date_one.click();
+    }
+    public void default_Date_exist() throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeVisible(default_date_exist, 4);
+    	
+    	if(default_date_exist.isDisplayed()==true)
+    	{
+    		default_Date_exist=true;
+    		com.highLighterMethod(driver, default_date_exist);
+    		
+    	}
+    }
+    public void Verify_Hint_working_fine() throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeVisible(hint_icon, 4);
+    	if(hint_icon.isDisplayed()==true)
+    	{
+    		hint_icon_exist=true;
+    		com.highLighterMethod(driver, hint_icon);
+    	}
+    }
+    public void Verify_Max_and_Min_Value() throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeVisible(min_max_field, 4);
+    	//if we put value more than 70 it must gives error
+    	com.Explicit_wait_elementToBeVisible(save_btn_scroll, 4);
+    	com.Scroll_To_Element(save_btn_scroll);
+    	min_max_field.sendKeys("12334");
+    	com.Explicit_wait_elementToBeVisible(min_max_error, 4);
+    	if(min_max_error.isDisplayed()==true)
+    	{
+    		min_max_error_bool=true;
+    		com.highLighterMethod(driver, min_max_field);
+    		Thread.sleep(5000);
+    	}
+    	Thread.sleep(50000);
     }
 
 }

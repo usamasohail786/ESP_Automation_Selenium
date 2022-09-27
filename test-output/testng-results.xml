@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-21T16:25:28 PKT" name="Default suite" finished-at="2022-09-21T16:26:28 PKT" duration-ms="60594">
+  <suite started-at="2022-09-27T10:45:41 PKT" name="Default suite" finished-at="2022-09-27T10:47:04 PKT" duration-ms="82503">
     <groups>
     </groups>
-    <test started-at="2022-09-21T16:25:28 PKT" name="Default test" finished-at="2022-09-21T16:26:28 PKT" duration-ms="60594">
+    <test started-at="2022-09-27T10:45:41 PKT" name="Default test" finished-at="2022-09-27T10:47:04 PKT" duration-ms="82503">
       <class name="Test.Test_Stemex_Application_Creation_forms_test_1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:25:28 PKT" name="setup" finished-at="2022-09-21T16:25:40 PKT" duration-ms="12438" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:45:41 PKT" name="setup" finished-at="2022-09-27T10:46:00 PKT" duration-ms="18580" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="App_Create_Test_forms()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:25:40 PKT" name="App_Create_Test_forms" finished-at="2022-09-21T16:26:28 PKT" duration-ms="47883" status="PASS">
+        <test-method signature="App_Create_Test_forms_Single_Section()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:00 PKT" name="App_Create_Test_forms_Single_Section" finished-at="2022-09-27T10:46:42 PKT" duration-ms="42397" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- App_Create_Test_forms -->
-        <test-method signature="App_short_text_legth_test()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:26:28 PKT" name="App_short_text_legth_test" finished-at="2022-09-21T16:26:28 PKT" duration-ms="23" status="PASS">
+        </test-method> <!-- App_Create_Test_forms_Single_Section -->
+        <test-method signature="App_short_text_legth_test_Single_Section()[pri:4, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:42 PKT" name="App_short_text_legth_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="1472" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- App_short_text_legth_test -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@6cdba6dc]" started-at="2022-09-21T16:26:28 PKT" name="Tear_Down" finished-at="2022-09-21T16:26:28 PKT" duration-ms="180" status="PASS">
+        </test-method> <!-- App_short_text_legth_test_Single_Section -->
+        <test-method signature="required_field_test_Single_Section()[pri:5, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="required_field_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- required_field_test_Single_Section -->
+        <test-method signature="read_only_field_test_Single_Section()[pri:6, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="read_only_field_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="25" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read_only_field_test_Single_Section -->
+        <test-method signature="calendar_today_date_test_Single_Section()[pri:7, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="calendar_today_date_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="11258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calendar_today_date_test_Single_Section -->
+        <test-method signature="default_date_test_Single_Section()[pri:8, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="default_date_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="46" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- default_date_test_Single_Section -->
+        <test-method signature="Hint_Icon_test_Single_Section()[pri:9, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="Hint_Icon_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Hint_Icon_test_Single_Section -->
+        <test-method signature="Min_Max_Test_Single_Section()[pri:10, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="Min_Max_Test_Single_Section" finished-at="2022-09-27T10:47:04 PKT" duration-ms="8239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Min_Max_Test_Single_Section -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:47:04 PKT" name="Tear_Down" finished-at="2022-09-27T10:47:04 PKT" duration-ms="129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Tear_Down -->

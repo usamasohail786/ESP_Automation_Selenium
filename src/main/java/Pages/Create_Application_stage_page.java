@@ -191,7 +191,7 @@ public class Create_Application_stage_page extends Test_Data {
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 4);
+    	com.Explicit_wait_elementToBeClickable(open_btn, 4);
     	open_btn.click();
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeStale(reject_btn, 5);
