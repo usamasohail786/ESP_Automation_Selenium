@@ -344,16 +344,20 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elementToBeVisible(min_max_field, 4);
     	//if we put value more than 70 it must gives error
     	com.Explicit_wait_elementToBeVisible(save_btn_scroll, 4);
-    	com.Scroll_To_Element(save_btn_scroll);
+    	com.Scroll_To_Element(min_max_field);
     	min_max_field.sendKeys("12334");
+    	com.Explicit_wait_elementToBeVisible(empty_click, 5);;
+    	empty_click.click();
     	com.Explicit_wait_elementToBeVisible(min_max_error, 4);
     	if(min_max_error.isDisplayed()==true)
     	{
     		min_max_error_bool=true;
+    		System.out.print("show me maxxx giving errror");
     		com.highLighterMethod(driver, min_max_field);
-    		Thread.sleep(5000);
+    		Thread.sleep(8000);
+  
     	}
-    	Thread.sleep(50000);
+    	
     }
 
 }

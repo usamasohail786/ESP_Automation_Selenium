@@ -48,6 +48,7 @@ public class Test_Data{
 	 public String reject_stage;
 	 public String app_name_forms;
 	 public String t_date;
+	 public String app_name_forms_invisibility;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -91,6 +92,8 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		reject_stage=(String) jsonobject_app_create.get("reject_stage");
 		app_name_forms=(String) jsonobject_app_create.get("app_name_forms");
 		t_date=(String) jsonobject_app_create.get("today_date");
+		app_name_forms_invisibility=(String) jsonobject_app_create.get("app_name_forms_invisibility");
+
 }
 
 }

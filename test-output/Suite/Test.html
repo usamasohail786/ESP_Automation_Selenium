@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>19/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>16/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 27 10:13:40 PKT 2022</td>
+<td>Started on:</td><td>Thu Sep 29 12:24:46 PKT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>485 seconds (485091 ms)</td>
+<tr><td>Total time:</td><td>500 seconds (500946 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,146 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Test.Test_Stemex_Application_Creation.App_Create_Test()'><b>App_Create_Test</b><br>Test class: Test.Test_Stemex_Application_Creation</td>
+<td><div><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at Test.Test_Stemex_Application_Creation.App_Create_Test(Test_Stemex_Application_Creation.java:53)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1544765522", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1544765522'><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at Test.Test_Stemex_Application_Creation.App_Create_Test(Test_Stemex_Application_Creation.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>3</td>
+<td>Test.Test_Stemex_Application_Creation@30bce90b</td></tr>
+<tr>
+<td title='Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_stage_Test()'><b>App_Create_stage_Test</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage_verification</td>
+<td><div><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage_verification.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1580741277", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1580741277'><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage_verification.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>1</td>
+<td>Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0</td></tr>
+<tr>
+<td title='Test.Test_Stemex_Application_Creation_with_stage2_rejected2.App_Create_stage_Test()'><b>App_Create_stage_Test</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage2_rejected2</td>
+<td><div><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at Test.Test_Stemex_Application_Creation_with_stage2_rejected2.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage2_rejected2.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace102779051", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace102779051'><pre>java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at Test.Test_Stemex_Application_Creation_with_stage2_rejected2.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage2_rejected2.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>4</td>
+<td>Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,29 +215,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.Test_Stemex_Application_Creation.App_Create_Test()'><b>App_Create_Test</b><br>Test class: Test.Test_Stemex_Application_Creation</td>
-<td></td>
-<td>53</td>
-<td>Test.Test_Stemex_Application_Creation@30bce90b</td></tr>
-<tr>
-<td title='Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_stage_Test()'><b>App_Create_stage_Test</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage_verification</td>
-<td></td>
-<td>46</td>
-<td>Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0</td></tr>
-<tr>
 <td title='Test.Test_Stemex_Application_Creation_with_stage_rejected.App_Create_stage_Test()'><b>App_Create_stage_Test</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage_rejected</td>
 <td></td>
-<td>49</td>
+<td>72</td>
 <td>Test.Test_Stemex_Application_Creation_with_stage_rejected@2474f125</td></tr>
-<tr>
-<td title='Test.Test_Stemex_Application_Creation_with_stage2_rejected2.App_Create_stage_Test()'><b>App_Create_stage_Test</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage2_rejected2</td>
-<td></td>
-<td>56</td>
-<td>Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_verify_stage1()'><b>App_Create_verify_stage1</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage_verification</td>
 <td></td>
-<td>5</td>
+<td>11</td>
 <td>Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Application_Creation_with_stage_rejected.App_Create_verify_stage1_rejected()'><b>App_Create_verify_stage1_rejected</b><br>Test class: Test.Test_Stemex_Application_Creation_with_stage_rejected</td>
@@ -117,12 +242,12 @@ function toggleAllBoxes() {
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_Test_By_Status_On_All_Tab()'><b>Stemp_Ex_Search_Test_By_Status_On_All_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
 <td></td>
-<td>53</td>
+<td>85</td>
 <td>Test.Test_Stemex_Search_Filters@3e6f3f28</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_Test_By_Status_On_Mine_Tab()'><b>Stemp_Ex_Search_Test_By_Status_On_Mine_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
 <td></td>
-<td>21</td>
+<td>22</td>
 <td>Test.Test_Stemex_Search_Filters@3e6f3f28</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_Test_Record_On_Action_Tab()'><b>Stemp_Ex_Search_Test_Record_On_Action_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
@@ -142,7 +267,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_by_Definition_On_Action_Tab()'><b>Stemp_Ex_Search_by_Definition_On_Action_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
 <td></td>
-<td>8</td>
+<td>7</td>
 <td>Test.Test_Stemex_Search_Filters@3e6f3f28</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_by_Definition_On_All_Tab()'><b>Stemp_Ex_Search_by_Definition_On_All_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
@@ -152,22 +277,22 @@ function toggleAllBoxes() {
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_by_Definition_On_Mine_Tab()'><b>Stemp_Ex_Search_by_Definition_On_Mine_Tab</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
 <td></td>
-<td>8</td>
+<td>7</td>
 <td>Test.Test_Stemex_Search_Filters@3e6f3f28</td></tr>
 <tr>
 <td title='Test.Test_Stemex_Search_Filters.Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record()'><b>Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record</b><br>Test class: Test.Test_Stemex_Search_Filters</td>
 <td></td>
-<td>45</td>
+<td>52</td>
 <td>Test.Test_Stemex_Search_Filters@3e6f3f28</td></tr>
 <tr>
 <td title='Test.Test_Log_In_Stemex.Test_Stemex_Log_In()'><b>Test_Stemex_Log_In</b><br>Test class: Test.Test_Log_In_Stemex</td>
 <td></td>
-<td>21</td>
+<td>23</td>
 <td>Test.Test_Log_In_Stemex@6aa61224</td></tr>
 <tr>
 <td title='Test.Test_Log_In_Stemex.Test_Stemex_Log_In_with_wrong_credentials()'><b>Test_Stemex_Log_In_with_wrong_credentials</b><br>Test class: Test.Test_Log_In_Stemex</td>
 <td></td>
-<td>1</td>
+<td>8</td>
 <td>Test.Test_Log_In_Stemex@6aa61224</td></tr>
 </table><p>
 </body>

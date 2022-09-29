@@ -1,53 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="19" passed="16" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-27T10:45:41 PKT" name="Default suite" finished-at="2022-09-27T10:47:04 PKT" duration-ms="82503">
+  <suite started-at="2022-09-29T12:24:46 PKT" name="Suite" finished-at="2022-09-29T12:33:07 PKT" duration-ms="500946">
     <groups>
     </groups>
-    <test started-at="2022-09-27T10:45:41 PKT" name="Default test" finished-at="2022-09-27T10:47:04 PKT" duration-ms="82503">
-      <class name="Test.Test_Stemex_Application_Creation_forms_test_1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:45:41 PKT" name="setup" finished-at="2022-09-27T10:46:00 PKT" duration-ms="18580" status="PASS">
+    <test started-at="2022-09-29T12:24:46 PKT" name="Test" finished-at="2022-09-29T12:33:07 PKT" duration-ms="500946">
+      <class name="Test.Test_Stemex_Application_Creation">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation@30bce90b]" started-at="2022-09-29T12:25:50 PKT" name="setup" finished-at="2022-09-29T12:26:13 PKT" duration-ms="23549" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="App_Create_Test_forms_Single_Section()[pri:3, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:00 PKT" name="App_Create_Test_forms_Single_Section" finished-at="2022-09-27T10:46:42 PKT" duration-ms="42397" status="PASS">
+        <test-method signature="App_Create_Test()[pri:3, instance:Test.Test_Stemex_Application_Creation@30bce90b]" started-at="2022-09-29T12:26:13 PKT" name="App_Create_Test" finished-at="2022-09-29T12:26:17 PKT" duration-ms="3619" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at Test.Test_Stemex_Application_Creation.App_Create_Test(Test_Stemex_Application_Creation.java:53)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- App_Create_Test_forms_Single_Section -->
-        <test-method signature="App_short_text_legth_test_Single_Section()[pri:4, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:42 PKT" name="App_short_text_legth_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="1472" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- App_short_text_legth_test_Single_Section -->
-        <test-method signature="required_field_test_Single_Section()[pri:5, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="required_field_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="214" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- required_field_test_Single_Section -->
-        <test-method signature="read_only_field_test_Single_Section()[pri:6, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="read_only_field_test_Single_Section" finished-at="2022-09-27T10:46:44 PKT" duration-ms="25" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- read_only_field_test_Single_Section -->
-        <test-method signature="calendar_today_date_test_Single_Section()[pri:7, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:44 PKT" name="calendar_today_date_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="11258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- calendar_today_date_test_Single_Section -->
-        <test-method signature="default_date_test_Single_Section()[pri:8, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="default_date_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="46" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- default_date_test_Single_Section -->
-        <test-method signature="Hint_Icon_test_Single_Section()[pri:9, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="Hint_Icon_test_Single_Section" finished-at="2022-09-27T10:46:55 PKT" duration-ms="44" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Hint_Icon_test_Single_Section -->
-        <test-method signature="Min_Max_Test_Single_Section()[pri:10, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:46:55 PKT" name="Min_Max_Test_Single_Section" finished-at="2022-09-27T10:47:04 PKT" duration-ms="8239" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Min_Max_Test_Single_Section -->
-        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_forms_test_1@198d6542]" started-at="2022-09-27T10:47:04 PKT" name="Tear_Down" finished-at="2022-09-27T10:47:04 PKT" duration-ms="129" status="PASS">
+        </test-method> <!-- App_Create_Test -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation@30bce90b]" started-at="2022-09-29T12:26:17 PKT" name="Tear_Down" finished-at="2022-09-29T12:26:17 PKT" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Tear_Down -->
-      </class> <!-- Test.Test_Stemex_Application_Creation_forms_test_1 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- Test.Test_Stemex_Application_Creation -->
+      <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011]" started-at="2022-09-29T12:32:13 PKT" name="setup" finished-at="2022-09-29T12:32:51 PKT" duration-ms="38823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="App_Create_stage_Test()[pri:6, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011]" started-at="2022-09-29T12:32:51 PKT" name="App_Create_stage_Test" finished-at="2022-09-29T12:32:56 PKT" duration-ms="4442" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at Test.Test_Stemex_Application_Creation_with_stage2_rejected2.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage2_rejected2.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_stage_Test -->
+        <test-method signature="App_Create_verify_stage2_rejected()[pri:7, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011]" started-at="2022-09-29T12:32:56 PKT" name="App_Create_verify_stage2_rejected" finished-at="2022-09-29T12:33:07 PKT" duration-ms="11146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_verify_stage2_rejected -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage2_rejected2@7357a011]" started-at="2022-09-29T12:33:07 PKT" name="Tear_Down" finished-at="2022-09-29T12:33:07 PKT" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tear_Down -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage2_rejected2 -->
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_verification">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0]" started-at="2022-09-29T12:29:38 PKT" name="setup" finished-at="2022-09-29T12:29:56 PKT" duration-ms="17753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="App_Create_stage_Test()[pri:3, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0]" started-at="2022-09-29T12:29:56 PKT" name="App_Create_stage_Test" finished-at="2022-09-29T12:29:58 PKT" duration-ms="1793" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [https://stemexe-stag.web.app/groups/choose] but found [https://stemexe-stag.web.app/auth/login]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at Test.Test_Stemex_Application_Creation_with_stage_verification.App_Create_stage_Test(Test_Stemex_Application_Creation_with_stage_verification.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_stage_Test -->
+        <test-method signature="App_Create_verify_stage1()[pri:4, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0]" started-at="2022-09-29T12:29:58 PKT" name="App_Create_verify_stage1" finished-at="2022-09-29T12:30:09 PKT" duration-ms="11155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_verify_stage1 -->
+        <test-method signature="App_Create_verify_stage2()[pri:5, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0]" started-at="2022-09-29T12:30:09 PKT" name="App_Create_verify_stage2" finished-at="2022-09-29T12:30:17 PKT" duration-ms="8125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_verify_stage2 -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_verification@7e19ebf0]" started-at="2022-09-29T12:30:17 PKT" name="Tear_Down" finished-at="2022-09-29T12:30:17 PKT" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tear_Down -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_verification -->
+      <class name="Test.Test_Log_In_Stemex">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Log_In_Stemex@6aa61224]" started-at="2022-09-29T12:24:46 PKT" name="setup" finished-at="2022-09-29T12:25:17 PKT" duration-ms="31023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Test_Stemex_Log_In_with_wrong_credentials()[pri:1, instance:Test.Test_Log_In_Stemex@6aa61224]" started-at="2022-09-29T12:25:17 PKT" name="Test_Stemex_Log_In_with_wrong_credentials" finished-at="2022-09-29T12:25:26 PKT" duration-ms="8991" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Stemex_Log_In_with_wrong_credentials -->
+        <test-method signature="Test_Stemex_Log_In()[pri:2, instance:Test.Test_Log_In_Stemex@6aa61224]" started-at="2022-09-29T12:25:26 PKT" name="Test_Stemex_Log_In" finished-at="2022-09-29T12:25:49 PKT" duration-ms="23131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Stemex_Log_In -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Log_In_Stemex@6aa61224]" started-at="2022-09-29T12:25:49 PKT" name="Tear_Down" finished-at="2022-09-29T12:25:50 PKT" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tear_Down -->
+      </class> <!-- Test.Test_Log_In_Stemex -->
+      <class name="Test.Test_Stemex_Application_Creation_with_stage_rejected">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@2474f125]" started-at="2022-09-29T12:30:17 PKT" name="setup" finished-at="2022-09-29T12:30:52 PKT" duration-ms="34354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="App_Create_stage_Test()[pri:6, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@2474f125]" started-at="2022-09-29T12:30:52 PKT" name="App_Create_stage_Test" finished-at="2022-09-29T12:32:04 PKT" duration-ms="72689" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_stage_Test -->
+        <test-method signature="App_Create_verify_stage1_rejected()[pri:7, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@2474f125]" started-at="2022-09-29T12:32:04 PKT" name="App_Create_verify_stage1_rejected" finished-at="2022-09-29T12:32:12 PKT" duration-ms="8120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- App_Create_verify_stage1_rejected -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Application_Creation_with_stage_rejected@2474f125]" started-at="2022-09-29T12:32:12 PKT" name="Tear_Down" finished-at="2022-09-29T12:32:13 PKT" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tear_Down -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage_rejected -->
+      <class name="Test.Test_Stemex_Search_Filters">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:26:17 PKT" name="setup" finished-at="2022-09-29T12:26:29 PKT" duration-ms="11758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Stemp_Ex_Search_Test_By_Status_On_All_Tab()[pri:4, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:26:29 PKT" name="Stemp_Ex_Search_Test_By_Status_On_All_Tab" finished-at="2022-09-29T12:27:54 PKT" duration-ms="85274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_Test_By_Status_On_All_Tab -->
+        <test-method signature="Stemp_Ex_Search_Test_By_Status_On_Mine_Tab()[pri:5, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:27:54 PKT" name="Stemp_Ex_Search_Test_By_Status_On_Mine_Tab" finished-at="2022-09-29T12:28:16 PKT" duration-ms="22122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_Test_By_Status_On_Mine_Tab -->
+        <test-method signature="Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record()[pri:6, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:28:16 PKT" name="Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record" finished-at="2022-09-29T12:29:09 PKT" duration-ms="52174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_by_Newset_First_Record_and_Oldest_First_Record -->
+        <test-method signature="Stemp_Ex_Search_by_Definition_On_All_Tab()[pri:7, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:09 PKT" name="Stemp_Ex_Search_by_Definition_On_All_Tab" finished-at="2022-09-29T12:29:16 PKT" duration-ms="7576" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_All_Tab -->
+        <test-method signature="Stemp_Ex_Search_Test_Record_On_All_Tab()[pri:8, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:16 PKT" name="Stemp_Ex_Search_Test_Record_On_All_Tab" finished-at="2022-09-29T12:29:19 PKT" duration-ms="2347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_All_Tab -->
+        <test-method signature="Stemp_Ex_Search_by_Definition_On_Mine_Tab()[pri:9, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:19 PKT" name="Stemp_Ex_Search_by_Definition_On_Mine_Tab" finished-at="2022-09-29T12:29:27 PKT" duration-ms="7997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_Mine_Tab -->
+        <test-method signature="Stemp_Ex_Search_Test_Record_On_Mine_Tab()[pri:10, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:27 PKT" name="Stemp_Ex_Search_Test_Record_On_Mine_Tab" finished-at="2022-09-29T12:29:28 PKT" duration-ms="1802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_Mine_Tab -->
+        <test-method signature="Stemp_Ex_Search_by_Definition_On_Action_Tab()[pri:11, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:28 PKT" name="Stemp_Ex_Search_by_Definition_On_Action_Tab" finished-at="2022-09-29T12:29:36 PKT" duration-ms="7937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_by_Definition_On_Action_Tab -->
+        <test-method signature="Stemp_Ex_Search_Test_Record_On_Action_Tab()[pri:12, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:36 PKT" name="Stemp_Ex_Search_Test_Record_On_Action_Tab" finished-at="2022-09-29T12:29:38 PKT" duration-ms="1791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Stemp_Ex_Search_Test_Record_On_Action_Tab -->
+        <test-method is-config="true" signature="Tear_Down()[pri:0, instance:Test.Test_Stemex_Search_Filters@3e6f3f28]" started-at="2022-09-29T12:29:38 PKT" name="Tear_Down" finished-at="2022-09-29T12:29:38 PKT" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tear_Down -->
+      </class> <!-- Test.Test_Stemex_Search_Filters -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

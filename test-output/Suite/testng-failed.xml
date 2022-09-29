@@ -3,6 +3,20 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="Test.Test_Stemex_Application_Creation">
+        <methods>
+          <include name="App_Create_Test"/>
+          <include name="Tear_Down"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Application_Creation -->
+      <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2">
+        <methods>
+          <include name="setup"/>
+          <include name="Tear_Down"/>
+          <include name="App_Create_stage_Test"/>
+        </methods>
+      </class> <!-- Test.Test_Stemex_Application_Creation_with_stage2_rejected2 -->
       <class name="Test.Test_Stemex_Application_Creation_with_stage_verification">
         <methods>
           <include name="setup"/>
