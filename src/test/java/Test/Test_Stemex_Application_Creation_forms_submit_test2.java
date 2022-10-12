@@ -233,7 +233,7 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
 		app_obj.click_on_all_date_time_fields();
-		Thread.sleep(400000);
+		
 		}
 		catch(Exception e2)
 		   {
