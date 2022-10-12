@@ -1,17 +1,23 @@
 package Utility;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 import java.io.IOException;
 
 import java.sql.Timestamp;
 import java.time.Duration;
-
+import java.time.Instant;
 import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,6 +32,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Predicate;
 import com.paulhammant.ngwebdriver.NgWebDriver;
+
+import dev.failsafe.Timeout;
+import io.netty.util.internal.ThreadLocalRandom;
 
 //import com.paulhammant.ngwebdriver.NgWebDriver;
 
@@ -90,7 +99,8 @@ public class Common_class {
 		}
 
 	}
-
+	
+ 
 	public void Explicit_wait_elements_visiblity(List<WebElement> list_element, int waittime) throws InterruptedException {
 		try
 		{
@@ -188,10 +198,18 @@ public class Common_class {
 	  JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click()", element);
   }
+	public void Scroll_into_View(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		//js.executeScript("arguments[0].scrollIntoView();", element);
+		js.executeScript("window.scrollBy(0,350)", "");
+	}
+	public void Scroll_by_Pixel(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,100)", "");
+	}
 	public void Scroll_To_Element(WebElement element) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
-
 	public void get_elements_text_click(List<WebElement> list_element, String text) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		
@@ -206,6 +224,81 @@ public class Common_class {
 				break;
 			}
 		}
+	}
+	public void get_elements_text_random(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        {  
+			String L=Random_Function.randomStringFromArr();
+        	list_element.get(i).sendKeys(L);
+        }
+			}
+	public void get_elements_text_random_validation(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        {  
+			String L=Random_Function.randomStringFromArrminvalue();
+        	list_element.get(i).sendKeys(L);
+        }
+			}
+	public void get_elements_email_text_random(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        { 
+			String L=Random_Function.randomemailFromArr();
+        	list_element.get(i).sendKeys(L);
+        }
+			}
+	public void randomemailFromArrValidation(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        { 
+		String L=Random_Function.randomemailFromArrValidation();
+    	list_element.get(i).sendKeys(L);
+        }
+		}
+	public void get_elements_link_text_random(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        {  
+			String L=Random_Function.randomURLFromArr();
+        	list_element.get(i).sendKeys(L);
+        }
+			}
+	public void all_date_click(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        {  
+			Thread.sleep(2000);
+        	list_element.get(i).click();
+        }
+			}
+
+public void get_random_number(List<WebElement> list_element) throws InterruptedException {
+for(int i=0;i<list_element.size();i++)
+{  
+	int L=Random_Function.randomintgenerate();
+	list_element.get(i).sendKeys(String.valueOf(L));
+}
+	}
+public void get_random_phone_number(List<WebElement> list_element) throws InterruptedException {
+for(int i=0;i<list_element.size();i++)
+{  
+	int L=Random_Function.randomintgenerate_phone_number();
+	list_element.get(i).sendKeys(String.valueOf(L));
+}
+	}
+	public void upload_file() throws AWTException
+	{
+		Robot rb = new Robot();
+    	
+    	// press Contol+V for pasting
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        
+        rb.keyPress(KeyEvent.VK_V);
+    
+       // release Contol+V for pasting
+       rb.keyRelease(KeyEvent.VK_CONTROL);
+       rb.keyRelease(KeyEvent.VK_V);
+    
+       // for pressing and releasing Enter
+       rb.keyPress(KeyEvent.VK_ENTER);
+       rb.keyRelease(KeyEvent.VK_ENTER);
+       System.out.print("presses1............");
 	}
 
 	public void Search_filters(List<WebElement> list_element, String text) throws InterruptedException
@@ -225,7 +318,58 @@ public class Common_class {
 
 		}
 	}
+public void send_date_on_list(List<WebElement> list_element) throws InterruptedException
+	
+	{
+		
+	for(int i=0;i<list_element.size();i++)
+    {  
+		
+		String L=Random_Function.random_date();
+		String F=Random_Function.randomStringFromTimevalue();
+		Explicit_wait_elementToBeVisible(list_element.get(i), 5);
+    	list_element.get(i).sendKeys(L);
+    	list_element.get(i).sendKeys(F);
+    }			
 
+		
+	}
+
+public void send_time_on_list(List<WebElement> list_element) throws InterruptedException
+
+{
+	
+for(int i=0;i<list_element.size();i++)
+{  
+	
+	String L=Random_Function.randomStringFromTimevalue();
+	Explicit_wait_elementToBeVisible(list_element.get(i), 5);
+	list_element.get(i).sendKeys(L);
+}			
+
+	
+}
+
+public void random_clicks(List<WebElement> list_element) throws InterruptedException
+
+{
+	
+	Random r = new Random();
+	int randomValue = r.nextInt(list_element.size()); //Getting a random value that is between 0 and (list's size)-1
+	list_element.get(randomValue).click(); //Clicking on the random item in the list.		
+	System.out.print(list_element.size()+"sizzzzzzzzzzzz");
+	
+}
+public void remove_atribute(List<WebElement> list_element) throws InterruptedException
+{
+	for (WebElement input : list_element) {
+	    ((JavascriptExecutor) driver).executeScript(
+	                "arguments[0].removeAttribute('readonly','readonly')",input);
+	}
+//	 JavascriptExecutor executor = (JavascriptExecutor)driver;
+//	 executor.executeScript("arguments[0].removeAttribute('readonly',0);", list_element); 
+
+}
 	public void Search_filters_compare(List<WebElement> list_element, String text) throws InterruptedException
 	
 	{
@@ -322,17 +466,12 @@ public class Common_class {
 	}
 	public void randomly_select(List<WebElement> option_select_list)
 	{
-//		JavascriptExecutor js = (JavascriptExecutor)driver;
-//		for (WebElement webElement : option_select_list) {
-//           
-//			js.executeScript("arguments[0].click()", webElement);
-//			}
-		//List <WebElement> listings = driver.findElements(By.cssSelector(""));
+
 		Random r = new Random();
 		System.out.print(option_select_list.size()+".....................sizeeeee");
 		int randomValue = r.nextInt(option_select_list.size()); //Getting a random value that is between 0 and (list's size)-1
 		option_select_list.get(randomValue).click();
-//		
+	
 		}
 	}
 

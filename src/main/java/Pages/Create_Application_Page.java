@@ -2,10 +2,15 @@ package Pages;
 
 
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
-
+import Utility.Test_Data_josn_itrator;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +20,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import Utility.Common_class;
+import Utility.Random_Function;
 import Utility.Test_Data;
 
 
@@ -26,8 +32,18 @@ public class Create_Application_Page extends Test_Data {
 	List<WebElement> choose_group;
 	@FindBy(xpath="//img[@src='assets/images/header/logo-stemexe.png']")
 	WebElement  stemex_logo;
+	@FindBy(xpath="//span[text()='Rating ']")
+	WebElement  rating;
+	@FindBy(xpath="(//mat-icon[text()='attach_file'])[1]")
+	WebElement  attachment;
+	@FindBy(xpath="(//span[contains(text(),'Upload Image')])[1]")
+	WebElement  attachment_img;
 	@FindBy(xpath="//mat-spinner")
 	WebElement  spinner;
+	@FindBy(xpath="//span[text()=' sample ']")
+	WebElement  sample_pdf;
+	@FindBy(xpath="//input[@data-placeholder='Phone Number']")
+	WebElement  phone_numer_field;
 	@FindBy(xpath="//a[@class='header-menu-item ng-star-inserted']//div//span")
 	List<WebElement> tab_list;
 	@FindBy(xpath="//a[@href='/pages/profile']")
@@ -97,10 +113,34 @@ public class Create_Application_Page extends Test_Data {
 	WebElement hint_icon;
 	@FindBy(xpath="(//input[@type='number'])[2]")	
 	WebElement min_max_field;
-	@FindBy(xpath="//mat-error[text()=' Value must be between 6 and 70 ']")	
+	@FindBy(xpath="//mat-error[text()=' Value must be between 4 and 7 ']")	
 	WebElement min_max_error;
+	@FindBy(xpath="//mat-error[text()=' Please enter valid Number ']")	
+	WebElement phone_no_error;
 	@FindBy(xpath="//button//span[text()='Save']")	
 	WebElement save_btn_scroll;
+	@FindBy(xpath="//mat-label[text()='Phone Number ']")	
+	WebElement attach_file;
+	@FindBy(xpath="//input[@data-placeholder='Currency']")	
+	WebElement currency_exist;
+	@FindBy(xpath="(//span[text()='PKR'])[1]")	
+	WebElement currency_correct;
+	@FindBy(xpath="//input[@data-type=1]")
+	List<WebElement> text_type_list;
+	@FindBy(xpath="//input[@data-type=10]")
+	List<WebElement> text_type_email_list;
+	@FindBy(xpath="//textarea[@data-type=2]")
+	List<WebElement> long_text_type_list;
+	@FindBy(xpath="//input[@data-type=3]")
+	List<WebElement> number_list;
+	@FindBy(xpath="//input[@data-type=11]")
+	List<WebElement> currency_fields;
+	@FindBy(xpath="//input[@data-type=26]")
+	List<WebElement> price_fields;
+	@FindBy(xpath="//input[@data-type=16]")
+	List<WebElement> phone_list;
+	@FindBy(xpath="//input[@data-type=15]")
+	List<WebElement> link_list;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -118,10 +158,15 @@ public class Create_Application_Page extends Test_Data {
 	public boolean default_Date_exist=false;
 	public boolean hint_icon_exist=false;
 	public boolean min_max_error_bool=false;
+	public boolean sample_pdf_uploaded_successfully=false;
+	public boolean	phone_min_max_error_bool=false;
+	public boolean	rating_bool=false;
+	public boolean	currency_exist_bool=false;
+	public boolean	currency_correct_bool=false;
     public Create_Application_Page(WebDriver driver) throws FileNotFoundException, IOException, ParseException {
     	
     	this.driver = driver;
-    	Data();
+    	
     	PageFactory.initElements(driver,this);
     
     	
@@ -147,7 +192,7 @@ public class Create_Application_Page extends Test_Data {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
       	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-      	//com.js_click(appication_counter_on_start); 
+      	com.js_click(appication_counter_on_start); 
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
       	counter_before_string=appication_counter_on_start.getText();
@@ -252,42 +297,83 @@ public class Create_Application_Page extends Test_Data {
     }
     public void verify_min_max_length_of_short_Text() throws InterruptedException
     {
-    	//add values in short text to check min length 4 and max length  10 are working fine
-    	//min length should not be less than 4
+    	//form submitting in all short text
     	Common_class com=new Common_class(driver);
-        com.Explicit_wait_elements_visiblity(short_text_input, 10);
-    	short_text_input.get(0).sendKeys("AB");
-    	com.Explicit_wait_elementToBeClickable(min_length_error, 5);
-    	if(min_length_error.isDisplayed())
-    	{
-    		min_length_error_bol=true;
-    	}
-    	com.Explicit_wait_elements_visiblity(short_text_input, 10);
-    	short_text_input.get(0).sendKeys("ABcd12324343243242343242344232423432");
-    	String typeValue=short_text_input.get(0).getAttribute("maxlength");
-    	int max_value=com.counter_int(typeValue);
-    	if(max_value==10)
-    	{
-    		max_length_error_bol=true;
-    	}
-    	
+        com.Explicit_wait_elements_visiblity(text_type_list, 10);
+        com.get_elements_text_random_validation(text_type_list);
+        	
     }
-    public void verify_required_field_working_fine() throws InterruptedException
+    public void verify_sending_data_into_all_email_field() throws InterruptedException
     {
     	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
     	//clicking on require click 
-    	com.Explicit_wait_elementToBeClickable(require_click, 4);
-    	require_click.click();
-    	//clicking on empty click
-    	com.Explicit_wait_elementToBeClickable(require_click, 4);
-    	empty_click.click();  
-    	com.Explicit_wait_elementToBeClickable(require_error, 4);
-    	//waiting for to show required error 
-        if(require_error.isDisplayed())
-        {
-        	required_field=true;
-        }
+    	com.Explicit_wait_elements_visiblity(text_type_email_list, 10);
+    	com.get_elements_email_text_random(text_type_email_list);
+       
+    }
+    public void verify_sending_data_into_all_long_fields() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(long_text_type_list, 10);
+    	com.get_elements_text_random(long_text_type_list);
+       
+    }
+    public void verify_sending_data_into_all_numbers() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(number_list, 10);
+    	com.get_random_number(number_list);
+       
+    }
+    public void verify_currency_data_into_all_fields() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(currency_fields, 10);
+    	com.get_random_number(currency_fields);
+       
+    }
+    public void verify_price_data_into_all_fields() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(price_fields, 10);
+    	com.get_random_number(price_fields);
+       
+    }
+    public void verify_sending_data_into_all_phone_numbers() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(phone_list, 10);
+    	com.get_random_phone_number(phone_list);
+       
+    }
+    public void verify_sending_data_into_all_links() throws InterruptedException
+    {
+    	//without required field form submit should not proceed
+    	Common_class com=new Common_class(driver);
+    	//clicking on require click 
+    	com.Explicit_wait_elements_visiblity(link_list, 10);
+    	com.get_elements_link_text_random(link_list);
+    	com.Explicit_wait_elements_visiblity(submit_btn, 3);
+    	com.element_to_be_stable(1000);
+        com.get_elements_text_click(submit_btn, "SUBMIT");
+        com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
+        com.Mouse_to_element(move_to_contianer);    
+        done_btn.click();  
+        com.Explicit_wait_elementToBeInvisible(spinner, 30);
+       // com.Explicit_wait_elementToBeVisible(appication, 5);
+    	//appication.click();
+    	//com.Explicit_wait_elementToBeVisible(content_load, 50);
        
     }
     public void verify_read_only_field()
@@ -308,9 +394,9 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elementToBeStale(select_today_date, 1);
     	select_today_date.click();
     	//opening the calendar the calendar again 
-    	com.Explicit_wait_elementToBeClickable(calendar_open, 5);
+    	com.Explicit_wait_elementToBeClickable(calendar_open, 2);
     	calendar_open.click();
-    	com.Explicit_wait_elementToBeVisible(calendar_contianer, 10);
+    	com.Explicit_wait_elementToBeVisible(calendar_contianer, 5);
     	com.Mouse_to_element(calendar_contianer);
     	//comparing today date with selected date
     	com.Explicit_wait_elementToBeStale(select_today_date_one, 1);
@@ -343,23 +429,116 @@ public class Create_Application_Page extends Test_Data {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeVisible(min_max_field, 4);
     	//if we put value more than 70 it must gives error
-    	com.Explicit_wait_elementToBeVisible(save_btn_scroll, 4);
-    	com.Scroll_To_Element(min_max_field);
+    	com.Scroll_into_View(min_max_field);
+    	com.Explicit_wait_elementToBeClickable(min_max_field, 4);
     	min_max_field.sendKeys("12334");
-    	com.Explicit_wait_elementToBeVisible(empty_click, 5);;
+    	com.Explicit_wait_elementToBeVisible(empty_click, 5);
     	empty_click.click();
-    	com.Explicit_wait_elementToBeVisible(min_max_error, 4);
+       	com.Explicit_wait_elementToBeVisible(min_max_error, 4);
     	if(min_max_error.isDisplayed()==true)
     	{
     		min_max_error_bool=true;
     		System.out.print("show me maxxx giving errror");
-    		com.highLighterMethod(driver, min_max_field);
-    		Thread.sleep(8000);
-  
-    	}
+    		com.highLighterMethod(driver, min_max_field);  
+   	}
+    }
+    	public void Verify_Phone_Field() throws InterruptedException
+        {
+        	Common_class com=new Common_class(driver);
+        	com.Explicit_wait_elementToBeVisible(phone_numer_field, 4);
+        	com.Scroll_into_View(phone_numer_field);
+        	com.Explicit_wait_elementToBeClickable(phone_numer_field, 4);
+        	phone_numer_field.sendKeys("ABCDEF");
+           	com.Explicit_wait_elementToBeVisible(phone_no_error, 4);
+        	if(phone_no_error.isDisplayed()==true)
+        	{
+        		phone_min_max_error_bool=true;
+        		com.highLighterMethod(driver, phone_numer_field);  
+       	}
     	
     }
+    	public void Verify_Attachment_working_fine() throws InterruptedException, AWTException
+        {
+        	Common_class com=new Common_class(driver);
+        	com.Explicit_wait_elementToBeVisible(attachment, 4);
+        	//if we put value more than 70 it must gives error
+        	com.Scroll_into_View(attachment);
+        	com.element_to_be_stable(3000);
+        	com.Explicit_wait_elementToBeClickable(attachment, 4);
+        	attachment.click();
+        	StringSelection str = new StringSelection("\"C:\\Users\\usamasoh\\Documents\\sample.pdf\"");
+        	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+        	com.upload_file();
+        	com.Explicit_wait_elementToBeVisible(sample_pdf, 4);
+        	if(sample_pdf.isDisplayed())
+        	{
+        		sample_pdf_uploaded_successfully=true;
+        	}
+    	
+    }
+    	public void Verify_Image_Attachment_working_fine() throws InterruptedException, AWTException
+        {
+        	Common_class com=new Common_class(driver);
+        	com.Explicit_wait_elementToBeVisible(attachment_img, 4);
+        	//if we put value more than 70 it must gives error
+        	com.Scroll_into_View(attachment_img);
+        	com.Explicit_wait_elementToBeClickable(attachment_img, 4);
+        	com.element_to_be_stable(3000);
+        	com.Explicit_wait_elementToBeClickable(attachment_img, 4);
+        	attachment_img.click();
+        	StringSelection str1 = new StringSelection("\"C:\\Users\\usamasoh\\Documents\\PNG_transparency_demonstration_1.png\"");
+        	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
+        	com.upload_file();
+        	Thread.sleep(200);
+        	//com.Explicit_wait_elementToBeVisible(sample_pdf, 4);
+//        	if(sample_pdf.isDisplayed())
+//        	{
+//        		sample_pdf_uploaded_successfully=true;
+//        	}
+    	
+    }
+    	public void Verify_Rating_working_fine() throws InterruptedException, AWTException
+        {
+        	Common_class com=new Common_class(driver);
+        	com.Explicit_wait_elementToBeVisible(rating, 4);
+        	//if we put value more than 70 it must gives error
+        	com.Scroll_into_View(rating);
+        	com.Explicit_wait_elementToBeClickable(rating, 4);
+        	com.element_to_be_stable(3000);
+        	if(rating.isDisplayed())
+        	{
+        		rating_bool=true;
+   
+        	}
+    	
+    }
+    	public void Verify_Currency_working_fine() throws InterruptedException, AWTException
+        {
+        	Common_class com=new Common_class(driver);
+        	com.Explicit_wait_elementToBeVisible(currency_exist, 4);
+        	//if we put value more than 70 it must gives error
+        	com.Scroll_into_View(currency_exist);
+        	com.Explicit_wait_elementToBeClickable(currency_exist, 4);
+        	com.element_to_be_stable(3000);
+        	if(currency_exist.isDisplayed())
+        	{
+        		currency_exist_bool=true;
+        		System.out.print("cur......");
+   
+        	}
+        	if(currency_correct.isDisplayed())
+        	{
+        		currency_correct_bool=true;
+        		System.out.print("cur2........");
+        		   
+        	}
+    	
+    }
+    	
 
 }
+
+
+
 
 
