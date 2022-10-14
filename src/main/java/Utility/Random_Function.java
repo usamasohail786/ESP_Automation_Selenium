@@ -42,6 +42,12 @@ public class Random_Function {
         String randomElem = arr[randIdx];
         return randomElem;
     }
+	public static String randomLookDefinationFromArr() {
+        String[] arr = {"NUM94842 - Forms Testing", "NUM94866 - Forms Testing", "NUM94842 - Forms Testing", "NUM94877 - Forms Testing", "NUM94878 - Forms Testing", "NUM95601 - Forms Testing","NUM95602 - Forms Testing","NUM95643 - Forms Testing", "NUM95645 - Forms Testing", "NUM95646 - Forms Testing", "NUM95730 - Forms Testing"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
 	public static String randomStringFromArrminvalue() {
         String[] arr = {"Car", "Bike", "Bus", "Train", "Swing", "Men","Plane","PIA", "Mike", "Ali", "UK", "Usa", "Oman","UAE"};
         int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
@@ -56,6 +62,18 @@ public class Random_Function {
     }
 	public static String randomemailFromArr() {
         String[] arr = {"usamasohail@gmail.com", "usamasohail@exceed.com", "AsadAli@exceed.com", "AhmadAli@exceed.com", "MuhammadAli@gmail.com", "MujjedAli@gmail.com","MuhammadSaif@gmail.com","osamasohail@gmail.com", "osamasohail@exceed.com", "sadAli@exceed.com", "Ali@exceed.com", "MuhammadFaiz@gmail.com", "AAli@gmail.com","MuhammadJaveed@gmail.com"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+	public static String randomfile() {
+        String[] arr = {"C:\\\\Users\\\\usamasoh\\\\Documents\\\\sample.pdf", "C:\\Users\\usamasoh\\Documents\\Printable List for Grocery.pdf", "C:\\Users\\usamasoh\\Documents\\Beauty Price List.pdf", "C:\\Users\\usamasoh\\Documents\\Healthy Grocery List.pdf"};
+        int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
+        String randomElem = arr[randIdx];
+        return randomElem;
+    }
+	public static String randomeimages() {
+        String[] arr = {"C:\\\\Users\\\\usamasoh\\\\Documents\\\\exceed-dubai-lounge.jpg", "C:\\Users\\usamasoh\\Documents\\images.jpg", "C:\\Users\\usamasoh\\Documents\\download.png", "C:\\Users\\usamasoh\\Documents\\images (4).jpg", "C:\\Users\\usamasoh\\Documents\\images (3).jpg"};
         int randIdx = ThreadLocalRandom.current().nextInt(arr.length);
         String randomElem = arr[randIdx];
         return randomElem;

@@ -225,26 +225,62 @@ public class Common_class {
 			}
 		}
 	}
-	public void get_elements_text_random(List<WebElement> list_element) throws InterruptedException {
+	public int get_elements_text_random(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
         {  
 			String L=Random_Function.randomStringFromArr();
         	list_element.get(i).sendKeys(L);
         }
+		return list_element.size();
 			}
-	public void get_elements_text_random_validation(List<WebElement> list_element) throws InterruptedException {
+	public int get_elements_Defination_look_up_fields(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        {  
+			String L=Random_Function.randomLookDefinationFromArr();
+        	list_element.get(i).sendKeys(L);
+        }
+		return list_element.size();
+			}
+	
+	public int get_elements_text_random_validation(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
         {  
 			String L=Random_Function.randomStringFromArrminvalue();
         	list_element.get(i).sendKeys(L);
         }
+		return list_element.size();
 			}
-	public void get_elements_email_text_random(List<WebElement> list_element) throws InterruptedException {
+	public int get_elements_email_text_random(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
         { 
 			String L=Random_Function.randomemailFromArr();
         	list_element.get(i).sendKeys(L);
         }
+		return list_element.size();
+			}
+	public int file_attach_randomly(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        { 
+			String L=Random_Function.randomfile();
+        	list_element.get(i).sendKeys(L);
+        }
+		return list_element.size();
+			}
+	public int image_attach_randomly(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        { 
+			String L=Random_Function.randomeimages();
+        	list_element.get(i).sendKeys(L);
+        }
+		return list_element.size();
+			}
+	public int gallery_attach_randomly(List<WebElement> list_element) throws InterruptedException {
+		for(int i=0;i<list_element.size();i++)
+        { 
+			String L=Random_Function.randomeimages();
+        	list_element.get(i).sendKeys(L);
+        }
+		return list_element.size();
 			}
 	public void randomemailFromArrValidation(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
@@ -253,34 +289,38 @@ public class Common_class {
     	list_element.get(i).sendKeys(L);
         }
 		}
-	public void get_elements_link_text_random(List<WebElement> list_element) throws InterruptedException {
+	public int get_elements_link_text_random(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
         {  
 			String L=Random_Function.randomURLFromArr();
         	list_element.get(i).sendKeys(L);
         }
+		return list_element.size();
 			}
-	public void all_date_click(List<WebElement> list_element) throws InterruptedException {
+	public int all_date_click(List<WebElement> list_element) throws InterruptedException {
 		for(int i=0;i<list_element.size();i++)
         {  
 			Thread.sleep(2000);
         	list_element.get(i).click();
         }
+		return list_element.size();
 			}
 
-public void get_random_number(List<WebElement> list_element) throws InterruptedException {
+public int get_random_number(List<WebElement> list_element) throws InterruptedException {
 for(int i=0;i<list_element.size();i++)
 {  
 	int L=Random_Function.randomintgenerate();
 	list_element.get(i).sendKeys(String.valueOf(L));
 }
+return list_element.size();
 	}
-public void get_random_phone_number(List<WebElement> list_element) throws InterruptedException {
+public int get_random_phone_number(List<WebElement> list_element) throws InterruptedException {
 for(int i=0;i<list_element.size();i++)
 {  
 	int L=Random_Function.randomintgenerate_phone_number();
 	list_element.get(i).sendKeys(String.valueOf(L));
 }
+return list_element.size();
 	}
 	public void upload_file() throws AWTException
 	{
@@ -318,7 +358,7 @@ for(int i=0;i<list_element.size();i++)
 
 		}
 	}
-public void send_date_on_list(List<WebElement> list_element) throws InterruptedException
+public int send_date_on_list(List<WebElement> list_element) throws InterruptedException
 	
 	{
 		
@@ -331,7 +371,7 @@ public void send_date_on_list(List<WebElement> list_element) throws InterruptedE
     	list_element.get(i).sendKeys(L);
     	list_element.get(i).sendKeys(F);
     }			
-
+return list_element.size();
 		
 	}
 
@@ -355,10 +395,29 @@ public void random_clicks(List<WebElement> list_element) throws InterruptedExcep
 {
 	
 	Random r = new Random();
-	int randomValue = r.nextInt(list_element.size()); //Getting a random value that is between 0 and (list's size)-1
+	int randomValue = r.nextInt(3); //Getting a random value that is between 0 and (list's size)-1
 	list_element.get(randomValue).click(); //Clicking on the random item in the list.		
-	System.out.print(list_element.size()+"sizzzzzzzzzzzz");
+	System.out.print(list_element.size()+"multi");
 	
+}
+public void click_while(WebElement element,List<WebElement> form) throws InterruptedException
+
+{
+	System.out.print("form click here");
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	for (int i=0;i<3;i++) {
+
+		String name = form.get(i).getText();
+		js.executeScript("arguments[0].click()", element);
+		System.out.print(name+"show me namesss.........");
+		if (name=="Form#3") {		
+			System.out.print("form click");
+			break;
+
+		}
+
+	}
+			
 }
 public void remove_atribute(List<WebElement> list_element) throws InterruptedException
 {

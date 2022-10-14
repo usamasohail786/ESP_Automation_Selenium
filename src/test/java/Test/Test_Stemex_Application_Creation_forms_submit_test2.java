@@ -241,7 +241,7 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 			e2.getMessage();
 		   }
 	}
-	@org.testng.annotations.Test(priority = 13)
+	@org.testng.annotations.Test(priority = 14)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Fill All dates Randomly")
 	@Feature("Date")
@@ -251,6 +251,99 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
 		app_obj.randomly_click_rating();
+	
+		
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 15)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Submit All Look Up Fields")
+	@Feature("Look Up Fields")
+	public void App_Test_Look_Fields() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.verify_sending_data_into_all_look_up_fields();
+	
+		
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 16)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Attachment filled")
+	@Feature("Attachment Upload")
+	public void App_Test_Attachment_uploads() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.verify_upload_all_the_attachment();
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 17)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("All Images Upload ")
+	@Feature("Image Upload")
+	public void App_Test_Image_uploads() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.verify_upload_all_the_Image();
+	
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 18)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("All Images Upload in Gallery ")
+	@Feature("Image Upload in Gallery")
+	public void App_Test_Gallery_uploads() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.verify_upload_all_the_Image_in_gallery();
+		Thread.sleep(50000000);
+		
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 4)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Add Multi Sections Randomly")
+	@Feature("Add Multi Sections")
+	public void App_Test_Add_Multi_Sections() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.verify_adding_multi_section();
+	
 	
 		
 		}

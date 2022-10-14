@@ -30,11 +30,16 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	WebDriver driver = null;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;
+	@FindBy(xpath="//input[@placeholder]")
+	List<WebElement> data_not_filled_already;
 	@FindBy(xpath="//img[@src='assets/images/header/logo-stemexe.png']")
 	WebElement  stemex_logo;
-	@FindBy(xpath="/html/body/xcdrs-app-root/div/xcdrs-pages-layout/div/div/app-add-applicant-request-inpage/div/div/div/div/div/div/div/app-submit-applicant-request/div/div/div/div[1]/div/div[2]/app-custom-fields-form/div/div/div/div[1]/div/app-custom-field/form/div/div[1]/div/xcdrs-esp-date-picker/mat-form-field/div/div[1]/div[4]/div/div/mat-datepicker-toggle/button/span[1]")
-	WebElement  date_click;
+	@FindBy(xpath="(//xcdrs-appliation-details-card)[1]")
+	WebElement  first_card;
+	@FindBy(xpath="//div[text()=\"Details \"]")
+	WebElement detail;
 	@FindBy(xpath="//span[text()='Rating ']")
+	
 	WebElement  rating;
 	@FindBy(xpath="(//mat-icon[text()='attach_file'])[1]")
 	WebElement  attachment;
@@ -131,8 +136,20 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	WebElement currency_correct;
 	@FindBy(xpath="//input[@data-type=1]")
 	List<WebElement> text_type_list;
+	@FindBy(xpath="//mat-select[@data-type=13]")
+	List<WebElement> look_up_list;
+	@FindBy(xpath="//*[contains(text(),'Form#')]")
+	List<WebElement> form;
+	@FindBy(xpath="//button[@data-action='addMultiField']")
+	WebElement add_action_list;
 	@FindBy(xpath="//input[@data-type=10]")
 	List<WebElement> text_type_email_list;
+	@FindBy(xpath="//input[@data-type=7]")
+	List<WebElement> file_upload_list;
+	@FindBy(xpath="//input[@data-type=23]")
+	List<WebElement> image_upload_list;
+	@FindBy(xpath="//input[@data-type=27]")
+	List<WebElement> gallery_image_upload_list;
 	@FindBy(xpath="//input[@data-type=4]")	
 	List<WebElement> date_list;
 	@FindBy(xpath="//input[@data-type=8]")	
@@ -310,79 +327,149 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	}
     	return Mine_tab;
     }
-    public void verify_sending_data_into_all_short_text() throws InterruptedException
+    public int verify_sending_data_into_all_short_text() throws InterruptedException
     {
     	//form submitting in all short text
+    	
     	Common_class com=new Common_class(driver);
         com.Explicit_wait_elements_visiblity(text_type_list, 10);
-        com.get_elements_text_random(text_type_list);
+        int size_date=com.get_elements_text_random(text_type_list);
+    	return size_date;	
+    		
+    }
+    public int verify_sending_data_into_all_look_up_fields() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver);
+        com.Explicit_wait_elements_visiblity(look_up_list, 10);
+        int size_look_up=com.get_elements_Defination_look_up_fields(look_up_list);
+        return size_look_up;
         	
     }
-    public void verify_sending_data_into_all_email_field() throws InterruptedException
+    public void verify_adding_multi_section() throws InterruptedException
     {
-    	//without required field form submit should not proceed
+    	
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
+        com.Explicit_wait_elementToBeClickable(add_action_list, 10);
+        com.click_while(add_action_list,form);
+        Thread.sleep(3000);
+        
+    		
+
+    		
+    	
+
+        	
+    }
+    public int verify_sending_data_into_all_email_field() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elements_visiblity(text_type_email_list, 10);
-    	com.get_elements_email_text_random(text_type_email_list);
+    	int size_email=com.get_elements_email_text_random(text_type_email_list);
+    	return size_email;
+    		
+    }
+    public int verify_upload_all_the_attachment() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver); 
+    	com.Explicit_wait_elements_visiblity(file_upload_list, 10);
+    	int size_images=com.file_attach_randomly(file_upload_list);
+    	return size_images;
        
     }
-    public void verify_sending_data_into_all_long_fields() throws InterruptedException
+    public int verify_upload_all_the_Image() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver); 
+    	com.Explicit_wait_elements_visiblity(image_upload_list, 10);
+    	int size_files=com.image_attach_randomly(image_upload_list);
+    	return size_files;
+       
+    }
+    public void verify_upload_all_the_Image_in_gallery() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver); 
+    	for(int i=0;i<2;i++)
+    	{
+    	com.Explicit_wait_elements_visiblity(gallery_image_upload_list, 10);
+    	com.gallery_attach_randomly(gallery_image_upload_list);
+    	}
+    
+      com.Explicit_wait_elementToBeVisible(submit_btn, 20);
+ 	  com.element_to_be_stable(1000);
+      com.js_click(submit_btn);
+     com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
+     com.Mouse_to_element(move_to_contianer);    
+     done_btn.click();  
+     com.Explicit_wait_elementToBeInvisible(spinner, 30);
+     com.Explicit_wait_elementToBeClickable(first_card, 5);
+     com.js_click(first_card);
+     com.Explicit_wait_elementToBeInvisible(spinner, 30);
+     com.Explicit_wait_elementToBeClickable(detail, 5);
+     com.js_click(detail);
+       
+    }
+    public int verify_sending_data_into_all_long_fields() throws InterruptedException
     {
     	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
     	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(long_text_type_list, 10);
-    	com.get_elements_text_random(long_text_type_list);
+    	int long_fields=com.get_elements_text_random(long_text_type_list);
+    	return long_fields;
        
     }
-    public void verify_sending_data_into_all_numbers() throws InterruptedException
+    public int verify_sending_data_into_all_numbers() throws InterruptedException
     {
     	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
     	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(number_list, 10);
-    	com.get_random_number(number_list);
+    	int Size=com.get_random_number(number_list);
+    	return Size;
        
     }
-    public void verify_currency_data_into_all_fields() throws InterruptedException
+    public int verify_currency_data_into_all_fields() throws InterruptedException
     {
     	
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elements_visiblity(currency_fields, 10);
-    	com.get_random_number(currency_fields);
+    	int Currency_Size=com.get_random_number(currency_fields);
+    	return Currency_Size;
        
     }
-    public void verify_price_data_into_all_fields() throws InterruptedException
+    public int verify_price_data_into_all_fields() throws InterruptedException
     {
     	
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elements_visiblity(price_fields, 10);
-    	com.get_random_number(price_fields);
+    	int price_size=com.get_random_number(price_fields);
+    	return price_size;
        
     }
-    public void verify_sending_data_into_all_phone_numbers() throws InterruptedException
+    public int verify_sending_data_into_all_phone_numbers() throws InterruptedException
     {
     	
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elements_visiblity(phone_list, 10);
-    	com.get_random_phone_number(phone_list);
+    	int phone_size=com.get_random_phone_number(phone_list);
+    	return phone_size;
        
     }
-    public void verify_sending_data_into_all_links() throws InterruptedException
+    public int verify_sending_data_into_all_links() throws InterruptedException
     {
     	
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elements_visiblity(link_list, 10);
-    	com.get_elements_link_text_random(link_list);
-
-       // com.Explicit_wait_elementToBeVisible(appication, 5);
-    	//appication.click();
-    	//com.Explicit_wait_elementToBeVisible(content_load, 50);
+    	int links_size=com.get_elements_link_text_random(link_list);
+        return links_size;
        
     }
     public void verify_read_only_field()
@@ -390,30 +477,24 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	//Read only field 	
     	Assert.assertTrue(read_only_field.getAttribute("disabled").equals("true"),"Element ReadOnly");
     }
-    public void click_on_all_dates_fields() throws InterruptedException
+    public int click_on_all_dates_fields() throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	System.out.print("datesssssssssssssssssssssssssssssssssssssssssssss");
     	com.Explicit_wait_elements_visiblity(date_list, 4);
     	
     	com.remove_atribute(date_list);
-    	com.send_date_on_list(date_list);
+    	int date_size=com.send_date_on_list(date_list);
+    	return date_size;
     	
     	
     }
-    public void click_on_all_date_time_fields() throws InterruptedException
+    public int click_on_all_date_time_fields() throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elements_visiblity(date_time_list, 4);	
     	com.remove_atribute(date_time_list);
-    	com.send_date_on_list(date_time_list);
-    	com.Explicit_wait_elementToBeVisible(submit_btn, 3);
-   	    com.element_to_be_stable(1000);
-        com.js_click(submit_btn);
-       com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
-       com.Mouse_to_element(move_to_contianer);    
-       done_btn.click();  
-       com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	int date_time_size=com.send_date_on_list(date_time_list);
+    	return date_time_size;
     	
     	
     }
