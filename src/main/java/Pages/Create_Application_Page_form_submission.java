@@ -135,41 +135,87 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	@FindBy(xpath="(//span[text()='PKR'])[1]")	
 	WebElement currency_correct;
 	@FindBy(xpath="//input[@data-type=1]")
+	public
 	List<WebElement> text_type_list;
+	@FindBy(xpath="//div[@data-type=1]")
+	public
+	List<WebElement> text_type_list_after_submit;
 	@FindBy(xpath="//mat-select[@data-type=13]")
+	public
 	List<WebElement> look_up_list;
+	@FindBy(xpath="//div[@data-type=13]")
+	public
+	List<WebElement> look_up_list_after_submit;
 	@FindBy(xpath="//*[contains(text(),'Form#')]")
 	List<WebElement> form;
 	@FindBy(xpath="//button[@data-action='addMultiField']")
 	WebElement add_action_list;
 	@FindBy(xpath="//input[@data-type=10]")
+	public
 	List<WebElement> text_type_email_list;
+	@FindBy(xpath="//input[@data-type=10]")
+	public
+	List<WebElement> text_type_email_list_after_submit;
 	@FindBy(xpath="//input[@data-type=7]")
+	public
 	List<WebElement> file_upload_list;
+	@FindBy(xpath="//div[@data-type=7]")
+	public
+	List<WebElement> file_upload_list_after_submit;
+	@FindBy(xpath="//div[@data-type=23]")
+	public
+	List<WebElement> image_upload_list_after_submit;
 	@FindBy(xpath="//input[@data-type=23]")
+	public
 	List<WebElement> image_upload_list;
 	@FindBy(xpath="//input[@data-type=27]")
 	List<WebElement> gallery_image_upload_list;
 	@FindBy(xpath="//input[@data-type=4]")	
+	public
 	List<WebElement> date_list;
+	@FindBy(xpath="//div[@data-type=4]")	
+	public
+	List<WebElement> date_list_after_submit;
 	@FindBy(xpath="//input[@data-type=8]")	
+	public
 	List<WebElement> date_time_list;
+	@FindBy(xpath="//div[@data-type=8]")	
+	public
+	List<WebElement> date_time_list_after_submit;
 	@FindBy(xpath="//app-esp-rating[@data-type=9]//div//div//div//div")	
 	List<WebElement> rating_random_clicks;
 	@FindBy(xpath="//app-esp-rating[@data-type=9]")	
 	List<WebElement> rating_element;
 	@FindBy(xpath="//textarea[@data-type=2]")
+	public
 	List<WebElement> long_text_type_list;
+	@FindBy(xpath="//div[@data-type=2]")
+	public
+	List<WebElement> long_text_type_list_submit;
 	@FindBy(xpath="//input[@data-type=3]")
+	public
 	List<WebElement> number_list;
+	@FindBy(xpath="//div[@data-type=3]")
+	public
+	List<WebElement> number_list_after_submit;
 	@FindBy(xpath="//input[@data-type=11]")
+	public
 	List<WebElement> currency_fields;
+	@FindBy(xpath="//div[@data-type=11]")
+	public
+	List<WebElement> currency_fields_after_submit;
 	@FindBy(xpath="//input[@data-type=26]")
+	public
 	List<WebElement> price_fields;
 	@FindBy(xpath="//input[@data-type=16]")
+	public
 	List<WebElement> phone_list;
 	@FindBy(xpath="//input[@data-type=15]")
+	public
 	List<WebElement> link_list;
+	@FindBy(xpath="//div[@data-type=15]")
+	public
+	List<WebElement> link_list_after_submit;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -192,6 +238,7 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	public boolean	rating_bool=false;
 	public boolean	currency_exist_bool=false;
 	public boolean	currency_correct_bool=false;
+	public int size_number_After;
     public Create_Application_Page_form_submission(WebDriver driver) throws FileNotFoundException, IOException, ParseException {
     	
     	this.driver = driver;
@@ -372,51 +419,43 @@ public class Create_Application_Page_form_submission extends Test_Data {
     }
     public int verify_upload_all_the_attachment() throws InterruptedException
     {
-    	
+    	int size_images=0;
+    	if(image_upload_list.size()>0)
+    	{
     	Common_class com=new Common_class(driver); 
     	com.Explicit_wait_elements_visiblity(file_upload_list, 10);
-    	int size_images=com.file_attach_randomly(file_upload_list);
+    	size_images=com.file_attach_randomly(file_upload_list);
+    	
+    	}
     	return size_images;
-       
     }
     public int verify_upload_all_the_Image() throws InterruptedException
     {
-    	
+    	int size_files=0;
+    	if(image_upload_list.size()>0)
+    	{
     	Common_class com=new Common_class(driver); 
     	com.Explicit_wait_elements_visiblity(image_upload_list, 10);
-    	int size_files=com.image_attach_randomly(image_upload_list);
+    	 size_files=com.image_attach_randomly(image_upload_list);
+    	}
     	return size_files;
-       
     }
     public void verify_upload_all_the_Image_in_gallery() throws InterruptedException
     {
-    	
+    	if(gallery_image_upload_list.size()>0)
+    	{
     	Common_class com=new Common_class(driver); 
-    	for(int i=0;i<2;i++)
+    	for(int i=0;i<Random_Function.random_number();i++)
     	{
     	com.Explicit_wait_elements_visiblity(gallery_image_upload_list, 10);
     	com.gallery_attach_randomly(gallery_image_upload_list);
     	}
-    
-      com.Explicit_wait_elementToBeVisible(submit_btn, 20);
- 	  com.element_to_be_stable(1000);
-      com.js_click(submit_btn);
-     com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
-     com.Mouse_to_element(move_to_contianer);    
-     done_btn.click();  
-     com.Explicit_wait_elementToBeInvisible(spinner, 30);
-     com.Explicit_wait_elementToBeClickable(first_card, 5);
-     com.js_click(first_card);
-     com.Explicit_wait_elementToBeInvisible(spinner, 30);
-     com.Explicit_wait_elementToBeClickable(detail, 5);
-     com.js_click(detail);
+    	}
        
     }
     public int verify_sending_data_into_all_long_fields() throws InterruptedException
     {
-    	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(long_text_type_list, 10);
     	int long_fields=com.get_elements_text_random(long_text_type_list);
     	return long_fields;
@@ -424,9 +463,7 @@ public class Create_Application_Page_form_submission extends Test_Data {
     }
     public int verify_sending_data_into_all_numbers() throws InterruptedException
     {
-    	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(number_list, 10);
     	int Size=com.get_random_number(number_list);
     	return Size;
@@ -434,13 +471,15 @@ public class Create_Application_Page_form_submission extends Test_Data {
     }
     public int verify_currency_data_into_all_fields() throws InterruptedException
     {
-    	
+    	int Currency_Size=0;
+    	if(currency_fields.size()>0)
+    	{
     	Common_class com=new Common_class(driver);
-    	
     	com.Explicit_wait_elements_visiblity(currency_fields, 10);
-    	int Currency_Size=com.get_random_number(currency_fields);
+    	Currency_Size=com.get_random_number(currency_fields);
+    	
+    	}
     	return Currency_Size;
-       
     }
     public int verify_price_data_into_all_fields() throws InterruptedException
     {
@@ -538,6 +577,38 @@ public class Create_Application_Page_form_submission extends Test_Data {
     		com.highLighterMethod(driver, default_date_exist);
     		
     	}
+    }
+    public void sizes_after_submit() throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeVisible(submit_btn, 20);
+    	com.element_to_be_stable(1000);
+        com.js_click(submit_btn);
+        com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
+        com.Mouse_to_element(move_to_contianer);    
+        done_btn.click();  
+        com.Explicit_wait_elementToBeInvisible(spinner, 30);
+        com.Explicit_wait_elementToBeClickable(first_card, 5);
+        com.js_click(first_card);
+        com.Explicit_wait_elementToBeInvisible(spinner, 30);
+        com.Explicit_wait_elementToBeClickable(detail, 5);
+        com.js_click(detail);
+        com.Explicit_wait_elements_visiblity(text_type_list_after_submit, 5);
+    	text_type_list_after_submit.size();
+    	com.Explicit_wait_elements_visiblity(look_up_list_after_submit, 5);
+    	look_up_list_after_submit.size();
+    	text_type_email_list_after_submit.size();
+    	file_upload_list_after_submit.size();
+    	image_upload_list_after_submit.size();
+    	date_list_after_submit.size();
+    	date_time_list_after_submit.size();
+    	long_text_type_list_submit.size();
+    	currency_fields_after_submit.size();
+    	link_list_after_submit.size();
+    	com.Explicit_wait_elements_visiblity(number_list_after_submit, 5);
+    	size_number_After=number_list_after_submit.size();
+    	System.out.print(size_number_After+"after here..........");
+    	
     }
     public void Verify_Hint_working_fine() throws InterruptedException
     {

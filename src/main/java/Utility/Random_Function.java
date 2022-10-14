@@ -128,6 +128,15 @@ public class Random_Function {
 		Timestamp rand = new Timestamp(offset + (long)(Math.random() * diff));
 		return rand;
 	}
+	public static int random_number()
+	{
+		Random rand = new Random();
+		int rand_int1=0;
+		for(int i=0; i<3;i++) {
+		     rand_int1 = rand.nextInt(10);
+		}
+   return rand_int1;
+	}
 
 }
 

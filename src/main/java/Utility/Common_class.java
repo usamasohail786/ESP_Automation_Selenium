@@ -405,7 +405,7 @@ public void click_while(WebElement element,List<WebElement> form) throws Interru
 {
 	System.out.print("form click here");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
-	for (int i=0;i<3;i++) {
+	for (int i=0;i<Random_Function.random_number();i++) {
 
 		String name = form.get(i).getText();
 		js.executeScript("arguments[0].click()", element);
@@ -413,7 +413,6 @@ public void click_while(WebElement element,List<WebElement> form) throws Interru
 		if (name=="Form#3") {		
 			System.out.print("form click");
 			break;
-
 		}
 
 	}

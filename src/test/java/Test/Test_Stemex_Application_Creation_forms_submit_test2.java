@@ -177,7 +177,7 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		try
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
-		app_obj.verify_price_data_into_all_fields();
+		int date_here=app_obj.verify_price_data_into_all_fields();
 		}
 		catch(Exception e2)
 		   {
@@ -324,8 +324,28 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
 		app_obj.verify_upload_all_the_Image_in_gallery();
-		Thread.sleep(50000000);
 		
+		}
+		catch(Exception e2)
+		   {
+			e2.printStackTrace();
+			e2.getMessage();
+		   }
+	}
+	@org.testng.annotations.Test(priority = 19)
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("All Fields Validation after Submition")
+	@Feature("Fields Validation")
+	public void App_Test_Verify_all_the_submitted_fields() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+		Data();
+		try
+		{
+		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
+		app_obj.sizes_after_submit();
+		int size=app_obj.size_number_After;
+		int siz_number=app_obj.number_list.size();
+		System.out.print(size+"after..........");
+		System.out.print(siz_number+"before..........");
 		}
 		catch(Exception e2)
 		   {
