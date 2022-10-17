@@ -14,10 +14,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Listeners;
+import org.testng.asserts.SoftAssert;
+
 import Base.Test_Base;
 import Pages.Create_Application_Page;
 import Pages.Create_Application_Page_form_submission;
 import Pages.Log_In_Stem_ex;
+import Utility.Common_class;
 import Utility.TestAllureListener;
 import Utility.Test_Data;
 import io.qameta.allure.Description;
@@ -342,10 +345,37 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
 		app_obj.sizes_after_submit();
-		int size=app_obj.size_number_After;
-		int siz_number=app_obj.number_list.size();
-		System.out.print(size+"after..........");
-		System.out.print(siz_number+"before..........");
+		SoftAssert softAssertion= new SoftAssert();
+		int size_number_after=app_obj.size_number_After;
+		int number_before=app_obj.numbers;
+		softAssertion.assertEquals(size_number_after, number_before,"Number field not submitted properly");
+		int currency_after=app_obj.size_currency_after;
+		int currency_before_number=app_obj.currency;
+		softAssertion.assertEquals(currency_after, currency_before_number,"Currency field not submitted properly");
+		int size_email_after=app_obj.size_email_After;
+		int size_email_before=app_obj.email;
+		softAssertion.assertEquals(size_email_after, size_email_before,"Email field not submitted properly");
+		int size_date_after=app_obj.size_date_after;
+		int size_date_before=app_obj.date;
+		softAssertion.assertEquals(size_date_after, size_date_before,"Date field not submitted properly");
+		int size_date_time_after=app_obj.size_date_time_after;
+		int size_date_time_before=app_obj.date_time;
+		softAssertion.assertEquals(size_date_time_after, size_date_time_before,"Date Time field not submitted properly");
+		int size_file_after=app_obj.size_file_after;
+		int size_file_file_before=app_obj.file_upload;
+		softAssertion.assertEquals(size_file_after, size_file_file_before,"File field not submitted properly");
+		int size_image_after=app_obj.size_images_after;
+		int size_image_before=app_obj.images;
+		softAssertion.assertEquals(size_image_after, size_image_before,"Image field not submitted properly");
+		int size_links_after=app_obj.size_links_after;
+		System.out.print(size_links_after+"after link.........");
+		int size_links_before=app_obj.links;
+		softAssertion.assertEquals(size_links_after, size_links_before,"Links field not submitted properly");
+		System.out.print(size_links_before+"before link");
+		int size_look_up_after=app_obj.size_look_up_after;
+		int size_look_before=app_obj.look_up;
+		softAssertion.assertEquals(size_look_up_after, size_look_up_after,"Look Up field not submitted properly");
+		softAssertion.assertAll();
 		}
 		catch(Exception e2)
 		   {

@@ -29,6 +29,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.google.common.base.Predicate;
 import com.paulhammant.ngwebdriver.NgWebDriver;
@@ -400,22 +401,26 @@ public void random_clicks(List<WebElement> list_element) throws InterruptedExcep
 	System.out.print(list_element.size()+"multi");
 	
 }
-public void click_while(WebElement element,List<WebElement> form) throws InterruptedException
+public int click_while(WebElement element,List<WebElement> form) throws InterruptedException
 
 {
 	System.out.print("form click here");
 	JavascriptExecutor js = (JavascriptExecutor)driver;
+	int j=0;
 	for (int i=0;i<Random_Function.random_number();i++) {
 
 		String name = form.get(i).getText();
 		js.executeScript("arguments[0].click()", element);
 		System.out.print(name+"show me namesss.........");
+	
+		j++;
 		if (name=="Form#3") {		
 			System.out.print("form click");
 			break;
 		}
 
 	}
+	return j;
 			
 }
 public void remove_atribute(List<WebElement> list_element) throws InterruptedException
@@ -505,7 +510,10 @@ public void remove_atribute(List<WebElement> list_element) throws InterruptedExc
 		}
 
 	}
-
+   public static void softAssertion()
+   {
+	   SoftAssert softAssertion= new SoftAssert();
+   }
 	public int counter_int(String Text) {
 		int counter = 0;
 		counter = Integer.parseInt(Text);
