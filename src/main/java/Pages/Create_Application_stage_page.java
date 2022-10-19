@@ -65,7 +65,7 @@ public class Create_Application_stage_page extends Test_Data {
 	WebElement reject_btn_2;
 	@FindBy(xpath="//span[text()=' Proceed ']")
 	WebElement Proceed_btn;
-	@FindBy(xpath="//div[text()='Open']")
+	@FindBy(xpath="//div[text()=' Open ']")
 	WebElement open_btn;
 	@FindBy(xpath="//div[text()='Complete']")
 	WebElement complete_stage1;
@@ -186,7 +186,7 @@ public class Create_Application_stage_page extends Test_Data {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeClickable(open_btn, 4);
-    	open_btn.click();
+    	com.js_click(open_btn);
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeStale(reject_btn, 5);
     	com.element_to_be_stable(2000);
