@@ -226,7 +226,7 @@ public class Test_Stemex_Application_Creation_forms_required_validation extends 
 		try
 		{
 		Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(obj.driver);
-		app_obj.verify_sending_data_into_all_links();
+		app_obj.verify_sending_data_into_all_links_required();
 		app_obj.submit_btn_display();
 		assertTrue(app_obj.submit_btn_bool,"Submit button clicked");
 		String URL = obj.driver.getCurrentUrl();
