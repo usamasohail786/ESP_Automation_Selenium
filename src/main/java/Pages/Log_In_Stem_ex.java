@@ -50,7 +50,6 @@ public class Log_In_Stem_ex {
     	Common_class com=new Common_class(driver);
     	
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	//phone_number.clear();
     	password_input_text.clear();
     	com.Explicit_wait_elementToBeClickable(phone_number, 100);
     	System.out.print(phone+"phone................");

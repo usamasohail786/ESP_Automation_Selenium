@@ -174,7 +174,6 @@ public class Create_Application_Page extends Test_Data {
     public void Choose_Group(String group_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.get_elements_text_click(choose_group, group_name);
     	
     }
@@ -199,8 +198,6 @@ public class Create_Application_Page extends Test_Data {
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeVisible(content_load, 70);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
@@ -231,15 +228,12 @@ public class Create_Application_Page extends Test_Data {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
       	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-      	//com.js_click(appication_counter_on_start); 
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
       	counter_before_string=appication_counter_on_start.getText();
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeVisible(content_load, 70);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
@@ -251,17 +245,6 @@ public class Create_Application_Page extends Test_Data {
         com.Explicit_wait_elementToBeClickable(search_result.get(0), 30);
         com.Explicit_wait_elementToBeVisible(available_wait, 5);
     	search_result.get(0).click();
-//    	com.Explicit_wait_elements_visiblity(field1, 100);
-//    	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
-//    	com.Explicit_wait_elements_visiblity(submit_btn, 3);
-//    	com.element_to_be_stable(1000);
-//        com.get_elements_text_click(submit_btn, Submit_btn);
-//        com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
-//        com.Mouse_to_element(move_to_contianer);    
-//        done_btn.click();  
-//        com.Explicit_wait_elementToBeInvisible(spinner, 30);
-//    	appication.click();
-//    	com.Explicit_wait_elementToBeVisible(content_load, 50);
     	
       
     }
@@ -285,7 +268,6 @@ public class Create_Application_Page extends Test_Data {
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	//com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_after_string_mine=appication_counter_on_end.getText();
         counter_after_mine=Integer.parseInt(counter_after_string_mine);
@@ -332,36 +314,33 @@ public class Create_Application_Page extends Test_Data {
     }
     public void verify_currency_data_into_all_fields() throws InterruptedException
     {
-    	//without required field form submit should not proceed
+    	
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
+    	
     	com.Explicit_wait_elements_visiblity(currency_fields, 10);
     	com.get_random_number(currency_fields);
        
     }
     public void verify_price_data_into_all_fields() throws InterruptedException
     {
-    	//without required field form submit should not proceed
+    	
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
+    	
     	com.Explicit_wait_elements_visiblity(price_fields, 10);
     	com.get_random_number(price_fields);
        
     }
     public void verify_sending_data_into_all_phone_numbers() throws InterruptedException
     {
-    	//without required field form submit should not proceed
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(phone_list, 10);
     	com.get_random_phone_number(phone_list);
        
     }
     public void verify_sending_data_into_all_links() throws InterruptedException
     {
-    	//without required field form submit should not proceed
+    	
     	Common_class com=new Common_class(driver);
-    	//clicking on require click 
     	com.Explicit_wait_elements_visiblity(link_list, 10);
     	com.get_elements_link_text_random(link_list);
     	com.Explicit_wait_elements_visiblity(submit_btn, 3);
@@ -371,9 +350,6 @@ public class Create_Application_Page extends Test_Data {
         com.Mouse_to_element(move_to_contianer);    
         done_btn.click();  
         com.Explicit_wait_elementToBeInvisible(spinner, 30);
-       // com.Explicit_wait_elementToBeVisible(appication, 5);
-    	//appication.click();
-    	//com.Explicit_wait_elementToBeVisible(content_load, 50);
        
     }
     public void verify_read_only_field()
@@ -490,12 +466,6 @@ public class Create_Application_Page extends Test_Data {
         	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
         	com.upload_file();
         	Thread.sleep(200);
-        	//com.Explicit_wait_elementToBeVisible(sample_pdf, 4);
-//        	if(sample_pdf.isDisplayed())
-//        	{
-//        		sample_pdf_uploaded_successfully=true;
-//        	}
-    	
     }
     	public void Verify_Rating_working_fine() throws InterruptedException, AWTException
         {
@@ -523,13 +493,13 @@ public class Create_Application_Page extends Test_Data {
         	if(currency_exist.isDisplayed())
         	{
         		currency_exist_bool=true;
-        		System.out.print("cur......");
+        		
    
         	}
         	if(currency_correct.isDisplayed())
         	{
         		currency_correct_bool=true;
-        		System.out.print("cur2........");
+        		
         		   
         	}
     	

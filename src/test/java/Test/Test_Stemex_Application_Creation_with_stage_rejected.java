@@ -76,7 +76,6 @@ public class Test_Stemex_Application_Creation_with_stage_rejected extends Test_D
 		
 		String stage1_rejected=app_obj.Approve_verify_Stage1_Rejected();
 		
-		System.out.print(stage1_rejected+"...............................................");
 		assertEquals(stage1_rejected, reject_stage);
 		}
 		catch(Exception e2)

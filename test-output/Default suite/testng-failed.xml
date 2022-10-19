@@ -3,25 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.Test_Stemex_Application_Creation_forms_submit_test2">
+      <class name="Test.Test_Stemex_Application_Creation_forms_required_validation">
         <methods>
-          <include name="App_Test_Add_Multi_Sections"/>
-          <include name="App_Create_Test_forms_Single_Section"/>
-          <include name="App_Money_sending_into_fields"/>
-          <include name="App_date_fill_fields"/>
-          <include name="App_Long_text_sending_data_in_all_fields"/>
-          <include name="App_Long_text_sending_data_in_all_random_number_fields"/>
-          <include name="App_Phone_number_sending_data_in_all_random_number_fields"/>
-          <include name="App_Test_Look_Fields"/>
-          <include name="App_email_text_sending_data_in_all_fields"/>
-          <include name="App_date_time"/>
-          <include name="App_link_sending_into_fields"/>
           <include name="setup"/>
           <include name="Tear_Down"/>
-          <include name="App_short_text_sending_data_in_all_fields"/>
-          <include name="App_Test_Rating"/>
+          <include name="App_Test_Verify_all_the_submitted_fields_Required_Validation"/>
         </methods>
-      </class> <!-- Test.Test_Stemex_Application_Creation_forms_submit_test2 -->
+      </class> <!-- Test.Test_Stemex_Application_Creation_forms_required_validation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

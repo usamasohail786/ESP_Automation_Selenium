@@ -71,8 +71,15 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	WebElement  header_menu;
 	@FindBy(xpath="//input")
 	List<WebElement> field1;
+	@FindBy(xpath="//button[@id=\\\"btnSubmit\\\"]")
+	public static
+	List<WebElement> submit_btn_list;
 	@FindBy(xpath="//button[@id=\"btnSubmit\"]")
-	WebElement   submit_btn;
+	public static
+	WebElement submit_btn;
+	@FindBy(xpath="//button[@disabled=\"true\"]")
+	public static
+	WebElement submit_btn_disable;
 
 	@FindBy(xpath="(//mat-dialog-container//div)[4]//button")
 	WebElement done_btn;
@@ -238,6 +245,7 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	public boolean	rating_bool=false;
 	public boolean	currency_exist_bool=false;
 	public boolean	currency_correct_bool=false;
+	public boolean	submit_btn_bool=false;
 	public int size_number_After;
 	public int size_email_After;
 	public int size_short_Text_After;
@@ -274,7 +282,6 @@ public class Create_Application_Page_form_submission extends Test_Data {
     public void Choose_Group(String group_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.get_elements_text_click(choose_group, group_name);
     	
     }
@@ -295,15 +302,12 @@ public class Create_Application_Page_form_submission extends Test_Data {
       	com.js_click(appication_counter_on_start); 
       
     	int L=Random_Function.randomintgenerate();
-    	System.out.print(L+".yeah herere L nwewew........................................");
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
       	counter_before_string=appication_counter_on_start.getText();
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeVisible(content_load, 70);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
@@ -334,15 +338,12 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
       	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-      	//com.js_click(appication_counter_on_start); 
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
       	counter_before_string=appication_counter_on_start.getText();
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeVisible(content_load, 70);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
@@ -354,18 +355,6 @@ public class Create_Application_Page_form_submission extends Test_Data {
         com.Explicit_wait_elementToBeClickable(search_result.get(0), 30);
         com.Explicit_wait_elementToBeVisible(available_wait, 5);
     	search_result.get(0).click();
-//    	com.Explicit_wait_elements_visiblity(field1, 100);
-//    	com.Get_Attribute_of_element_click(field1,filed_place_holder_Value,attribute_name,field);
-//    	com.Explicit_wait_elements_visiblity(submit_btn, 3);
-//    	com.element_to_be_stable(1000);
-//        com.get_elements_text_click(submit_btn, Submit_btn);
-//        com.Explicit_wait_elementToBeVisible(move_to_contianer, 10);
-//        com.Mouse_to_element(move_to_contianer);    
-//        done_btn.click();  
-//        com.Explicit_wait_elementToBeInvisible(spinner, 30);
-//    	appication.click();
-//    	com.Explicit_wait_elementToBeVisible(content_load, 50);
-    	
       
     }
     public Boolean verify_action_tab() throws InterruptedException
@@ -388,7 +377,6 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	//com.element_to_be_stable(2000);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_end, 30);
     	counter_after_string_mine=appication_counter_on_end.getText();
         counter_after_mine=Integer.parseInt(counter_after_string_mine);
@@ -400,11 +388,10 @@ public class Create_Application_Page_form_submission extends Test_Data {
     }
     public void verify_sending_data_into_all_short_text() throws InterruptedException
     {
-    	//form submitting in all short text
     	
     	Common_class com=new Common_class(driver);
         com.Explicit_wait_elements_visiblity(text_type_list, 10);
-        date=com.get_elements_text_random(text_type_list);
+        short_text=com.get_elements_text_random(text_type_list);
     	
     		
     }
@@ -545,10 +532,9 @@ public class Create_Application_Page_form_submission extends Test_Data {
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elements_visiblity(date_list, 4);
-    	
     	com.remove_atribute(date_list);
     	date=com.send_date_on_list(date_list);
-    	System.out.print(date+"outere.........");
+    	
     	
     	
     }
@@ -626,15 +612,40 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	size_long_Text_After=long_text_type_list_submit.size();
     	size_images_after=image_upload_list_after_submit.size();
     	size_date_after=date_list_after_submit.size();
-    	System.out.print(size_date_after+"inner date");
+    	
     	size_date_time_after=date_time_list_after_submit.size();
     	size_currency_after=currency_fields_after_submit.size();
     	size_email_After=text_type_email_list_after_submit.size();
     	size_look_up_after=look_up_list_after_submit.size();
     	size_file_after=file_upload_list_after_submit.size();
     	size_links_after=link_list_after_submit.size();
-    	System.out.print(size_number_After+"after here..........");
     	
+    	
+    }
+    public void submit_btn_display() throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    try
+    {
+    	if(submit_btn_disable.isDisplayed()==true)
+    	{
+    		submit_btn_bool=true;
+    		System.out.println("inside true..............");
+    	}
+    	else
+    	{
+    		System.out.println("side true..............");
+    		com.Explicit_wait_elementToBeClickable(submit_btn, 4);
+    		com.js_click(submit_btn);
+    		
+    		submit_btn_bool=false;
+    	}
+    }
+    catch(Exception e)
+    {
+    	System.out.println("catch..............");
+    	submit_btn_bool=false;
+    }
     }
     public void Verify_Hint_working_fine() throws InterruptedException
     {
@@ -660,7 +671,6 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	if(min_max_error.isDisplayed()==true)
     	{
     		min_max_error_bool=true;
-    		System.out.print("show me maxxx giving errror");
     		com.highLighterMethod(driver, min_max_field);  
    	}
     }
@@ -712,11 +722,7 @@ public class Create_Application_Page_form_submission extends Test_Data {
         	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str1, null);
         	com.upload_file();
         	Thread.sleep(200);
-        	//com.Explicit_wait_elementToBeVisible(sample_pdf, 4);
-//        	if(sample_pdf.isDisplayed())
-//        	{
-//        		sample_pdf_uploaded_successfully=true;
-//        	}
+     
     	
     }
     	public void Verify_Rating_working_fine() throws InterruptedException, AWTException
@@ -738,20 +744,18 @@ public class Create_Application_Page_form_submission extends Test_Data {
         {
         	Common_class com=new Common_class(driver);
         	com.Explicit_wait_elementToBeVisible(currency_exist, 4);
-        	//if we put value more than 70 it must gives error
         	com.Scroll_into_View(currency_exist);
         	com.Explicit_wait_elementToBeClickable(currency_exist, 4);
         	com.element_to_be_stable(3000);
         	if(currency_exist.isDisplayed())
         	{
         		currency_exist_bool=true;
-        		System.out.print("cur......");
+        		
    
         	}
         	if(currency_correct.isDisplayed())
         	{
         		currency_correct_bool=true;
-        		System.out.print("cur2........");
         		   
         	}
     	

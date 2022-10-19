@@ -117,7 +117,6 @@ public class Create_Application_stage_page extends Test_Data {
     public void Choose_Group(String group_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.get_elements_text_click(choose_group, group_name);
     	
     }
@@ -134,15 +133,12 @@ public class Create_Application_stage_page extends Test_Data {
     	String attribute_name="data-placeholder";
     	Common_class com=new Common_class(driver);
       	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-      	//com.js_click(appication_counter_on_start); 
     	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 10);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
       	counter_before_string=appication_counter_on_start.getText();
       	counter_before=Integer.parseInt(counter_before_string);
       	com.Explicit_wait_elements_visiblity(app_main_tabs_list, 50);
     	com.get_elements_text_click(app_main_tabs_list,text_of_mid_tab);
-    	//com.Explicit_wait_elementToBeInvisible(spinner, 30);
-    	//com.getNGDriver().waitForAngularRequestsToFinish();
     	driver.navigate().refresh();
     	com.Explicit_wait_elementToBeVisible(content_load, 70);
     	com.Explicit_wait_elementToBeVisible(appication_counter_on_start, 50);
@@ -164,8 +160,6 @@ public class Create_Application_stage_page extends Test_Data {
         com.Explicit_wait_elementToBeVisible(done_btn, 4);
         done_btn.click();  
         com.Explicit_wait_elementToBeInvisible(spinner, 30);
-        //application.click();
-    	//com.Explicit_wait_elementToBeVisible(content_load, 50);
     	
       
     }

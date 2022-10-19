@@ -375,6 +375,12 @@ public class Test_Stemex_Application_Creation_forms_submit_test2 extends Test_Da
 		int size_look_up_after=app_obj.size_look_up_after;
 		int size_look_before=app_obj.look_up;
 		softAssertion.assertEquals(size_look_up_after, size_look_up_after,"Look Up field not submitted properly");
+		int size_short_text_before=app_obj.short_text;
+		int size_short_text_after=app_obj.size_short_Text_After;
+		softAssertion.assertEquals(size_short_text_after, size_short_text_before,"Short text field not submitted properly");
+		int size_long_text_after=app_obj.long_text;
+		int size_long_text_before=app_obj.size_long_Text_After;
+		softAssertion.assertEquals(size_long_text_after, size_long_text_before,"Long text field not submitted properly");
 		softAssertion.assertAll();
 		}
 		catch(Exception e2)

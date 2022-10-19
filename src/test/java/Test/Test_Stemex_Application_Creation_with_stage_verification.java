@@ -97,8 +97,6 @@ public class Test_Stemex_Application_Creation_with_stage_verification extends Te
 		app_obj.Approve_verify_Stage2();
 		app_obj.Approve_verify_both_stages_completed();
 		assertTrue(app_obj.accepted_size,"Stages not approved properly");
-		//System.out.print(stage2_accept+"...............................................");
-		//assertEquals(stage2_accept, complete_stage_1);
 		}
 		catch(Exception e2)
 		   {

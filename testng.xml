@@ -10,6 +10,7 @@
       <class name="Test.Test_Stemex_Application_Creation_with_stage_rejected"/>
       <class name="Test.Test_Stemex_Application_Creation_with_stage2_rejected2"/>
       <class name="Test.Test_Stemex_Application_Creation_forms_submit_test2"/>
+      <class name="Test.Test_Stemex_Application_Creation_forms_required_validation"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

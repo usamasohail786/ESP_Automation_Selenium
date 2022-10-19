@@ -14,6 +14,7 @@
     "complete_stage_1":"Complete"
      "reject_stage":"Rejected"
      "app_name_forms":"Forms Testing",
+     "app_name_forms_validations_required":"Form Validation Test Required",
      "app_name_forms_invisibility":"Form Testing to Check Invisibility Functionality",
      "today_date":"26"
   

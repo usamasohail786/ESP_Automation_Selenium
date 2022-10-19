@@ -26,10 +26,7 @@ public class Form_Visiblity_page extends Test_Data {
 	WebElement  form_visibile_container;
 	@FindBy(xpath="//div[@class='exceeders-card']")
 	WebElement  form_invisibile_container;
-	//@FindBy(xpath="//a[@class='header-menu-item ng-star-inserted']//div//span")
-	//List<WebElement> tab_list;
-	//@FindBy(xpath="//a[@href='/pages/profile']")
-	//WebElement  profile_img;
+	
 
 	
 	public boolean form_condition_applicant_name_exist=false;
@@ -50,7 +47,7 @@ public class Form_Visiblity_page extends Test_Data {
     	if(form_visibile_container.isDisplayed()==true)
     	{
     		form_condition_applicant_name_exist=true;
-    		System.out.print("adas......................................");
+    		
     	}
     	
     	

@@ -76,9 +76,6 @@ public class Test_Stemex_Application_Creation_forms_visbilty_test extends Test_D
 	    Form_Visiblity_page app_obj = new Form_Visiblity_page(obj.driver);
 		app_obj.verify_form_visiblity_with_applicant_name_condition();
 		assertTrue(app_obj.form_condition_applicant_name_exist,"Visibility working not fine");
-
-		//assertTrue(app_obj.min_length_error_bol);
-		//assertTrue(app_obj.max_length_error_bol);
 		}
 		catch(Exception e2)
 		   {

@@ -49,6 +49,7 @@ public class Test_Data{
 	 public String app_name_forms;
 	 public String t_date;
 	 public String app_name_forms_invisibility;
+	 public String app_name_forms_validations_required;
 public void Data() throws FileNotFoundException, IOException, ParseException
 {
 	 JSONParser jsonparse=new JSONParser();  
@@ -93,7 +94,7 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		app_name_forms=(String) jsonobject_app_create.get("app_name_forms");
 		t_date=(String) jsonobject_app_create.get("today_date");
 		app_name_forms_invisibility=(String) jsonobject_app_create.get("app_name_forms_invisibility");
-
+		app_name_forms_validations_required=(String) jsonobject_app_create.get("app_name_forms_validations_required");
 }
 
 }
