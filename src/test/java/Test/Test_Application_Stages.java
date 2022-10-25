@@ -58,10 +58,6 @@ public class Test_Application_Stages extends Test_Data {
 		assertEquals(URL, url);
 		app_obj.Choose_Group(group_name);
 		String tab_text_exist = app_obj.Choose_Tab(tab);
-		//assertEquals(tab_text_exist, tab);
-	
-	//app_obj.Creat_Application_to_test_forms(app_name_forms, create_app_btn, field1_data, submit_btn_text, field_place_holder,
-				//done_btn_text, app_main_mid_tab,app_text_display);
 		
 		}
 		catch(Exception e2)
