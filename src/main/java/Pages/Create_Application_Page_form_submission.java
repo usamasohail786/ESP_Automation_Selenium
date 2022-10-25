@@ -523,6 +523,16 @@ public class Create_Application_Page_form_submission extends Test_Data {
         
        
     }
+    public void verify_sending_data_into_all_links_required() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver);
+    	
+    	com.Explicit_wait_elements_visiblity(link_list, 10);
+    	 links=com.get_elements_link_text_random_clear(link_list);
+        
+       
+    }
     public void verify_read_only_field()
     {
     	//Read only field 	
@@ -630,11 +640,11 @@ public class Create_Application_Page_form_submission extends Test_Data {
     	if(submit_btn_disable.isDisplayed()==true)
     	{
     		submit_btn_bool=true;
-    		System.out.println("inside true..............");
+    		
     	}
     	else
     	{
-    		System.out.println("side true..............");
+    		
     		com.Explicit_wait_elementToBeClickable(submit_btn, 4);
     		com.js_click(submit_btn);
     		
@@ -643,7 +653,7 @@ public class Create_Application_Page_form_submission extends Test_Data {
     }
     catch(Exception e)
     {
-    	System.out.println("catch..............");
+    	
     	submit_btn_bool=false;
     }
     }

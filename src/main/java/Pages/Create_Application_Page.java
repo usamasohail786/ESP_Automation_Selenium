@@ -39,6 +39,7 @@ public class Create_Application_Page extends Test_Data {
 	@FindBy(xpath="(//span[contains(text(),'Upload Image')])[1]")
 	WebElement  attachment_img;
 	@FindBy(xpath="//mat-spinner")
+	public static
 	WebElement  spinner;
 	@FindBy(xpath="//span[text()=' sample ']")
 	WebElement  sample_pdf;
@@ -183,6 +184,8 @@ public class Create_Application_Page extends Test_Data {
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
     	com.get_elements_text_click(tab_list, Tab_name);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
     	return Tab_name;
     }
     public void Creat_Application(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab,String app_text_display) throws InterruptedException
@@ -242,7 +245,7 @@ public class Create_Application_Page extends Test_Data {
     	com.get_elements_text_click(creat_application_btn, app_btn_txt);
      	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	search_btn.sendKeys(search); 		
-        com.Explicit_wait_elementToBeClickable(search_result.get(0), 30);
+        com.Explicit_wait_elementToBeStale(search_result.get(0), 3);
         com.Explicit_wait_elementToBeVisible(available_wait, 5);
     	search_result.get(0).click();
     	
