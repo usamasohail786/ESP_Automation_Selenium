@@ -15,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import Utility.Common_class;
+import Utility.Random_Function;
 import Utility.Test_Data;
 
 
@@ -24,7 +25,7 @@ public class Satge_page extends Test_Data {
 
 	@FindBy(xpath="//div[@class='section-controls-container ng-star-inserted']")
 	WebElement  form_visibile_container;
-	@FindBy(xpath="(//mat-icon)[12]")
+	@FindBy(xpath="//mat-icon[text()='error']")
 	WebElement  icon_cross;
 	@FindBy(xpath="//a[contains(@class,'pointer')]")
 	WebElement  back_pointer;
@@ -47,8 +48,12 @@ public class Satge_page extends Test_Data {
 	WebElement  spinner;
 	@FindBy(xpath="//button[contains(@class,'gradient-btn btn-respond')]")
 	List<WebElement> approve_proceed_list;
+	@FindBy(xpath="//button[contains(@class,'btn-respond mat-stroked-button')]")
+	List<WebElement> reject_btn_list;
 	@FindBy(xpath="//div[contains(@class,'requests-count')]//div//div[1]")
 	WebElement count_app;
+	@FindBy(xpath="//textarea[@mattextareaautosize='true']")
+	WebElement dialogue_send_data;
 	WebElement currency_correct;
 	@FindBy(xpath="//input[@data-type=1]")
 	public
@@ -139,6 +144,7 @@ public class Satge_page extends Test_Data {
 	
 	public boolean form_condition_applicant_name_exist=false;
 	public boolean form_invisible=false;
+	public boolean accept=true;
 	public static int count_before;
 	public static int count_after;
 	public static String count_before_string;
@@ -151,13 +157,13 @@ public class Satge_page extends Test_Data {
     
     	
     }
-    public void verify_Stages_working_fine() throws InterruptedException
+    public void verify_Stages_working_fine_with_approve_status() throws InterruptedException
+
     {
     	
     	Common_class com=new Common_class(driver);
-        driver.navigate().refresh();
     	com.Explicit_wait_elementToBeInvisible(spinner, 20);
-    	com.Explicit_wait_elementToBeVisible(count_app, 5);
+    	com.Explicit_wait_elementToBeClickable(count_app, 5);
     	count_before_string=count_app.getText();
     	count_before=Integer.parseInt(count_before_string);
     	for(int i=0;i<6;i++)
@@ -166,11 +172,181 @@ public class Satge_page extends Test_Data {
    	        com.js_click(card_detail.get(i));
    			com.Explicit_wait_elements_visiblity(red_dot, 10);
    			com.Explicit_wait_elementToBeInvisible(spinner, 10);
+   		    int wild=0;
    			while(red_dot.size()>0)
     			{
+                   
+                    if(wild>20)
+                    {
+                    	accept=false;
+                    	Assert.assertTrue(false,"Satge still opened even after criteria or activity approved");
+                    	break;
+                    }
 
+                    wild++;
+                   
    				    com.Explicit_wait_elementToBeClickable(red_dot.get(0), 4);
     		        com.js_click(red_dot.get(0));
+    				com.Explicit_wait_elements_visiblity(approve_proceed_list, 5);
+    				for(int j=0;j<approve_proceed_list.size();j++)
+    				{
+    					
+    					
+    					try
+    					{
+    					com.Explicit_wait_elementToBeClickable(approve_proceed_list.get(j), 4);
+    			        com.js_click(approve_proceed_list.get(j));		
+    			        if(place_holder_list.size()==0)
+    			        {
+    			        if(unique_data_type.size()>0)
+    			        { 
+    			        	com.Explicit_wait_elements_visiblity(unique_data_type, 2);
+    			        	
+    			        	Create_Application_Page_form_submission app_obj = new Create_Application_Page_form_submission(driver);
+    			        	if(text_type_list.size()>0)
+    			        	{
+    			        		
+    			        	com.Explicit_wait_elements_visiblity(text_type_list, 3);
+    			        	app_obj.verify_sending_data_into_all_short_text();
+    			        	}
+    			        	if(text_type_email_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(text_type_email_list, 3);
+    			        	app_obj.verify_sending_data_into_all_email_field();
+    			        	}
+    			        	if(phone_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(phone_list, 3);
+    			        	app_obj.verify_sending_data_into_all_phone_numbers();
+    			        	}
+    			        	if(link_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(link_list, 3);	
+    			        	app_obj.verify_sending_data_into_all_links();
+    			        	}
+    			        	if(look_up_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(look_up_list, 3);	
+    			        	app_obj.verify_sending_data_into_all_look_up_fields();
+    			        	}
+    			        	if(number_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(number_list, 3);	
+    			        	app_obj.verify_sending_data_into_all_numbers();
+    			        	}
+    			        	if(currency_fields.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(currency_fields, 3);	
+    			        	app_obj.verify_currency_data_into_all_fields();
+    			        	}
+    			        	if(date_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(date_list, 3);	
+    			        	app_obj.click_on_all_dates_fields();;
+    			        	}
+    			        	if(date_time_list.size()>0)
+    			        	{
+    			        	com.Explicit_wait_elements_visiblity(date_time_list, 3);	
+    			        	app_obj.click_on_all_date_time_fields();
+    			        	}
+    			        	
+    			        }
+    			        }
+    			       
+    					if(mat_dialoge.size()>0)
+    					{
+    						com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
+    						com.Mouse_to_element(mat_dialoge.get(0));
+    						com.Explicit_wait_elementToBeClickable(container_btn, 2);
+    						container_btn.click();
+    						com.Explicit_wait_elementToBeInvisible(spinner, 10);
+    						com.Explicit_wait_elementToBeClickable(back_pointer, 3);
+    						com.js_click(back_pointer);
+    					}
+    				}
+    				catch(Exception e)
+					{
+						com.Explicit_wait_elementToBeClickable(back_pointer, 3);
+						com.js_click(back_pointer);
+					}
+    				
+    				}
+    				
+    			}
+    		driver.navigate().back();		
+  	        com.Explicit_wait_elements_visiblity(card_detail, 10);
+   			com.Explicit_wait_elementToBeInvisible(spinner, 10);
+    		}
+    
+    	com.Explicit_wait_elementToBeVisible(count_app, 5);
+    	
+    	count_after_string=count_app.getText();
+    	count_after=Integer.parseInt(count_after_string);
+    }
+
+
+    public void verify_Stages_working_fine_with_reject_status() throws InterruptedException
+    {
+    	
+    	Common_class com=new Common_class(driver); 	
+        
+    	com.Explicit_wait_elementToBeInvisible(spinner, 20);
+    	com.Explicit_wait_elementToBeVisible(count_app, 5);
+    	count_before_string=count_app.getText();
+    	count_before=Integer.parseInt(count_before_string);
+    	for(int i=0;i<6;i++)
+    		{
+    		
+    		com.Explicit_wait_elements_visiblity(card_detail, 20);
+   	        com.js_click(card_detail.get(i));
+   			com.Explicit_wait_elements_visiblity(red_dot, 10);
+   			com.Explicit_wait_elementToBeInvisible(spinner, 10);
+   		    int wild=0;
+   			while(red_dot.size()>0)
+    			{
+   			 if(wild>20)
+             {
+             	accept=false;
+             	Assert.assertTrue(false,"Satge still opened even after criteria or activity approved or rejected");
+             	break;
+             }
+
+             wild++;
+   				int list_num=Random_Function.randomintgenerate_reject();
+   				    com.Explicit_wait_elementToBeClickable(red_dot.get(0), 4);
+    		        com.js_click(red_dot.get(0));
+    		        try
+    		        
+    		        {  
+    		        	com.Explicit_wait_elements_visiblity(reject_btn_list, 2);
+    		        	if(reject_btn_list.size()>0)
+    		        {
+    		        	com.Explicit_wait_elementToBeClickable(reject_btn_list.get(0), 4);
+    		        	com.js_click(reject_btn_list.get(list_num));
+    		        	if(mat_dialoge.size()>0)
+    					{
+    						com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
+    						com.Mouse_to_element(mat_dialoge.get(0));
+    						com.Explicit_wait_elementToBeClickable(dialogue_send_data, 3);
+    						dialogue_send_data.sendKeys("Comment here reject");
+    						com.Explicit_wait_elementToBeClickable(container_btn, 4);
+    						container_btn.click();
+    						com.Explicit_wait_elementToBeVisible(icon_cross, 5);
+    						com.Explicit_wait_elementToBeInvisible(spinner, 10);
+    						com.Explicit_wait_elementToBeClickable(back_pointer, 3);
+    						//com.js_click(back_pointer);
+    						driver.navigate().back();		
+    						com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    						break;
+    					}
+    		        	
+    		        	
+    		        }
+    		       }
+  		        catch(Exception e)
+  		        {
+  		        	
+   		        }
     				com.Explicit_wait_elements_visiblity(approve_proceed_list, 5);
     				for(int j=0;j<approve_proceed_list.size();j++)
     				{
@@ -235,6 +411,7 @@ public class Satge_page extends Test_Data {
     			        	
     			        }
     			        }
+    			        
     					if(mat_dialoge.size()>0)
     					{
     						com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
@@ -246,28 +423,27 @@ public class Satge_page extends Test_Data {
     						com.js_click(back_pointer);
     					}
     				}
+    			
     				catch(Exception e)
 					{
 						com.Explicit_wait_elementToBeClickable(back_pointer, 3);
 						com.js_click(back_pointer);
-					}
-    				
+					}  				
     				}
-    			}
+    			
     		driver.navigate().back();		
   	        com.Explicit_wait_elements_visiblity(card_detail, 10);
    			com.Explicit_wait_elementToBeInvisible(spinner, 10);
-    		}
+    		
     	com.Explicit_wait_elementToBeVisible(count_app, 5);
     	
     	count_after_string=count_app.getText();
     	count_after=Integer.parseInt(count_after_string);
-    	
-    	
-    	
+    			
+    			 			
+}	
     }
-   
-    
+    }
 }
 
 

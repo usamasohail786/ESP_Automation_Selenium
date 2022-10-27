@@ -59,13 +59,13 @@ public class Create_Application_stage_page extends Test_Data {
 	WebElement approve_btn;
 	@FindBy(xpath="//span[text()=' Reject ']")
 	WebElement reject_btn;
-	@FindBy(xpath="//div[text()='Rejected']")
+	@FindBy(xpath="//div[contains(@class,'application-status')]")
 	WebElement rejected_status;
 	@FindBy(xpath="(//button//span[text()=' Reject '])[2]")
 	WebElement reject_btn_2;
 	@FindBy(xpath="//span[text()=' Proceed ']")
 	WebElement Proceed_btn;
-	@FindBy(xpath="//div[text()=' Open ']")
+	@FindBy(xpath="//div[contains(@class,'red-dot')]")
 	WebElement open_btn;
 	@FindBy(xpath="//div[text()='Complete']")
 	WebElement complete_stage1;
@@ -73,7 +73,7 @@ public class Create_Application_stage_page extends Test_Data {
 	WebElement accept_btn;
 	@FindBy(xpath="//div[text()='Accepted']")
 	List<WebElement> count_accepted;
-	@FindBy(xpath="//a[text()='First test']")
+	@FindBy(xpath="//a[contains(@class,'pointer')]")
 	WebElement first_btn;
 	@FindBy(xpath="(//span[@class='mat-button-wrapper'])[1]")
 	WebElement move_to_contianer;

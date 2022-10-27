@@ -48,16 +48,13 @@ public class Log_In_Stem_ex {
     public void Log_In(String phone,String pass) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeClickable(password_input_text, 100);
     	password_input_text.clear();
     	com.Explicit_wait_elementToBeClickable(phone_number, 100);
-    	System.out.print(phone+"phone................");
+        phone_number.clear();
     	phone_number.sendKeys(phone);
-    	Thread.sleep(2000);
     	password_input_text.sendKeys(pass);
     	sign_in_btn.click();
-    	System.out.print(sign_in_btn+"sign in button");
         com.Explicit_wait_elementToBeInvisible(spinner, 100);
     }
     public void Log_In_wrong_credentials(String phone,String pass) throws InterruptedException

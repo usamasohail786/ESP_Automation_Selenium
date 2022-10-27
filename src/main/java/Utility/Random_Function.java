@@ -101,6 +101,11 @@ public class Random_Function {
         randomNum = ThreadLocalRandom.current().nextInt(1, 500);
 		return randomNum;
     }
+	public static  int randomintgenerate_reject() {
+		 int randomNum = 0; 
+       randomNum = ThreadLocalRandom.current().nextInt(0, 1);
+		return randomNum;
+   }
 	public static  int randominvalidationtgenerate() {
 		 int randomNum = 0; 
        randomNum = ThreadLocalRandom.current().nextInt(1, 50);

@@ -42,7 +42,7 @@ public class Test_Application_Stages extends Test_Data {
 
 	}
 	
-	@org.testng.annotations.Test(priority = 3)
+	@org.testng.annotations.Test(priority = 1)
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Verifying forms with the help of creating application")
 	@Feature("Create Application")
@@ -66,16 +66,16 @@ public class Test_Application_Stages extends Test_Data {
 			e2.getMessage();
 		   }
 	}
-	@org.testng.annotations.Test(priority = 4)
+	@org.testng.annotations.Test(priority = 2)
 	@Severity(SeverityLevel.CRITICAL)
-	@Description("Verifying Visibilty of Single Section Form Using Condition of Application")
-	@Feature("Visiblity with Applicant Name")
-	public void Form_visiblity_test_using_conditional_in_form_Section() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+	@Description("Verifying_Multiple_Stages_with_Criteria_Activity_and_Form_filling")
+	@Feature("Verifying Stage with Accept Status")
+	public void Verifying_Multiple_Stages_with_Criteria_Activity_and_Form_filling() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
 		try
 		{
 	    Satge_page app_obj = new Satge_page(obj.driver);
-		app_obj.verify_Stages_working_fine();
+		app_obj.verify_Stages_working_fine_with_approve_status();
 		Assert.assertNotEquals(Satge_page.count_before, Satge_page.count_after);
 		}
 		catch(Exception e2)

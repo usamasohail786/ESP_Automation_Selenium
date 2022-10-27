@@ -45,7 +45,7 @@ public class Create_Application_Page extends Test_Data {
 	WebElement  sample_pdf;
 	@FindBy(xpath="//input[@data-placeholder='Phone Number']")
 	WebElement  phone_numer_field;
-	@FindBy(xpath="//a[@class='header-menu-item ng-star-inserted']//div//span")
+	@FindBy(xpath="//div[contains(@class,'header-menu-content')]")
 	List<WebElement> tab_list;
 	@FindBy(xpath="//a[@href='/pages/profile']")
 	WebElement  profile_img;
@@ -181,8 +181,9 @@ public class Create_Application_Page extends Test_Data {
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
+    	com.Explicit_wait_elementToBeClickable(tab_list.get(1), 50);	
     	com.get_elements_text_click(tab_list, Tab_name);
     	com.Explicit_wait_elementToBeInvisible(spinner, 30);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);
