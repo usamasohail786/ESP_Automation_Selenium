@@ -12,7 +12,8 @@
       <class name="Test.Test_Stemex_Application_Creation_forms_submit_test2"/>
       <class name="Test.Test_Stemex_Application_Creation_forms_required_validation"/>
       <class name="Test.Test_Stemex_Application_Creation_forms_invisbilty_test"/>
-     <class name="Test.Test_Application_Stages"/>
+      <class name="Test.Test_Application_Stages"/>
+      <class name="Test.Test_Application_Stage_Rejected"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

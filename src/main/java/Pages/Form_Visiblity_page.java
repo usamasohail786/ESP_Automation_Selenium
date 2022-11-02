@@ -26,7 +26,8 @@ public class Form_Visiblity_page extends Test_Data {
 	WebElement  form_visibile_container;
 	@FindBy(xpath="//div[@class='exceeders-card']")
 	WebElement  form_invisibile_container;
-	
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 
 	
 	public boolean form_condition_applicant_name_exist=false;

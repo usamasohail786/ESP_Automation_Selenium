@@ -26,7 +26,7 @@ public class Create_Application_stage_page extends Test_Data {
 	WebElement  stemex_logo;
 	@FindBy(xpath="//mat-spinner")
 	WebElement  spinner;
-	@FindBy(xpath="//a[@class='header-menu-item ng-star-inserted']//div//span")
+	@FindBy(xpath="//div[contains(@class,'header-menu-content')]")
 	List<WebElement> tab_list;
 	@FindBy(xpath="//a[@href='/pages/profile']")
 	WebElement  profile_img;
@@ -93,6 +93,8 @@ public class Create_Application_stage_page extends Test_Data {
 	WebElement result_load;
 	@FindBy(xpath="//textarea[@mattextareaautosize='true']")
 	WebElement comment_area;
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -123,9 +125,12 @@ public class Create_Application_stage_page extends Test_Data {
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(progress_bar, 80);
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
     	com.get_elements_text_click(tab_list, Tab_name);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
     	return Tab_name;
     }
     public void Creat_Application(String search,String app_btn_txt,String field,String Submit_btn,String filed_place_holder_Value,String done_btn_text,String text_of_mid_tab,String app_text_display) throws InterruptedException
@@ -184,9 +189,16 @@ public class Create_Application_stage_page extends Test_Data {
     
     {
     	Common_class com=new Common_class(driver);
+    	try
+    	{
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
-    	com.Explicit_wait_elementToBeClickable(open_btn, 4);
+    	com.Explicit_wait_elementToBeVisible(open_btn, 4);
     	com.js_click(open_btn);
+    	}
+    	catch(Exception e)
+    	{
+    		
+    	}
     	com.Explicit_wait_elementToBeInvisible(spinner, 50);
     	com.Explicit_wait_elementToBeStale(reject_btn, 5);
     	com.element_to_be_stable(2000);

@@ -103,7 +103,7 @@ public class Random_Function {
     }
 	public static  int randomintgenerate_reject() {
 		 int randomNum = 0; 
-       randomNum = ThreadLocalRandom.current().nextInt(0, 1);
+       randomNum = ThreadLocalRandom.current().nextInt(0, 2);
 		return randomNum;
    }
 	public static  int randominvalidationtgenerate() {

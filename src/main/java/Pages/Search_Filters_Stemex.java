@@ -106,7 +106,7 @@ public class Search_Filters_Stemex {
 			com.Explicit_wait_elementToBeClickable(appication_counter, 10);
 			String all_count = appication_counter.getText();
 			all_int_count = com.counter_int(all_count);
-			System.out.println(all_int_count+".......all print");
+			
 
 		}
 		
@@ -318,7 +318,6 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elementToBeVisible(content_load, 50);
 		com.Explicit_wait_elementToBeVisible(application_no_text, 30);
 		oldest_last_newest_cosider_initial = com.Get_Text_single_element(application_no_text);
-		System.out.println(oldest_last_newest_cosider_initial+"getting text on Default filter");
 		com.Explicit_wait_elementToBeStale(filters_box, 2);
 		com.js_click(filters_box);
 		com.Explicit_wait_elements_visiblity(search_filter_list, 10);
@@ -335,7 +334,6 @@ public class Search_Filters_Stemex {
 		com.Explicit_wait_elementToBeInvisible(spinner, 100);
 		//clicked on oldest first and getting record text
 		oldest_last_newest_cosider = com.Get_Text_single_element(application_no_text_last);
-		System.out.println(oldest_last_newest_cosider+"clicked on oldest first and getting record text");
 		//com.element_to_be_stable(1000);
 		com.Explicit_wait_elementToBeStale(filters_box, 2);
 		com.js_click(filters_box);
@@ -433,7 +431,7 @@ public class Search_Filters_Stemex {
     	if(appliction_empty_txt.isDisplayed())
     	{
     		aap_empty_record_exist=true;
-    		System.out.println("if");
+    		
     	}
     	else
     	{

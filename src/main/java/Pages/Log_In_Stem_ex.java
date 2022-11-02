@@ -20,11 +20,15 @@ public class Log_In_Stem_ex {
 	WebDriver driver = null;
 	@FindBy(xpath="//mat-label[text()='Mobile Number']/parent::label/parent::span/preceding-sibling::input")
 	WebElement phone_number;
+	@FindBy(xpath="//input[@name='email']")
+	WebElement esp_email;
+	@FindBy(xpath="//input[@name='password']")
+	WebElement esp_pass;
 	@FindBy(xpath="//input[@formcontrolname='password']")
 	WebElement password_input_text;
 	@FindBy(xpath="//input[@name='email']")
 	WebElement  email_input_text;
-	@FindBy(xpath="//span[text()='Sign In']")
+	@FindBy(xpath="//span[contains(text(),'Sign In')]")
 	WebElement  sign_in_btn;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;
@@ -54,6 +58,20 @@ public class Log_In_Stem_ex {
         phone_number.clear();
     	phone_number.sendKeys(phone);
     	password_input_text.sendKeys(pass);
+    	com.Explicit_wait_elementToBeClickable(sign_in_btn, 10);
+    	sign_in_btn.click();
+        com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    }
+    public void Log_In_ESP(String email,String pass) throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeClickable(esp_pass, 100);
+    	esp_pass.clear();
+    	com.Explicit_wait_elementToBeClickable(esp_email, 100);
+        esp_email.clear();
+    	esp_email.sendKeys(email);
+    	esp_pass.sendKeys(pass);
+    	com.Explicit_wait_elementToBeClickable(sign_in_btn, 10);
     	sign_in_btn.click();
         com.Explicit_wait_elementToBeInvisible(spinner, 100);
     }

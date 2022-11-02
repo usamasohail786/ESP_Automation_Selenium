@@ -132,6 +132,8 @@ public class Create_Application_Page_form_required_validation extends Test_Data 
 	WebElement attach_file;
 	@FindBy(xpath="//input[@data-placeholder='Currency']")	
 	WebElement currency_exist;
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 	@FindBy(xpath="(//span[text()='PKR'])[1]")	
 	WebElement currency_correct;
 	@FindBy(xpath="//input[@data-type=1]")
@@ -280,7 +282,8 @@ public class Create_Application_Page_form_required_validation extends Test_Data 
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(progress_bar, 90);
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
     	com.get_elements_text_click(tab_list, Tab_name);
     	return Tab_name;

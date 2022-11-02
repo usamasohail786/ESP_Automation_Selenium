@@ -15,6 +15,7 @@ public class Test_Data{
 	 public String group_name;
 	 public String invalid_pass_user;
 	 public String tab;
+	 public String reject_popup;
 	 public String url;
 	 public String search_app;
 	 public String search_app_1;
@@ -48,6 +49,10 @@ public class Test_Data{
 	 public String reject_stage;
 	 public String app_name_forms;
 	 public String t_date;
+	 public String group_esp;
+	 public String tab_esp;
+	 public String esp_email;
+	 public String esp_pass;
 	 public String app_name_forms_invisibility;
 	 public String app_name_forms_validations_required;
 public void Data() throws FileNotFoundException, IOException, ParseException
@@ -57,9 +62,13 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		JSONObject jsonobject_app_create=(JSONObject) jsonparse.parse(new FileReader("Test_Data_json\\create_application_data.json"));
 		JSONObject jsonobject_search_filters=(JSONObject) jsonparse.parse(new FileReader("Test_Data_json\\search_filters_data.json"));
 		pass=(String)jsonobject.get("password_stemex");
+		esp_email=(String)jsonobject.get("esp_email");
+		esp_pass=(String)jsonobject.get("esp_pass");
 		phone_number=(String) jsonobject.get("phone_number");
 		group_name=(String) jsonobject_app_create.get("group");	
+		group_esp=(String) jsonobject_app_create.get("group_esp");	
 		tab=(String) jsonobject_app_create.get("tab_name");
+		tab_esp=(String) jsonobject_app_create.get("tab_name_esp");
 		url=(String) jsonobject.get("url");
 		search_app=(String) jsonobject_app_create.get("search_create_app");
 		search_app_1=(String) jsonobject_app_create.get("search_create_app_1");
@@ -95,6 +104,7 @@ public void Data() throws FileNotFoundException, IOException, ParseException
 		t_date=(String) jsonobject_app_create.get("today_date");
 		app_name_forms_invisibility=(String) jsonobject_app_create.get("app_name_forms_invisibility");
 		app_name_forms_validations_required=(String) jsonobject_app_create.get("app_name_forms_validations_required");
+		reject_popup=(String) jsonobject_app_create.get("reject_popup");
 }
 
 }

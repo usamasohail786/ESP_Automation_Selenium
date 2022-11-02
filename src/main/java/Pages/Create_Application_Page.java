@@ -30,6 +30,8 @@ public class Create_Application_Page extends Test_Data {
 	WebDriver driver = null;
 	@FindBy(xpath="//h4[@class='group-title']")
 	List<WebElement> choose_group;
+	@FindBy(xpath="//div[@class='org-name']")
+	List<WebElement> org_name;
 	@FindBy(xpath="//img[@src='assets/images/header/logo-stemexe.png']")
 	WebElement  stemex_logo;
 	@FindBy(xpath="//span[text()='Rating ']")
@@ -45,10 +47,12 @@ public class Create_Application_Page extends Test_Data {
 	WebElement  sample_pdf;
 	@FindBy(xpath="//input[@data-placeholder='Phone Number']")
 	WebElement  phone_numer_field;
-	@FindBy(xpath="//div[contains(@class,'header-menu-content')]")
+	@FindBy(xpath="//div[contains(@class,'header-menu')]//a")
 	List<WebElement> tab_list;
 	@FindBy(xpath="//a[@href='/pages/profile']")
 	WebElement  profile_img;
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 	@FindBy(xpath="//mat-error")
 	WebElement  pass_error;
 	@FindBy(xpath="//span[@class='mat-button-wrapper']")
@@ -178,12 +182,30 @@ public class Create_Application_Page extends Test_Data {
     	com.get_elements_text_click(choose_group, group_name);
     	
     }
+    public void Choose_Group_Esp(String group_name) throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elements_visiblity(org_name, 20);
+    	com.get_elements_text_click(org_name, group_name);
+    	
+    }
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
     	com.Explicit_wait_elementToBeInvisible(spinner, 100);
-    	com.Explicit_wait_elements_visiblity(tab_list, 100);
-    	com.Explicit_wait_elementToBeClickable(tab_list.get(1), 50);	
+    	com.Explicit_wait_elementToBeInvisible(progress_bar, 90);
+    	com.Explicit_wait_elements_visiblity(tab_list, 100);	
+    	com.get_elements_text_click(tab_list, Tab_name);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    	com.Explicit_wait_elementToBeVisible(content_load, 50);
+    	return Tab_name;
+    }
+    public String Choose_Tab_ESP(String Tab_name) throws InterruptedException
+    {
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(progress_bar, 90);
+    	com.Explicit_wait_elements_visiblity(tab_list, 100);	
     	com.get_elements_text_click(tab_list, Tab_name);
     	com.Explicit_wait_elementToBeInvisible(spinner, 30);
     	com.Explicit_wait_elementToBeVisible(content_load, 50);

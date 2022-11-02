@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
-
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.sql.Timestamp;
@@ -15,6 +15,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Random;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -34,6 +35,7 @@ import org.testng.asserts.SoftAssert;
 import com.google.common.base.Predicate;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 
+import Pages.Satge_page;
 import dev.failsafe.Timeout;
 import io.netty.util.internal.ThreadLocalRandom;
 
@@ -213,11 +215,11 @@ public class Common_class {
 	}
 	public void get_elements_text_click(List<WebElement> list_element, String text) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		
+		System.out.print(text+"text heree");
 		for (WebElement webElement : list_element) {
 
 			String name = webElement.getText();
-
+			System.out.println(webElement.getText()+"get text show request.............");
 			if (name.contains(text)) {
 				js.executeScript("arguments[0].click()", webElement);
 				System.out.println(webElement.getText()+"get text show request.............");
@@ -506,7 +508,25 @@ public void random_clicks(List<WebElement> list_element) throws InterruptedExcep
 {
 	
 	Random r = new Random();
-	int randomValue = r.nextInt(3); //Getting a random value that is between 0 and (list's size)-1
+	int randomValue = r.nextInt(2); //Getting a random value that is between 0 and (list's size)-1
+	list_element.get(randomValue).click(); //Clicking on the random item in the list.		
+	
+}
+public void random_clicks_stage(List<WebElement> list_element) throws InterruptedException, FileNotFoundException, IOException, ParseException
+
+{
+	int size_list=Satge_page.size;
+	Random r = new Random();
+	int randomValue = r.nextInt(size_list); //Getting a random value that is between 0 and (list's size)-1
+	list_element.get(randomValue).click(); //Clicking on the random item in the list.		
+	
+}
+public void random_clicks_user_list(List<WebElement> list_element) throws InterruptedException, FileNotFoundException, IOException, ParseException
+
+{
+	int size_list=Satge_page.user_list_size;
+	Random r = new Random();
+	int randomValue = r.nextInt(size_list); //Getting a random value that is between 0 and (list's size)-1
 	list_element.get(randomValue).click(); //Clicking on the random item in the list.		
 	
 }

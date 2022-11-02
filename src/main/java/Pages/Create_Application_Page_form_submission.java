@@ -223,6 +223,8 @@ public class Create_Application_Page_form_submission extends Test_Data {
 	@FindBy(xpath="//div[@data-type=15]")
 	public
 	List<WebElement> link_list_after_submit;
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 	String counter_before_string;
 	String counter_after_string;
 	int counter_before;
@@ -288,7 +290,8 @@ public class Create_Application_Page_form_submission extends Test_Data {
     public String Choose_Tab(String Tab_name) throws InterruptedException
     {
     	Common_class com=new Common_class(driver);
-    	com.Explicit_wait_elementToBeInvisible(spinner, 100);	
+    	com.Explicit_wait_elementToBeInvisible(spinner, 100);
+    	com.Explicit_wait_elementToBeInvisible(progress_bar, 80);
     	com.Explicit_wait_elements_visiblity(tab_list, 100);
     	com.get_elements_text_click(tab_list, Tab_name);
     	return Tab_name;

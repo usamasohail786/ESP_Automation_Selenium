@@ -30,7 +30,7 @@ import io.qameta.allure.SeverityLevel;
 
 
 @Listeners({ TestAllureListener.class })
-public class Test_Application_Stage_Rejected extends Test_Data {
+public class Test_Application_Stage_Reassign extends Test_Data {
 	Test_Base obj = new Test_Base();
 
 
@@ -38,7 +38,7 @@ public class Test_Application_Stage_Rejected extends Test_Data {
 	public void setup() {
 
 		obj.initialize_driver();
-		obj.driver.get("https://stemexe-stag.web.app/auth/login");
+		obj.driver.get("https://qaesp.azurewebsites.net/login");
 
 	}
 	
@@ -53,11 +53,11 @@ public class Test_Application_Stage_Rejected extends Test_Data {
 		Common_class com=new Common_class(obj.driver);
 		Log_In_Stem_ex log_obj = new Log_In_Stem_ex(obj.driver);
 		Create_Application_Page app_obj = new Create_Application_Page(obj.driver);
-		log_obj.Log_In(phone_number, pass);
+		log_obj.Log_In_ESP(esp_email, esp_pass);
 		String URL = obj.driver.getCurrentUrl();
-		assertEquals(URL, url);
-		app_obj.Choose_Group(group_name);
-		String tab_text_exist = app_obj.Choose_Tab(tab);
+		//assertEquals(URL, url);
+		app_obj.Choose_Group_Esp(group_esp);
+		String tab_text_exist = app_obj.Choose_Tab_ESP(tab_esp);
 		
 		}
 		catch(Exception e2)
@@ -68,15 +68,15 @@ public class Test_Application_Stage_Rejected extends Test_Data {
 	}
 	@org.testng.annotations.Test(priority = 2)
 	@Severity(SeverityLevel.CRITICAL)
-	@Description("verifying_Multiple_Stages_with_Reject_Status_Randomly")
-	@Feature("Verifying Stage with Accept Status")
-	public void Verifying_Multiple_Stages_with_Reject_Status_Randomly() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+	@Description("verifying Reassign User")
+	@Feature("Verifying Reassign User")
+	public void Verifying_Reassign_user() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
 		try
 		{
 	    Satge_page app_obj = new Satge_page(obj.driver);
-		app_obj.verify_Stages_working_fine_with_reject_status(reject_popup);
-		Assert.assertNotEquals(Satge_page.count_before, Satge_page.count_after);
+		app_obj.verify_Stages_Reassign_Working_fine();
+		Assert.assertTrue(Satge_page.stage_locked_bool_reassign, "Stage not Reassigned Succefully");
 		}
 		catch(Exception e2)
 		   {

@@ -30,7 +30,7 @@ import io.qameta.allure.SeverityLevel;
 
 
 @Listeners({ TestAllureListener.class })
-public class Test_Application_Stage_Rejected extends Test_Data {
+public class Test_Application_Return_Stages extends Test_Data {
 	Test_Base obj = new Test_Base();
 
 
@@ -68,15 +68,15 @@ public class Test_Application_Stage_Rejected extends Test_Data {
 	}
 	@org.testng.annotations.Test(priority = 2)
 	@Severity(SeverityLevel.CRITICAL)
-	@Description("verifying_Multiple_Stages_with_Reject_Status_Randomly")
-	@Feature("Verifying Stage with Accept Status")
-	public void Verifying_Multiple_Stages_with_Reject_Status_Randomly() throws InterruptedException, FileNotFoundException, IOException, ParseException {
+	@Description("Veryfying Stage Return working fine")
+	@Feature("Stage Return")
+	public void Verifying_Stage_Return() throws InterruptedException, FileNotFoundException, IOException, ParseException {
 		Data();
 		try
 		{
 	    Satge_page app_obj = new Satge_page(obj.driver);
-		app_obj.verify_Stages_working_fine_with_reject_status(reject_popup);
-		Assert.assertNotEquals(Satge_page.count_before, Satge_page.count_after);
+		app_obj.verify_Stages_Return_Working_fine();
+		Assert.assertTrue(Satge_page.stage_locked_bool,"Stage Could not return Successfully");
 		}
 		catch(Exception e2)
 		   {

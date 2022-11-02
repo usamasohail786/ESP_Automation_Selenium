@@ -29,18 +29,40 @@ public class Satge_page extends Test_Data {
 	WebElement  icon_cross;
 	@FindBy(xpath="//a[contains(@class,'pointer')]")
 	WebElement  back_pointer;
+	@FindBy(xpath="//div[contains(@class,'mat-select-arrow ')]")
+	WebElement  arrow_stage;
 	@FindBy(xpath="//button[contains(@class,'gradient-btn mat-flat-button')]")
 	WebElement  container_btn;
 	@FindBy(xpath="(//div[contains(@class,'application-status')])[2]")
-	WebElement  red_dot_open;
+	WebElement  red_dot_open; 
+	@FindBy(xpath="//textarea[@formcontrolname='reason']")
+	WebElement  reason_form; 
+	@FindBy(xpath="//button[@role='menuitem']")
+	WebElement  return_stage_btn; 
+	@FindBy(xpath="(//button[@role='menuitem'])[1]")
+	WebElement  reassign_stage_btn; 
 	@FindBy(xpath="//div[@class='exceeders-card']")
 	WebElement  form_invisibile_container;
 	@FindBy(xpath="//xcdrs-appliation-details-card")
 	List<WebElement> card_detail;
+	@FindBy(xpath="//xcdrs-esp-checkbox")
+	List<WebElement> user_list;
+	@FindBy(xpath="//div[contains(@class,'application-status locked')]")
+	List<WebElement> stage_locked;
+	@FindBy(xpath="//mat-option")
+	List<WebElement>list_stage;
 	@FindBy(xpath="//div[contains(@class,'red-dot')]")
 	List<WebElement> red_dot;
+	@FindBy(xpath="//mat-icon[@class='mat-icon notranslate gray-icon material-icons mat-icon-no-color']")
+	List<WebElement> three_dots;
+	@FindBy(xpath="//div[contains(@class,'application-status accepted')]")
+	List<WebElement> complete_stage;
+	@FindBy(xpath="//div[contains(@class,'application-status')]")
+	List<WebElement>status_dot;
 	@FindBy(xpath="//input[@data-type]")
 	List<WebElement> unique_data_type;
+	@FindBy(xpath="//span[text()='You have rejected the criteria.']")
+	List<WebElement> rejected_popup;
 	@FindBy(xpath="//mat-dialog-container")
 	List<WebElement> mat_dialoge;
 	@FindBy(xpath="//mat-spinner")
@@ -140,15 +162,22 @@ public class Satge_page extends Test_Data {
 	@FindBy(xpath="//input[@placeholder]")
 	public
 	List<WebElement> place_holder_list;
-	
+	@FindBy(xpath="//ng-progress//div[@active='true']")
+	WebElement progress_bar;
 	
 	public boolean form_condition_applicant_name_exist=false;
 	public boolean form_invisible=false;
 	public boolean accept=true;
+	public static boolean stage_locked_bool=false;
+	public static boolean stage_locked_bool_reassign=false;
+	public boolean reject=true;
 	public static int count_before;
 	public static int count_after;
 	public static String count_before_string;
 	public static String count_after_string;
+	public static int size = 0;
+	public static int stage_size = 0;
+	public static int user_list_size = 0;
     public Satge_page(WebDriver driver) throws FileNotFoundException, IOException, ParseException {
     	
     	this.driver = driver;
@@ -283,9 +312,140 @@ public class Satge_page extends Test_Data {
     	count_after_string=count_app.getText();
     	count_after=Integer.parseInt(count_after_string);
     }
+    public int verify_Stages_Return_Working_fine() throws InterruptedException, FileNotFoundException, IOException, ParseException
+    {
+    	
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 20);
+    	com.Explicit_wait_elementToBeClickable(count_app, 5);
+    	for(int i=0;i<6;i++)
+    		{
+    		
+    	    com.Explicit_wait_elements_visiblity(card_detail, 20);
+    		com.js_click(card_detail.get(i));
+   			com.Explicit_wait_elements_visiblity(red_dot, 20);
+   			com.Explicit_wait_elementToBeInvisible(spinner, 10);
+   		  
+   		    if(complete_stage.size()>0)
+   		    {
+   		     com.Explicit_wait_elements_visiblity(complete_stage, 20);
+   		    	com.js_click(red_dot.get(0));
+   		    	com.Explicit_wait_elements_visiblity(three_dots, 5);
+   		        size=three_dots.size();
+   		        System.out.print(size+"Sizes");
+   		    	com.random_clicks_stage(three_dots);
+   		    	com.Explicit_wait_elementToBeClickable(return_stage_btn, 3);
+   		    	com.js_click(return_stage_btn);
+   		    	com.Explicit_wait_elements_visiblity(mat_dialoge, 10);
+   		    	if(mat_dialoge.size()>0)
+				{
+					com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
+					com.Mouse_to_element(mat_dialoge.get(0));
+					com.Explicit_wait_elementToBeClickable(arrow_stage, 3);
+					com.js_click(arrow_stage);
+					com.Explicit_wait_elements_visiblity(list_stage, 4);
+					stage_size=list_stage.size();
+					com.random_clicks_stage(list_stage);
+					com.Explicit_wait_elementToBeClickable(reason_form, 4);
+					reason_form.sendKeys("Going back to Stage that I am chosing Randomly");
+					com.Explicit_wait_elementToBeClickable(container_btn, 2);
+					container_btn.click();
+					com.Explicit_wait_elementToBeInvisible(spinner, 10);
+					com.Explicit_wait_elementToBeClickable(back_pointer, 3);
+					com.js_click(back_pointer);
+					com.Explicit_wait_elementToBeInvisible(progress_bar, 15);
+					com.Explicit_wait_elements_visiblity(red_dot, 10);
+					
+					if(stage_locked.size()>0)
+					{
+						stage_locked.size();
+						stage_locked_bool=true;
+					}
+					break;
+				}
+   		    }
+   		
+   		    else
+   		    {	
+   			driver.navigate().back();
+   			continue;
+    		}
+		
+    		}
+    	return size;
+    	
+    }
+    public int verify_Stages_Reassign_Working_fine() throws InterruptedException, FileNotFoundException, IOException, ParseException
+    {
+    	
+    	Common_class com=new Common_class(driver);
+    	com.Explicit_wait_elementToBeInvisible(spinner, 20);
+    	com.Explicit_wait_elementToBeClickable(count_app, 5);
+    	for(int i=0;i<6;i++)
+    		{
+    		
+    	    com.Explicit_wait_elements_visiblity(card_detail, 20);
+    		com.js_click(card_detail.get(i));
+   			com.Explicit_wait_elements_visiblity(red_dot, 20);
+   			com.Explicit_wait_elementToBeInvisible(spinner, 10);
+   		  
+   		    if(complete_stage.size()>0)
+   		    {
+   		     com.Explicit_wait_elements_visiblity(complete_stage, 20);
+   		    	com.js_click(red_dot.get(0));
+   		    	com.Explicit_wait_elements_visiblity(three_dots, 5);
+   		        size=three_dots.size();
+   		    	com.random_clicks_stage(three_dots);
+   		    	com.Explicit_wait_elementToBeClickable(reassign_stage_btn, 3);
+   		    	com.js_click(reassign_stage_btn);
+   		    	com.Explicit_wait_elements_visiblity(mat_dialoge, 10);
+   		    	if(mat_dialoge.size()>0)
+				{
+					com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
+					com.Mouse_to_element(mat_dialoge.get(0));
+					com.Explicit_wait_elements_visiblity(user_list, 5);
+					
+					if(user_list.size()>0)
+					{
+					
+					
+					user_list_size=user_list.size();
+					com.random_clicks_user_list(user_list);
+					}
+					com.Explicit_wait_elementToBeClickable(container_btn, 2);
+					container_btn.click();
+					if(mat_dialoge.size()>0)
+					{
+						com.Explicit_wait_elementToBeVisible(mat_dialoge.get(0), 2);
+						com.Mouse_to_element(mat_dialoge.get(0));
+						com.Explicit_wait_elementToBeClickable(container_btn, 2);
+						container_btn.click();
+					}
+					com.Explicit_wait_elementToBeInvisible(progress_bar, 6);
+					com.Explicit_wait_elements_visiblity(stage_locked, 10);
+				
+					if(stage_locked.size()>0)
+					{
+						stage_locked.size();
+						stage_locked_bool_reassign=true;
+					}
+					break;
+				}
+   		    }
+   		
+   		    else
+   		    {	
+   			driver.navigate().back();
+   			continue;
+    		}
+		
+    		}
+    	return size;
+    	
+    }    
+   
 
-
-    public void verify_Stages_working_fine_with_reject_status() throws InterruptedException
+    public void verify_Stages_working_fine_with_reject_status(String pop_up_txt) throws InterruptedException
     {
     	
     	Common_class com=new Common_class(driver); 	
@@ -307,7 +467,7 @@ public class Satge_page extends Test_Data {
    			 if(wild>20)
              {
              	accept=false;
-             	Assert.assertTrue(false,"Satge still opened even after criteria or activity approved or rejected");
+             	Assert.assertTrue(accept,"Satge still opened even after criteria or activity approved or rejected");
              	break;
              }
 
@@ -337,6 +497,12 @@ public class Satge_page extends Test_Data {
     						//com.js_click(back_pointer);
     						driver.navigate().back();		
     						com.Explicit_wait_elementToBeInvisible(spinner, 30);
+    						com.Explicit_wait_elements_visiblity(rejected_popup, 3);
+    					    if(rejected_popup.size()>0)
+    					    {
+    					    	reject=true;
+    					    	Assert.assertTrue(true,"Satge could not  rejected still opened");
+    					    }
     						break;
     					}
     		        	
